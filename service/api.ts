@@ -1,5 +1,11 @@
 import axios from 'axios';
 
+import Constants from 'expo-constants';
+
+const apiOpenRouterKey = Constants.expoConfig?.extra?.openrouterKey;
+const apiGeminiKey = Constants.expoConfig?.extra?.askgeminiKey;
+
+
 export async function askChatGPT(message: string): Promise<string> {
     try {
         const res = await axios.post(
@@ -20,7 +26,7 @@ export async function askChatGPT(message: string): Promise<string> {
             },
             {
                 headers: {
-                    Authorization: `Bearer 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`,
+                    Authorization: `Bearer ${apiOpenRouterKey}`,
                     'Content-Type': 'application/json',
                 },
             }
@@ -65,7 +71,7 @@ export async function geocodeAddress(address: string) {
 export async function askGeminiWithImage(imageBase64: string, prompt: string) {
     try {
         const res = await fetch(
-            'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCa4wN2x49Q1xsjyAeWHdeDCOJ5yY5gBPQ',
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiGeminiKey}`,
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
