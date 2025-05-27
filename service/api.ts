@@ -20,7 +20,7 @@ export async function askChatGPT(message: string): Promise<string> {
             },
             {
                 headers: {
-                    Authorization: `Bearer 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`,
+                    Authorization: `Bearer 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`,
                     'Content-Type': 'application/json',
                 },
             }
@@ -58,121 +58,6 @@ export async function geocodeAddress(address: string) {
     } catch (error) {
         console.error('❌ Geocode error:', error);
         return null;
-    }
-}
-//
-// const OCR_API_KEY = 'K88174659988957';
-//
-// export async function extractTextFromImage(base64Image: string) {
-//     try {
-//         const formData = new FormData();
-//         formData.append('apikey', OCR_API_KEY);
-//         formData.append('language', 'vietnamese');
-//         formData.append('language', 'chinese_tra');
-//         formData.append('language', 'chinese_simplified');
-//         formData.append('language', 'eng');
-//         formData.append('base64Image', `data:image/jpg;base64,${base64Image}`);
-//
-//         const res = await fetch('https://api.ocr.space/parse/image', {
-//             method: 'POST',
-//             body: formData,
-//         });
-//
-//         const data = await res.json();
-//         console.log('📸 OCR Result:', data);
-//
-//         if (data?.ParsedResults?.[0]?.ParsedText) {
-//             return data.ParsedResults[0].ParsedText;
-//         }
-//
-//         throw new Error(data?.ErrorMessage || 'Không nhận dạng được văn bản.');
-//     } catch (error) {
-//         console.error('❌ OCR Error:', error);
-//         return '';
-//     }
-// }
-//
-//
-// export async function translateText(text: string, fromLang = 'vi', toLang = 'en') {
-//     try {
-//         const res = await fetch('https://libretranslate.de/translate', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({
-//                 q: text,
-//                 source: fromLang,
-//                 target: toLang,
-//                 format: 'text',
-//             }),
-//         });
-//
-//         const data = await res.json();
-//         console.log('🌐 Translated result:', data);
-//         return data.translatedText;
-//     } catch (error) {
-//         console.error('❌ Translate error:', error);
-//         return 'Không thể dịch.';
-//     }
-// }
-//
-//
-// export async function handleOCRandTranslate(base64Image: string) {
-//     const extracted = await extractTextFromImage(base64Image);
-//     console.log('OCR:', extracted);
-//
-//     if (extracted.trim()) {
-//         const translated = await translateText(extracted);
-//         console.log('Translated:', translated);
-//         return translated;
-//     }
-//
-//     return 'Không nhận dạng được chữ.';
-// }
-
-
-export async function askImageToGPT(imageBase64: string, userPrompt: string) {
-    try {
-        const res = await axios.post(
-            'https://openrouter.ai/api/v1/chat/completions',
-            {
-                model: 'openai/gpt-3.5-turbo',
-                messages: [
-                    {
-                        role: 'system',
-                        content:
-                            'Bạn là hướng dẫn viên du lịch thông minh. Chỉ tập trung nhận diện các địa danh, biển hiệu, hoặc thông tin văn hoá tại Hội An, Việt Nam.',
-                    },
-                    {
-                        role: 'user',
-                        content: [
-                            {
-                                type: 'text',
-                                text: userPrompt,
-                            },
-                            {
-                                type: 'image_url',
-                                image_url: {
-                                    url: imageBase64,
-                                },
-                            },
-                        ],
-                    },
-                ],
-            },
-            {
-                headers: {
-                    Authorization: 'Bearer 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',
-                    'Content-Type': 'application/json',
-                },
-            }
-        );
-
-        return res.data.choices[0].message.content.trim();
-    } catch (error: any) {
-        console.error('❌ GPT Image Error:', error?.response?.data || error.message);
-        return 'Lỗi khi gửi ảnh lên GPT.';
     }
 }
 
