@@ -24,7 +24,7 @@ export default function OnboardingScreen() {
   return (
       <View className="flex items-center bg-white w-full h-full ">
         <Image source={welcome} className="h-[389px] w-full top-[59px]" resizeMode="contain"/>
-        <View className="top-[80px] w-full max-w-[393px] flex flex-col items-center">
+        <View className="top-5 w-full max-w-[393px] flex flex-col items-center">
           <Text className="text-[48px] w-full text-left font-bold  text-[#8B3A00] uppercase font-phudu">
             Khám phá Hội An theo cách riêng của bạn – chỉ với
           </Text>

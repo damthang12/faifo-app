@@ -1,9 +1,7 @@
-import { Image, Text, TouchableOpacity, View } from 'react-native';
-import ArrLeft from "@/assets/images/arrow-left.png";
-import DialogueBox from "@/assets/images/onboarding/DialogueBox - lg-right.png";
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import gradient from "@/assets/images/onboarding/Gradient.png";
 import logoStep from "@/assets/images/onboarding/step-logo.png";
-import { useRouter } from "expo-router";
+import {useRouter} from "expo-router";
 
 
 export default function ChatScreen() {

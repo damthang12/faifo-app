@@ -4,10 +4,10 @@ import { View } from 'react-native';
 export default function TabBarBackground() {
   return (
       <View
-          className="bg-white border border-gray-200 flex items-center justify-center px-4 left-4 right-4 bottom-5"
+          className="bg-white border border-gray-200 flex items-center justify-center px-4 left-3 right-3 bottom-6"
           style={{
             height: 72,
-            marginTop: 10,
+            marginTop: 16,
             borderRadius: 100,
             position: 'absolute',
             shadowColor: '#000',

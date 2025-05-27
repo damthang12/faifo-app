@@ -1,10 +1,13 @@
-import { Tabs } from 'expo-router';
-import { Platform } from 'react-native';
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import {Tabs} from 'expo-router';
+import {HapticTab} from '@/components/HapticTab';
+import {IconSymbol} from '@/components/ui/IconSymbol';
+import {Colors} from '@/constants/Colors';
+import {useColorScheme} from '@/hooks/useColorScheme';
 import TabBarBackground from "@/components/layout/TabBarBackground";
+import ChatBot from "@/assets/Icon/ChatBot";
+import Profile from "@/assets/Icon/Profile";
+import PlanIcon from "@/assets/Icon/Map";
+import CameraFifoIcon from "@/assets/Icon/CameraFaifo";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -15,11 +18,11 @@ export default function TabLayout() {
             tabBarShowLabel: false,
             headerShown: false,
             tabBarButton: HapticTab,
-            tabBarBackground: TabBarBackground, // 👈 gắn vào đây
+            tabBarBackground: TabBarBackground,
             tabBarStyle: {
               position: 'absolute',
               backgroundColor: 'transparent',
-              height: 72,
+              height: 75,
               borderTopWidth: 0,
               elevation: 0,
             },
@@ -29,32 +32,31 @@ export default function TabLayout() {
         <Tabs.Screen
             name="index"
             options={{
-              tabBarIcon: ({ color }) => <IconSymbol size={26} name="house.fill" color={color} />,
+              tabBarIcon: ({ color }) => <IconSymbol size={24} name="house.fill" color={color} />,
             }}
         />
         <Tabs.Screen
-            name="search"
+            name="camera"
             options={{
-              tabBarIcon: ({ color }) => <IconSymbol size={26} name="magnifyingglass" color={color} />,
+              tabBarIcon: ({ color }) => <CameraFifoIcon size={24}  color={color} />,
             }}
         />
         <Tabs.Screen
             name="chat"
             options={{
-              tabBarIcon: ({ color }) => <IconSymbol size={26} name="bubble.left.and.bubble.right.fill" color={color} />,
+              tabBarIcon: ({ color }) => <ChatBot size={24} color={color} />,
             }}
         />
         <Tabs.Screen
-            name="map"
+            name="plan"
             options={{
-              tabBarStyle: { display: 'none' },
-              tabBarIcon: ({ color }) => <IconSymbol size={26} name="map.fill" color={color} />,
+              tabBarIcon: ({ color }) => <PlanIcon size={24} color={color} />,
             }}
         />
         <Tabs.Screen
             name="profile"
             options={{
-              tabBarIcon: ({ color }) => <IconSymbol size={26} name="person.crop.circle.fill" color={color} />,
+              tabBarIcon: ({ color }) => <Profile size={24} color={color} />,
             }}
         />
       </Tabs>

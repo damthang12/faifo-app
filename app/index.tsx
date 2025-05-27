@@ -1,9 +1,13 @@
-import { useState, useEffect } from 'react';
-import { View, Text, Image, Pressable, Button, TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router';
+import {useEffect, useState} from 'react';
+import {Image, Pressable, Text, TouchableOpacity, View} from 'react-native';
+import {useRouter} from 'expo-router';
 // import * as SecureStore from 'expo-secure-store';
 import logoFaifo from '../assets/images/onboarding/faifo-logo.png';
 import selectLanguage from '../assets/images/onboarding/select-language.png';
+import '../i18n';
+import '@/i18n/calendarLocale';
+import {useTranslation} from "react-i18next";
+import {useLanguageStore} from "@/store/useLanguageStore";
 
 const LANGUAGES = [
   { code: 'vi', label: '🇻🇳 Tiếng Việt (VI)' },
@@ -13,22 +17,20 @@ const LANGUAGES = [
 
 export default function OnboardingScreen() {
   const [step, setStep] = useState<'splash' | 'language'>('splash');
-  const [selected, setSelected] = useState<string | null>(null);
   const router = useRouter();
+  const { t } = useTranslation();
+  const {setLanguage, language} = useLanguageStore()
 
   useEffect(() => {
     const timer = setTimeout(() => setStep('language'), 2000);
     return () => clearTimeout(timer);
   }, []);
 
-  const handleSelectLanguage = async (code: string) => {
-    setSelected(code);
-    // await SecureStore.setItemAsync('language', code);
-
+  const handleSelectLanguage = (code: string) => {
+    setLanguage(code);
   };
 
   const handleSkip = () => {
-    // await SecureStore.setItemAsync('language', 'en');
     setTimeout(() => {
       router.push('/(onboardings)');
     }, 300);  };
@@ -46,7 +48,7 @@ export default function OnboardingScreen() {
         <Image source={selectLanguage} className="w-[336px] h-[339px] absolute z-0" resizeMode="contain" />
         <View className="top-[100px] absolute w-full h-full flex flex-col items-center">
           <Text className="text-[32px] font-bold mb-6 text-[#8B3A00] uppercase font-phudu">
-            Select a language
+            {t('select_language')}
           </Text>
           <View className="space-y-4 w-full">
             {LANGUAGES.map((lang) => (
@@ -58,10 +60,10 @@ export default function OnboardingScreen() {
                   <Text className="text-xl font-semibold font-beVN">{lang.label}</Text>
                   <View
                       className={`w-6 h-6 rounded-full border-2 ${
-                          selected === lang.code ? 'border-orange-500 ' : 'border-gray-400'
+                          language === lang.code ? 'border-orange-500 ' : 'border-gray-400'
                       } items-center justify-center`}
                   >
-                    {selected === lang.code && <View className="w-2.5 h-2.5 rounded-full bg-orange-500" />}
+                    {language === lang.code && <View className="w-2.5 h-2.5 rounded-full bg-orange-500" />}
                   </View>
                 </Pressable>
             ))}

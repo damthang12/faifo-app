@@ -1,10 +1,9 @@
-import { Image, Pressable, Text, TouchableOpacity, View } from 'react-native';
-import { useRouter } from 'expo-router';
+import {Image, Pressable, Text, TouchableOpacity, View} from 'react-native';
+import {useRouter} from 'expo-router';
 import logoStep from '../../assets/images/onboarding/step-logo.png';
-import gradient from '../../assets/images/onboarding/Gradient.png';
 import DialogueBox from "@/assets/images/onboarding/DialogueBox - sm.png";
 import ArrLeft from "@/assets/images/arrow-left.png";
-import { useState } from "react";
+import {useState} from "react";
 
 
 const LANGUAGES = [

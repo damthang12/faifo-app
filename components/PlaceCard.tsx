@@ -1,44 +1,65 @@
-import { View, Text, Image, Pressable } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { useState } from 'react';
+import {Image, ImageSourcePropType, Pressable, Text, View} from 'react-native';
+import {Ionicons} from '@expo/vector-icons';
+import {useRouter} from "expo-router";
 
 export interface PropTypes {
   item: {
     id: string;
-    title: string;
+    place: string;
     rating: number;
     reviewCount: number;
     price: string;
     openTime: string;
-    image: string;
+    image: ImageSourcePropType;
   };
 }
 
 export function PlaceCard({ item }: PropTypes) {
-  const [liked, setLiked] = useState(false);
+  // const [liked, setLiked] = useState(false);
+  const router = useRouter();
+  // const {lists , addItemToList} = useFavoriteStore();
+  //
+  // const listName = lists.find(list => list.id === item.id)?.name || 'Favorites';
+  //   const handleLike = () => {
+  //       setLiked(!liked);
+  //       if (!liked) {
+  //       addItemToList(listName, {
+  //           id: item.id,
+  //           name: item.place,
+  //           rating: item.rating,
+  //           reviewCount: item.reviewCount,
+  //           openTime: item.openTime,
+  //           image: item.image,
+  //           category: 'N/A',
+  //       });
+  //       }
+  //   };
+
 
   return (
-      <View className="mr-4 overflow-hidden w-[280px] h-[272px]">
+      <Pressable
+          onPress={() => router.push(`/places/${item.id}`)}
+          className="mr-4  overflow-hidden w-[280px] h-[272px]">
         <View className="relative">
           <Image
-              source={{ uri: item.image }}
+              source={item.image}
               className="w-full h-[179px] rounded-2xl"
               resizeMode="cover"
           />
-          <Pressable
-              onPress={() => setLiked(!liked)}
-              className="absolute top-2 right-2 bg-white/70 p-1.5 rounded-full"
-          >
-            <Ionicons
-                name={liked ? 'heart' : 'heart-outline'}
-                size={20}
-                color={liked ? '#EF4444' : '#6B7280'}
-            />
-          </Pressable>
+          {/*<Pressable*/}
+          {/*    onPress={() => setLiked(!liked)}*/}
+          {/*    className="absolute top-2 right-2 bg-white/70 p-1.5 rounded-full"*/}
+          {/*>*/}
+          {/*  <Ionicons*/}
+          {/*      name={liked ? 'heart' : 'heart-outline'}*/}
+          {/*      size={20}*/}
+          {/*      color={liked ? '#EF4444' : '#6B7280'}*/}
+          {/*  />*/}
+          {/*</Pressable>*/}
         </View>
 
         <View className="p-3 space-y-1 flex flex-col gap-3">
-          <Text className="font-semibold text-base text-[#351904]">{item.title}</Text>
+          <Text className="font-semibold text-base text-[#351904]">{item.place}</Text>
 
           <View className="flex-row items-center gap-1">
             {[...Array(5)].map((_, i) => (
@@ -57,6 +78,6 @@ export function PlaceCard({ item }: PropTypes) {
             <Text className="text-xs text-gray-500">Giờ mở cửa: {item.openTime}</Text>
           </View>
         </View>
-      </View>
+      </Pressable>
   );
 }
