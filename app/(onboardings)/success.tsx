@@ -1,9 +1,6 @@
-import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { useRouter } from 'expo-router';
-import logoStep from '../../assets/images/onboarding/step-logo.png';
-import DialogueBox from "@/assets/images/onboarding/DialogueBox-md-ritgh.png";
-import ArrLeft from "@/assets/images/arrow-left.png";
-import gradient from "@/assets/images/onboarding/Gradient.png";
+import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {useRouter} from 'expo-router';
+import logoStep from '../../assets/images/mascot/Mascot7.png';
 
 
 export default function OnboardingSuccess() {

@@ -1,6 +1,7 @@
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import logoStep from '../../assets/images/onboarding/step-logo.png';
+import logoStep from '../../assets/images/mascot/Mascot6.png';
+import logoStep2 from '../../assets/images/mascot/Mascot3.png';
 import gradient from '../../assets/images/onboarding/Gradient.png';
 import DialogueBox from "@/assets/images/onboarding/DialogueBox - lg-right.png";
 import ArrLeft from "@/assets/images/arrow-left.png";
@@ -78,7 +79,7 @@ export default function OnboardingStep5() {
         <View className="w-full h-full top-[110px] gap-10">
           <View className="flex  justify-center w-full flex-row">
             {/* Logo bên cạnh */}
-            <Image source={logoStep} className="h-[120px] w-[96px]" resizeMode="contain" />
+            <Image source={logoStep2} className="h-[120px] w-[96px]" resizeMode="contain" />
             {/* Khung hội thoại */}
             <View className="relative flex items-center justify-center z-10">
               <Image source={DialogueBox} className="h-[87px] w-[287px]" resizeMode="contain" />

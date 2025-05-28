@@ -16,6 +16,7 @@ import {useEffect, useState} from "react";
 import FilterModal from "@/components/modal/FilterModal";
 import {PLACES_SECTIONS} from "@/constants/MockData";
 import {useRouter} from "expo-router";
+import FT from "@/assets/Icon/FT";
 
 
 export const TABS = [
@@ -75,7 +76,7 @@ export default function HomeScreen() {
               <Pressable className="bg-white flex items-center justify-center w-11 h-11 rounded-full"
                          onPress={() => setFilterVisible(true)}
               >
-                <Ionicons name="filter" size={24} color="#000" />
+                <FT size={24} color="#000" />
               </Pressable>
             </View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-10" contentContainerStyle={{ gap: 32 }}>

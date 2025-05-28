@@ -132,30 +132,20 @@ export default function PlaceDetailScreen() {
                 <View className="h-[1px] w-full bg-gray-300"/>
 
                 <ExpandableSection2
-                    title="Tổng quan"
-                    lines={[
-                        'Hãy trải nghiệm dịch vụ may đồ tại Hội An với các cửa hàng nổi tiếng nơi chất lượng và tay nghề gặp nhau.',
-                        'Bạn sẽ có thể chọn lựa chất liệu và thiết kế để có một bộ trang phục độc đáo chỉ có một không hai dành riêng cho bạn.',
-                    ]}
+                    title={place.overview?.title || 'Tổng quan'}
+                    lines={place.overview?.description || []}
                 />
                 <View className="h-[1px] w-full bg-gray-300"/>
 
                 <ExpandableSection1
                     title="Bao gồm"
-                    lines={[
-                        'Dịch vụ may đo theo yêu cầu, được thực hiện theo số đo chính xác của bạn',
-                        'Lựa chọn đa dạng về chất liệu và kiểu dáng',
-                        'Tư vấn cá nhân với thợ may để thiết kế bộ đồ',
-                        'Thử đồ và điều chỉnh theo yêu cầu (nếu cần)',
-                    ]}
+                    lines={place.include?.description || []}
                 />
                 <View className="h-[1px] w-full bg-gray-300"/>
 
                 <ExpandableSection2
-                    title="Thời gian nhận trang phục"
-                    lines={[
-                        'Bạn có thể đến nhận trang phục tại cửa hàng hoặc điểm thu nhận vào thời gian đã hẹn.',
-                    ]}
+                    title={place.include2?.title || 'Bao gồm'}
+                    lines={place.include2?.description || []}
                 />
                 <View className="h-[1px] w-full bg-gray-300"/>
 
@@ -163,11 +153,7 @@ export default function PlaceDetailScreen() {
                 <View className="h-[1px] w-full bg-gray-300"/>
                 <ExpandableSection1
                     title="Mẹo du lịch"
-                    lines={[
-                        'Đảm bảo bạn có số đo chính xác, nếu không hãy yêu cầu cửa hàng đo cho bạn',
-                        'Thảo luận với thợ may về sở thích và yêu cầu riêng của bạn',
-                        'Nếu có thể, hãy đặt lịch trước để tránh phải chờ lâu',
-                    ]}
+                    lines={place.travelTips?.description || []}
                 />
                 <View className="h-[1px] w-full bg-gray-300"/>
                 <ImageDropdown
@@ -186,10 +172,8 @@ export default function PlaceDetailScreen() {
                 <ExpandableSection1
                     isChatBot={true}
                     title="Cần Giúp Đỡ?"
-                    lines={[
-                        'Để biết thêm chi tiết, bạn có thể liên hệ với cửa hàng qua nền tảng đặt chỗ hoặc đến tận nơi.',
-                        'Cần trợ giúp về việc đo số đo? Hãy trò chuyện với thợ may trực tuyến qua chatbot của chúng tôi để được hướng dẫn.',
-                    ]}
+                    lines={place.needHelp || []}
+
                 />
 
                 <View className="flex flex-row mb-10 justify-between">

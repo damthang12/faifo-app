@@ -1,6 +1,6 @@
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import logoStep from '../../assets/images/onboarding/step-logo.png';
+import logoStep from '../../assets/images/mascot/Mascot1.png';
 import gradient from '../../assets/images/onboarding/Gradient.png';
 import DialogueBox from "@/assets/images/onboarding/DialogueBox - md.png";
 import ArrLeft from "@/assets/images/arrow-left.png";

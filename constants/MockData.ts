@@ -110,6 +110,10 @@ export interface Images {
     url: string;
 }
 
+export interface Include {
+    text: string
+}
+
 export interface Item {
     id: string;
     place: string;
@@ -124,6 +128,25 @@ export interface Item {
     category?: string;
     booking?: Booking[];
     isMaintained?: boolean;
+    overview?: {
+        title: string;
+        description?: string[]
+    };
+    include?: {
+        title: string;
+        description?: string[];
+        }
+    include2?: {
+        title: string;
+        description?: string[];
+    }
+
+    travelTips?: {
+        title: string;
+        description?: string[];
+    }
+    reviews?: string[]
+    needHelp?: string[];
 }
 
 export interface Trip {
@@ -176,6 +199,42 @@ export const PLACES_SECTIONS: Place[] = [
                         price: '1.250.000đ',
                         originalPrice: '1.550.000đ',
                     },
+                ],
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy trải nghiệm dịch vụ may đồ tại Hội An với các cửa hàng nổi tiếng nơi chất lượng và tay nghề gặp nhau. Bạn sẽ có thể chọn lựa chất liệu và thiết kế để có một bộ trang phục độc đáo chỉ có một không hai dành riêng cho bạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Dịch vụ may đo theo yêu cầu, được thực hiện theo số đo chính xác của bạn',
+                        'Lựa chọn đa dạng về chất liệu và kiểu dáng',
+                        'Tư vấn cá nhân với thợ may để thiết kế bộ đồ',
+                        'Thử đồ và điều chỉnh theo yêu cầu (nếu cần)'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận trang phục',
+                    description: ['Bạn có thể đến nhận trang phục tại cửa hàng hoặc điểm thu nhận vào thời gian đã hẹn.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description:
+                        [
+                        'Đảm bảo bạn có số đo chính xác, nếu không hãy yêu cầu cửa hàng đo cho bạn',
+                        'Thảo luận với thợ may về sở thích và yêu cầu riêng của bạn',
+                        'Nếu có thể, hãy đặt lịch trước để tránh phải chờ lâu',
+                        ]
+                },
+                reviews: [
+                    'Mình đến Hội An lần đầu tiên và quyết định thử dịch vụ may đồ tại đây. Thực sự bất ngờ với thời gian may nhanh, chỉ mất một buổi sáng là tôi đã có bộ đồ ưng ý. Đặc biệt, họ rất chú ý đến chi tiết, may rất tinh xảo. Chắc chắn sẽ giới thiệu cho bạn bè.',
+                    'Tôi đến Hội An và muốn may một bộ đồ truyền thống ngay lập tức, thật không ngờ dịch vụ lại nhanh như vậy. Sau vài giờ, bộ đồ của tôi đã hoàn thành, rất vừa vặn và đẹp mắt. Dịch vụ rất thân thiện, ai cũng nhiệt tình giúp đỡ.'
+                ],
+                needHelp: [
+                    'Để biết thêm chi tiết, bạn có thể liên hệ với cửa hàng qua nền tảng đặt chỗ hoặc đến tận nơi.',
+                    'Cần trợ giúp về việc đo số đo? Hãy trò chuyện với thợ may trực tuyến qua chatbot của chúng tôi để được hướng dẫn.'
                 ]
             },
             {
@@ -197,6 +256,41 @@ export const PLACES_SECTIONS: Place[] = [
                         price: '300.000đ',
                         originalPrice: '350.000đ',
                     }
+                ],
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ],
+                needHelp: [
+                    'Nếu bạn cần thêm thông tin về việc thả đèn hoa đăng, hãy liên hệ với chúng tôi qua nền tảng đặt chỗ hoặc trò chuyện trực tuyến.',
+                    'Bạn có thể đặt trước đèn hoa đăng để đảm bảo có đủ số lượng cho nhóm của mình.'
                 ]
             },
             {
@@ -217,6 +311,38 @@ export const PLACES_SECTIONS: Place[] = [
                         price: '282.000đ',
                         originalPrice: '350.000đ',
                     }
+                ],
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy trải nghiệm văn hóa Hội An qua việc thuê áo dài, mặc trang phục truyền thống này khi tham quan phố cổ. Áo dài là biểu tượng của sự duyên dáng và thanh thoát, sẽ giúp bạn có những bức ảnh tuyệt đẹp trong hành trình khám phá Hội An.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Áo dài cao cấp: Chọn từ bộ sưu tập áo dài truyền thống và thiết kế tinh tế.',
+                        'Dịch vụ thử đồ miễn phí: Nhân viên sẽ hỗ trợ bạn thử và điều chỉnh áo dài sao cho vừa vặn và thoải mái nhất.',
+                        'Thời gian thuê linh hoạt: Bạn có thể thuê áo dài trong vòng 4 tiếng hoặc cả ngày, tuỳ theo kế hoạch tham quan của bạn.',
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian thuê áo dài',
+                    description: ['Bạn có thể nhận áo dài tại cửa hàng vào thời gian đã đặt trước. Lưu ý: Thời gian thuê có thể kéo dài đến 4 tiếng hoặc cả ngày, tùy vào yêu cầu của bạn.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Lựa chọn các cửa hàng nằm gần các địa điểm tham quan nổi tiếng trong phố cổ để tiện di chuyển.',
+                        'Để có những bức ảnh đẹp nhất, hãy thử thuê áo dài vào buổi sáng sớm hoặc lúc hoàng hôn.',
+                    ]
+                },
+                reviews: [
+                    'Mình đã thuê áo dài để tham quan phố cổ và thật sự rất thích! Áo dài rất đẹp và thoải mái. Chắc chắn sẽ giới thiệu cho bạn bè!' ,
+                    'Mình đến Hội An trong chuyến du lịch gần đây và quyết định thử trải nghiệm thuê áo dài tại một cửa hàng ở phố cổ. Dịch vụ tại đây thật sự khiến mình bất ngờ. Nhân viên nhiệt tình, giúp mình chọn lựa áo dài phù hợp với dáng người và yêu cầu. '
+                ],
+                needHelp: [
+                    'Nếu bạn cần thêm thông tin chi tiết hoặc giúp đỡ, đừng ngần ngại trò chuyện với chúng tôi qua chatbot để được hỗ trợ ngay lập tức.'
                 ]
 
             },
@@ -238,7 +364,38 @@ export const PLACES_SECTIONS: Place[] = [
                         price: '',
                         originalPrice: '30.000đ',
                     }
+                ],
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy khám phá nghề gốm truyền thống tại Làng Gốm Thanh Hà, một trong những làng nghề nổi tiếng ở Hội An. Đây là nơi bạn có thể tìm hiểu về quá trình làm gốm thủ công và mua những sản phẩm gốm độc đáo. Đặc biệt, bạn có thể trực tiếp tham gia vào các hoạt động làm gốm, tạo ra những món đồ mang đậm nét văn hóa Hội An.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Tham quan làng gốm Thanh Hà',
+                        'Hướng dẫn làm gốm từ các nghệ nhân',
+                        'Mua sắm sản phẩm gốm thủ công',
+                    ]
+                },
+                include2: {
+                    title: '',
+                    description: ['']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Để có những trải nghiệm tốt nhất, bạn nên đi vào buổi sáng để tránh đông đúc.',
+                        'Đừng quên mặc đồ thoải mái để có thể tham gia vào việc tạo ra sản phẩm gốm.',
+                    ]
+                },
+                reviews: [
+                    'Thật tuyệt vời khi được tham gia vào quá trình làm gốm tại Thanh Hà. Tôi đã làm được một chiếc bát gốm và được biết thêm về nghệ thuật truyền thống của làng nghề. Hướng dẫn viên rất thân thiện và nhiệt tình, dễ thương.',
+                'Tham quan làng gốm Thanh Hà là một trải nghiệm không thể bỏ qua khi đến Hội An. Tôi đã được thử làm gốm với sự hướng dẫn tận tình của các nghệ nhân địa phương. Không khí ở đây thật yên bình, và các sản phẩm gốm cũng rất đẹp và chất lượng. '
                 ]
+                ,
+                needHelp: ['Nếu bạn cần thêm thông tin chi tiết hoặc giúp đỡ, đừng ngần ngại trò chuyện với chúng tôi qua chatbot để được hỗ trợ ngay lập tức.']
 
             }
         ],
@@ -267,6 +424,39 @@ export const PLACES_SECTIONS: Place[] = [
                         price: '',
                         originalPrice: '350.000đ',
                     }
+                ],
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy trải nghiệm một lớp học đặc biệt chỉ có tại Hội An, nơi bạn không chỉ được học cách pha chế cà phê đậm đà mà còn được hướng dẫn làm bánh mì theo phong cách truyền thống của vùng đất này. Đây là cơ hội tuyệt vời để khám phá nghệ thuật pha chế và làm bánh mà chỉ có ở Hội An.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Lớp học pha chế cà phê và làm bánh mì với hướng dẫn chuyên sâu',
+                        'Nguyên liệu và dụng cụ học tập chất lượng',
+                        'Cơ hội thưởng thức cà phê và bánh mì tự tay làm',
+                        'Các mẹo nhỏ để làm bánh mì và pha chế như một barista chuyên nghiệp'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian lớp học',
+                    description: ['Lớp học diễn ra từ sáng đến chiều, mỗi lớp kéo dài từ 1,5 đến 2 giờ, đủ để bạn học hỏi và thực hành các kỹ năng độc đáo này.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Đừng quên đăng ký trước vì lớp học này chỉ có tại Hội An, và rất được du khách yêu thích.',
+                        'Để có một trải nghiệm trọn vẹn, bạn có thể kết hợp khóa học với tham quan các điểm nổi bật của Hội An.',
+                    ]
+                },
+                reviews: [
+                    'Chuẩn bị để hồi hộp nhé! Nhất định phải thử cho những người yêu thích cà phê. Học cách pha 5 loại cà phê Việt Nam. Giảng viên chia sẻ lịch sử thú vị về văn hóa cà phê Việt Nam. Tôi và bạn đời đã có rất nhiều niềm vui!!!!!',
+                    'Lớp học này thực sự tuyệt vời! Tôi học được rất nhiều kỹ năng pha cà phê và làm bánh mì ngon. Đây là trải nghiệm không thể bỏ qua khi đến Hội An. Nếu bạn yêu thích ẩm thực, nhất định phải thử!'
+                ],
+                needHelp: [
+                    'Nếu bạn cần thêm thông tin chi tiết hoặc muốn đặt chỗ, hãy trò chuyện với chúng tôi qua chatbot để được hỗ trợ ngay lập tức!',
                 ]
 
 
@@ -299,6 +489,38 @@ export const PLACES_SECTIONS: Place[] = [
                         price: '250.000đ',
                         originalPrice: '200.000đ',
                     }
+                ],
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Khám phá di sản lịch sử tuyệt vời tại Nhà Cổ Tấn Ký – một trong những ngôi nhà cổ nhất ở Hội An. Với kiến trúc đặc trưng của khu phố cổ, nhà Tấn Ký mang đến cho bạn cái nhìn rõ nét về cuộc sống thương mại và sinh hoạt của người dân Hội An xưa. Đây là điểm đến không thể bỏ qua nếu bạn muốn tìm hiểu về văn hóa, kiến trúc truyền thống và những giá trị lịch sử sâu sắc của phố cổ này.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Vé tham quan nhà cổ Tấn Ký',
+                        'Tham quan các gian phòng, tìm hiểu về lịch sử và kiến trúc cổ xưa',
+                        'Hướng dẫn viên sẽ cung cấp thông tin chi tiết về lịch sử ngôi nhà và các vật dụng trong nhà',
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian tham quan',
+                    description: ['Bạn có thể tham quan nhà cổ trong khoảng 1 đến 1.5 giờ, tìm hiểu về các đồ vật, đồ cổ và những câu chuyện thú vị từ hướng dẫn viên.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Hãy giữ khoảng cách tôn trọng với các cư dân địa phương và không làm phiền họ khi họ đang sinh hoạt tại đây.',
+                        'Tránh làm ồn ào, di chuyển nhẹ nhàng và không làm gián đoạn không gian yên tĩnh trong khu vực.',
+                    ]
+                },
+                reviews: [
+                    'Một trải nghiệm tuyệt vời khi được tham quan ngôi nhà cổ này, hướng dẫn viên rất nhiệt tình và giàu kiến thức. Cảm giác như lùi về thời gian',
+                    'Nhà cổ rất đẹp, lịch sử rất phong phú. Mọi người nên đến tham quan nếu muốn hiểu rõ hơn về Hội An.'
+                ],
+                needHelp: [
+                    'Bạn cần thêm thông tin về lịch sử nhà cổ hay hướng dẫn tham quan? Hãy trò chuyện với Faifan ngay qua chatbot, chúng tôi luôn sẵn sàng giúp bạn khám phá thêm nhiều điều thú vị tại Hội An!'
                 ]
 
             },
@@ -321,6 +543,39 @@ export const PLACES_SECTIONS: Place[] = [
                         price: '',
                         originalPrice: '500.000đ',
                     }
+                ],
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia lớp học làm đèn lồng Hội An để tự tay làm những chiếc đèn lồng xinh xắn, đặc trưng của thành phố này. Đây là hoạt động thú vị cho cả gia đình và nhóm bạn, giúp bạn trải nghiệm và học hỏi về văn hóa đặc sắc của Hội An thông qua việc tạo ra sản phẩm thủ công truyền thống. Không chỉ là một món quà lưu niệm độc đáo, bạn còn hiểu rõ hơn về lịch sử và nghệ thuật làm đèn lồng của người dân.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Hướng dẫn chi tiết từ nghệ nhân địa phương',
+                        'Nguyên liệu và dụng cụ để làm đèn lồng',
+                        'Sản phẩm tự làm sẽ được mang về làm kỷ niệm',
+                        'Cảm nhận không gian làng nghề và tham quan các xưởng đèn lồng nổi tiếng của Hội An'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian lớp học',
+                    description: ['Lớp học có thời gian linh hoạt, bạn có thể tham gia trong khoảng 1.5 đến 2 giờ đồng hồ. Bạn sẽ được hướng dẫn từng bước từ lúc cắt, uốn khung đến lúc trang trí đèn lồng. Lớp học mở cửa từ sáng đến chiều, và bạn có thể đặt lịch trước để đảm bảo tham gia.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Đặt trước: Để tránh thiếu chỗ, bạn nên đặt lớp học trước ít nhất một ngày, đặc biệt là vào cuối tuần hoặc mùa du lịch cao điểm.',
+                        'Lớp học làm đèn lồng nằm gần các khu di tích nổi tiếng, bạn có thể kết hợp tham quan Phố Cổ Hội An sau khi hoàn thành lớp học.',
+                    ]
+                },
+                reviews: [
+                    'Lớp học này thật tuyệt vời! Tôi đã được hướng dẫn tận tình và học cách làm đèn lồng từ đầu đến cuối. Chắc chắn sẽ giới thiệu cho bạn bè đến tham gia.' ,
+                    'Lớp học rất thú vị và sáng tạo, mình làm được chiếc đèn lồng rất đẹp. Đây là một trải nghiệm văn hóa Hội An không thể bỏ qua khi đến đây.'
+                ],
+                needHelp: [
+                    'Nếu bạn cần thêm thông tin chi tiết về lớp học hoặc muốn đặt chỗ, đừng ngần ngại trò chuyện với chúng tôi qua chatbot Faifan để được hỗ trợ ngay lập tức!',
                 ]
 
             },
@@ -351,6 +606,40 @@ export const PLACES_SECTIONS: Place[] = [
                         originalPrice: '500.000đ',
                     }
 
+                ],
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Tham quan vườn rau Trà Quế là một trải nghiệm thú vị giúp bạn khám phá vẻ đẹp thiên nhiên và nền nông nghiệp truyền thống của Hội An. Vườn rau nổi tiếng với các loại rau tươi sạch, được chăm sóc theo phương pháp hữu cơ, giúp bạn hiểu thêm về quy trình trồng trọt của người dân địa phương. Bạn cũng sẽ được tham gia các hoạt động thu hoạch rau, tìm hiểu cách sử dụng các loại rau trong ẩm thực Hội An và thử làm món ăn đặc sản.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Tham quan vườn rau và tìm hiểu về các loại rau đặc sản của Hội An',
+                        'Tham gia hoạt động thu hoạch rau tươi',
+                        'Hướng dẫn sử dụng rau trong các món ăn truyền thống Hội An',
+                        'Thưởng thức các món ăn chế biến từ rau tươi ngay tại vườn'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian tham quan',
+                    description: ['Tham quan vườn rau Trà Quế sẽ mất khoảng 1.5 – 2 giờ. Bạn sẽ có thời gian để đi dạo, khám phá các khu vực trồng rau, tham gia thu hoạch rau và tận hưởng không gian thiên nhiên mát mẻ.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Để đảm bảo có hướng dẫn viên và có thể tham gia các hoạt động thu hoạch, bạn nên đặt lịch tham quan trước ít nhất một ngày.',
+                        'Ăn uống tại vườn: Hãy thử các món ăn làm từ rau tươi ngay tại vườn như gỏi rau sống, bánh xèo rau, bạn sẽ được thưởng thức hương vị tươi ngon nhất.',
+                        'Mang theo mũ, nón, kem chống nắng: Để bảo vệ da khỏi ánh nắng mặt trời.',
+                    ]
+                },
+                reviews: [
+                    'Trải nghiệm tại làng rau Trà Quế thật sự thú vị. Mình được tham gia thu hoạch rau và thưởng thức các món ăn làm từ rau tươi. Không gian ở đây rất yên bình, dễ chịu với mình.',
+                    'Đây là một trải nghiệm tuyệt vời khi đến Hội An! Rau rất đẹp và sạch, các hướng dẫn viên rất nhiệt tình. Mình được học rất nhiều về nông nghiệp hữu cơ và các món ăn từ rau.'
+                ],
+                needHelp: [
+                    'Nếu bạn có bất kỳ câu hỏi nào hoặc muốn biết thêm thông tin về làng rau Trà Quế, đừng ngần ngại trò chuyện với Faifan ngay! Chúng tôi luôn sẵn sàng hỗ trợ bạn.'
                 ]
 
             },
@@ -379,7 +668,7 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: MVDL2,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}]
+                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
 
             },
             {
@@ -390,7 +679,7 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: MVDL3,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}]
+                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
 
             },
             {
@@ -401,7 +690,7 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: MVDL4,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}]
+                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
 
             },
         ],
@@ -428,6 +717,34 @@ export const PLACES_SECTIONS: Place[] = [
                         price: '350.000đ',
                         originalPrice: '200.000đ',
                     }
+                ],
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời với Show ký ức Hội An – một hoạt động nghệ thuật đặc sắc tái hiện những khoảnh khắc lịch sử quan trọng của thành phố Hội An qua các màn trình diễn nghệ thuật đương đại. Tại đây, bạn sẽ được chiêm ngưỡng những vũ điệu, âm nhạc và những câu chuyện độc đáo về di sản văn hóa Hội An. Đây chắc chắn sẽ là một trải nghiệm không thể bỏ qua khi bạn đến Hội An.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Chương trình biểu diễn: Show Ký Ức Hội An tái hiện những khoảnh khắc lịch sử quan trọng của thành phố qua các màn trình diễn nghệ thuật đặc sắc, kết hợp giữa âm nhạc, ánh sáng và diễn xuất.',
+                        'Không gian nghệ thuật: Khán giả sẽ được chìm đắm trong không gian lung linh, huyền bí với những chiếc đèn lồng, tái hiện sự sống động của Hội An xưa.',
+                        'Câu chuyện văn hóa: Những câu chuyện về lịch sử, văn hóa, truyền thống của Hội An được kể lại qua mỗi màn biểu diễn, mang đến cái nhìn sâu sắc về sự phát triển của thành phố.',
+                        'Dịch vụ phục vụ: Nhân viên hỗ trợ đón tiếp, hướng dẫn và giải thích về nội dung của show diễn để khách tham gia có được trải nghiệm trọn vẹn.'
+                    ]
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Show ký ức Hội An là hoạt động nổi bật vào buổi tối, vì vậy nếu bạn muốn tránh đông đúc, hãy đến vào những ngày trong tuần thay vì cuối tuần.',
+                    ]
+                },
+                reviews: [
+                    'Mình không nghĩ rằng mình sẽ có một trải nghiệm tuyệt vời đến vậy tại Hội An! Show Ký Ức Hội An thật sự khiến mình bất ngờ. Cả sân khấu, âm nhạc và ánh sáng tạo ra một không gian hoàn toàn khác biệt, đưa tôi quay lại những khoảnh khắc lịch sử.',
+                'Chuyến đi Hội An của tôi đã trở nên đặc biệt hơn nhờ Show Ký Ức. Mọi thứ từ ánh sáng đến âm nhạc, vũ điệu đều tuyệt vời. Tôi đã được trải nghiệm một phần của lịch sử Hội An theo cách hoàn toàn mới và vô cùng hấp dẫn.'
+                ],
+                needHelp: [
+                    'Bạn cần thêm thông tin về show diễn này, trò chuyện với Faifan để biết thêm thông tin ngay nhé'
                 ]
 
             },
@@ -439,7 +756,34 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: XH2,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}]
+                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Chợ đêm Hội An là một trong những điểm đến không thể bỏ qua khi du khách ghé thăm thành phố này. Nằm dọc theo bờ sông Hoài, chợ đêm không chỉ nổi bật với những chiếc đèn lồng lung linh, mà còn là nơi bạn có thể thưởng thức những món ăn đặc sản và tìm mua các sản phẩm thủ công mỹ nghệ độc đáo.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Mua sắm: Khám phá hàng loạt các mặt hàng thủ công, quần áo, đèn lồng, đồ lưu niệm.',
+                        'Ẩm thực: Thưởng thức các món ăn đậm chất Hội An như Cao Lầu, Bánh Xèo, và các món ăn vặt hấp dẫn.',
+                    ]
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Một số quầy hàng có thể không chấp nhận thẻ tín dụng, vì vậy hãy mang theo đủ tiền mặt (và nên có một ít tiền lẻ) để thanh toán nhanh chóng.',
+                    ]
+                },
+                reviews: [
+                    'Chợ đêm Hội An thật sự là một trải nghiệm tuyệt vời! Không chỉ có đồ ăn ngon mà còn có vô số món đồ lưu niệm đẹp mắt. Tôi đặc biệt thích không khí vào ban đêm, với những chiếc đèn lồng sáng rực, thật sự rất lãng mạn và đáng nhớ. ',
+                'Thật sự rất thích chợ đêm Hội An! Các gian hàng bán đồ thủ công rất đẹp, giá cả hợp lý. Lần đầu đến Hội An, tôi đã mua được rất nhiều đồ lưu niệm tuyệt vời. Món Cao Lầu ở đây cũng ngon tuyệt vời. Đây là một trải nghiệm không thể bỏ qua!'
+                ]
+                ,
+                needHelp: [
+                    'Bạn cần thêm thông tin về chợ đêm Hội An, trò chuyện với Faifan để biết thêm thông tin ngay nhé'
+                ]
 
             },
             {
@@ -450,7 +794,35 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: XH3,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}]
+                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Tết Nguyên Tiêu là một trong những lễ hội đặc sắc nhất tại Hội An, diễn ra vào rằm tháng Giêng. Đây là dịp mà người dân địa phương tổ chức các hoạt động văn hóa, tín ngưỡng và các lễ hội sôi động bên sông Hoài, thu hút rất nhiều du khách tới tham gia.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Múa lân, múa rồng: Các tiết mục múa lân, múa rồng sôi động diễn ra khắp các khu phố cổ, mang đến không khí lễ hội đầy màu sắc.',
+                        'Lễ dâng hương và cầu may: Người dân Hội An tổ chức lễ cầu an, cầu may mắn cho gia đình và cộng đồng.',
+                        'Thả đèn hoa đăng: Đây là hoạt động truyền thống đặc trưng của lễ hội, du khách sẽ thả đèn hoa đăng trên sông Hoài với mong muốn cầu bình an, may mắn cho năm mới.',
+                    ]
+                },
+
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian tham gia: Lễ hội thường diễn ra vào buổi tối, đặc biệt là từ 17:00 đến 22:00, khi các hoạt động như múa lân, thả đèn hoa đăng và các hoạt động văn hóa diễn ra sôi nổi.',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia Tết Nguyên Tiêu ở Hội An và thật sự rất ấn tượng. Múa lân cực kỳ đặc sắc, không khí lễ hội vô cùng sôi động, đặc biệt là thả đèn hoa đăng trên sông rất đẹp.',
+                'Tết Nguyên Tiêu ở Hội An thực sự là một trải nghiệm tuyệt vời! Không khí lễ hội thật đặc sắc với những chiếc đèn lồng lung linh và các tiết mục múa lân sôi động. Chắc chắn tôi sẽ tham gia lại vào năm sau. '
+                ],
+                needHelp: [
+                    'Bạn cần thêm thông tin về tết nguyên tiêu, trò chuyện với Faifan để biết thêm thông tin ngay nhé'
+                ]
 
             },
             {
@@ -471,7 +843,35 @@ export const PLACES_SECTIONS: Place[] = [
                         price: '150',
                         originalPrice: '50.000đ',
                     }
+                ],
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Bài chòi là một trò chơi dân gian đặc sắc, gắn liền với đời sống văn hóa của người dân miền Trung. Khi tham gia vào hoạt động này tại Hội An, bạn sẽ được trải nghiệm không khí sôi động của một trò chơi mang đậm bản sắc văn hóa, kết hợp giữa âm nhạc, trí tuệ và may mắn. Chắc chắn đây sẽ là một hoạt động khó quên trong chuyến đi của bạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Tham gia vào trò chơi bài chòi với các thẻ bài ',
+                        'Quà tặng kỷ niệm mang về',
+                    ]
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Đến sớm để tìm chỗ ngồi: Bài chòi thu hút rất nhiều du khách, vì vậy bạn nên đến trước để tìm được vị trí ngồi thoải mái.',
+                        'Tận hưởng không khí lễ hội: Nếu đến vào các dịp lễ hội đặc biệt, bạn sẽ được trải nghiệm không khí sôi động hơn với sự tham gia của các nghệ sĩ và âm nhạc truyền thống.',
+                    ]
+                },
+                reviews: [
+                    'Trải nghiệm chơi bài chòi ở Hội An thật sự rất đặc biệt và vui nhộn! Được tham gia vào một trò chơi dân gian truyền thống, tôi cảm thấy như hòa mình vào văn hóa địa phương. Không khí thật sôi động và người chơi rất thân thiện. ',
+                    'Mặc dù tôi không biết chơi bài chòi nhưng không khí rất thân thiện và dễ tiếp cận. Một trải nghiệm đáng nhớ khi ở Hội An, đặc biệt là khi được nghe những giai điệu dân gian truyền thống.'
+                ],
+                needHelp: [
+                    'Bạn cần thêm thông tin về cách chơi bài chòi, trò chuyện với Faifan để biết thêm thông tin ngay nhé'
                 ]
+
 
             },
         ],
@@ -488,6 +888,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: VH1,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '15',
@@ -497,6 +928,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: VH2,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '16',
@@ -506,6 +968,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: VH3,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '17',
@@ -515,6 +1008,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: VH4,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
         ],
     },
@@ -530,6 +1054,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: LH1,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '19',
@@ -539,6 +1094,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: LH2,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '20',
@@ -548,6 +1134,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: LH3,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '21',
@@ -557,6 +1174,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: LH4,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
         ],
     },
@@ -572,6 +1220,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: AT1,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '23',
@@ -581,6 +1260,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: AT2,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '24',
@@ -590,6 +1300,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: AT3,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '25',
@@ -599,6 +1340,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: AT4,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
         ],
     },
@@ -614,6 +1386,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: CI1,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '27',
@@ -623,6 +1426,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: CI2,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '28',
@@ -632,6 +1466,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: CI3,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '29',
@@ -641,6 +1506,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: CI4,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
         ],
     },
@@ -657,6 +1553,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: QLN1,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '31',
@@ -666,6 +1593,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: QLN2,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '32',
@@ -675,6 +1633,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: QLN3,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '33',
@@ -684,6 +1673,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: QLN4,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
         ],
     },
@@ -700,6 +1720,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: BT1,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '35',
@@ -709,6 +1760,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: BT2,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '36',
@@ -718,6 +1800,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: BT3,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '37',
@@ -727,6 +1840,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: BT4,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
         ],
     },
@@ -743,6 +1887,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: LN1,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '39',
@@ -752,6 +1927,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: LN2,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '40',
@@ -761,6 +1967,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: LN3,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
             {
                 id: '41',
@@ -770,6 +2007,37 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: LN4,
+                overview: {
+                    title: 'Tổng quan',
+                    description: [
+                        'Hãy tham gia trải nghiệm tuyệt vời này và thả đèn hoa đăng trên sông Hoài tại Hội An, một hoạt động đặc sắc mang đậm bản sắc văn hóa của thành phố cổ. Bạn sẽ được thả những chiếc đèn lồng nhỏ trên dòng sông, cầu nguyện cho sức khỏe và may mắn, tạo nên một bức tranh đầy màu sắc và không gian huyền bí, lãng mạn.'
+                    ]
+                },
+                include: {
+                    title: 'Bao gồm',
+                    description: [
+                        'Đèn hoa đăng (mỗi chiếc)',
+                        'Thuyền đưa đón bạn đến điểm thả đèn',
+                        'Không gian thư giãn bên dòng sông',
+                        'Cầu nguyện và lắng nghe những câu chuyện về ý nghĩa đèn hoa đăng'
+                    ]
+                },
+                include2: {
+                    title: 'Thời gian nhận đèn',
+                    description: ['Bạn có thể đến nhận đèn tại điểm bán vé hoặc trước khi lên thuyền.']
+                },
+                travelTips: {
+                    title: 'Mẹo du lịch',
+                    description: [
+                        'Thời gian thả đèn hoa đăng đẹp nhất là và buổi tối, nếu bạn muốn tránh đông đúc, hãy đi vào những ngày trong tuần.',
+                        'Bạn có thể mua đèn hoa đăng tại các quầy bán hàng dọc bờ sông Hoài hoặc các cửa hàng gần phố cổ.',
+                        'Khi thả đèn, hãy nhẹ nhàng thả vào sông để đảm bảo đèn trôi đi một cách tự nhiên, không vứt đèn vào khu vực dòng nước quá mạnh để tránh đèn bị lật hoặc mắc kẹt',
+                    ]
+                },
+                reviews: [
+                    'Lần đầu tiên tôi tham gia thả đèn hoa đăng ở Hội An và phải nói rằng đó là một trải nghiệm rất đặc biệt. Không gian tại sông Hoài thật sự rất đẹp vào buổi tối, ánh đèn lấp lánh từ những chiếc đèn hoa đăng' ,
+                    'Thả đèn hoa đăng trên sông Hoài là một trong những hoạt động tôi yêu thích nhất khi đến Hội An. Cảm giác thả chiếc đèn vào dòng nước và nhìn nó trôi đi thật sự rất đặc biệt.'
+                ]
             },
         ],
     },

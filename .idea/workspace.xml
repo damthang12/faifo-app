@@ -5,9 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c302d3bd-7989-4001-96d0-7193c4b3d6ac" name="Changes" comment="update api key">
-      <change afterPath="$PROJECT_DIR$/app.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Icon/FT.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/mascot/Mascot1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/mascot/Mascot2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/mascot/Mascot3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/mascot/Mascot4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/mascot/Mascot5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/mascot/Mascot6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/mascot/Mascot7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/mascot/Mascot8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/mascot/Mascot9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(login)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(login)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(login)/sendmail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(login)/sendmail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step1.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step3.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step4.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step5.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step5.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step6.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step6.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step7.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step7.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step8.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step8.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/success.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/success.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/places/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/places/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/MockData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/MockData.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,13 +39,56 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;damthang12&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/damthang12/faifo-app.git&quot;,
+    &quot;accountId&quot;: &quot;16022472-34a7-40be-83e4-91e725c888d9&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2xiLs4EHL6d8dCZwNlQ6JPYxG3K" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/u2u2/Dev/u2u/faifo-app/assets/Icon",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "ts.external.directory.path": "/Users/u2u2/Dev/u2u/faifo-app/node_modules/typescript/lib"
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "/Users/u2u2/Dev/u2u/faifo-app/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/Icon" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images/mascot" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="update api key">
       <option name="closed" value="true" />
@@ -33,8 +98,36 @@
       <option name="project" value="LOCAL" />
       <updated>1748364790401</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update api key">
+      <option name="closed" value="true" />
+      <created>1748368347234</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748368347234</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update api key">
+      <option name="closed" value="true" />
+      <created>1748368388839</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1748368388839</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c302d3bd-7989-4001-96d0-7193c4b3d6ac" name="Changes" comment="update api key" />
+      <created>1748416151566</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748416151566</updated>
+      <workItem from="1748416153949" duration="81000" />
+      <workItem from="1748416259369" duration="10221000" />
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update api key" />
