@@ -38,7 +38,7 @@ export default function SendmailScreen() {
         <View className=" w-full absolute bottom-8 flex flex-col gap-4">
           <TouchableOpacity onPress={handleSkip}
                             className="h-[52px] w-full bg-[#F99F04] flex items-center justify-center  rounded-[32px]">
-            <Text className="text-xl font-semibold text-[#FFFFFF] font-beVN">Quay về</Text>
+            <Text className="text-xl font-semibold text-[#FFFFFF] font-beVNSemibold">Quay về</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -43,7 +43,7 @@ export default function ExpandableSection2({ title, lines }: Props) {
                 onPress={toggle}
                 className="flex-row justify-between items-center py-3 "
             >
-                <Text className="text-xl font-semibold text-[#8B3A00] font-beVN">{title}</Text>
+                <Text className="text-xl font-semibold text-[#8B3A00] font-beVNSemibold">{title}</Text>
                 <Ionicons
                     name={expanded ? 'chevron-up' : 'chevron-down'}
                     size={24}

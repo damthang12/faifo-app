@@ -15,27 +15,23 @@ export default function CameraScreen() {
             {/*</TouchableOpacity>*/}
 
             <Text className="text-[#351904] text-[40px] font-semibold uppercase font-phudu mb-10">Ống kính Faifo</Text>
-
-
-
-
             <ScrollView
                 contentContainerStyle={{ paddingBottom: 120 }}
                 showsVerticalScrollIndicator={false}
                 className="flex-1  ">
                 <View className="items-center">
                     <Image source={logoStep} className="h-[290px] w-full mb-6 mt-20" resizeMode="contain"/>
-                    <Text className="text-xl font-semibold text-black font-beVN mb-2">
+                    <Text className="text-xl font-semibold text-black font-beVNSemibold mb-2">
                         Khám phá Hội An qua ống kính của bạn
                     </Text>
                     <Text className="text-base font-beVN text-center mb-6">
-                        Đưa camera lên bất kỳ địa điểm, bảng hiệu, hay ký tự nào trong phố – Ứng dụng sẽ tự động nhận diện, dịch và hiển thị thông tin thú vị ngay trên màn hình!
+                        Đưa camera lên bất kỳ địa điểm, bảng hiệu, hay ký tự nào trong phố cổ – Ứng dụng sẽ tự động nhận diện, dịch và hiển thị thông tin thú vị ngay trên màn hình!
                     </Text>
                     <TouchableOpacity
                         onPress={() => router.push('/(app)/FaifoCamera')}
                         className="bg-[#F99F04] p-5 rounded-full"
                     >
-                        <Text className="text-white font-bold font-beVN text-xl">Bắt đầu ngay</Text>
+                        <Text className="text-white font-bold font-beVNSemibold text-xl">Bắt đầu ngay</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>

@@ -59,7 +59,7 @@ export default function ReviewDropdown({onOpen}: Props) {
     return (
         <View className="mt-4">
             <TouchableOpacity onPress={toggle} className="flex-row justify-between items-center mb-3">
-                <Text className="text-xl font-semibold text-[#8B3A00]">Đánh giá</Text>
+                <Text className="text-xl font-semibold text-[#8B3A00] font-beVNSemibold">Đánh giá</Text>
                 <Ionicons name={expanded ? 'chevron-up' : 'chevron-down'} size={24} color="#351904"/>
             </TouchableOpacity>
 
@@ -111,12 +111,12 @@ export default function ReviewDropdown({onOpen}: Props) {
                                         />
                                     ))}
                                 </View>
-                                <Text className="text-base text-gray-900 mb-4 font-beVN">{item.content}</Text>
+                                <Text className="text-base text-gray-900 mb-4  font-beVN "> {item.content}</Text>
 
                                 <View className="flex-row justify-between items-center">
                                     <Text
-                                        className="text-sm font-semibold text-[#0A0D12] mt-1 font-beVN">{item.name}</Text>
-                                    <Text className="text-xs text-gray-800 font-beVN">{item.date}</Text>
+                                        className="text-sm font-semibold text-[#0A0D12] mt-1 font-BeVNSemiBold">{item.name}</Text>
+                                    <Text className="text-xs text-gray-800 ">{item.date}</Text>
 
                                 </View>
 

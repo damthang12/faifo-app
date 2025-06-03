@@ -27,23 +27,23 @@ export default function ModalEditAvatar({
             swipeDirection="down"
             style={{ justifyContent: 'flex-end', margin: 0 }}
         >
-            <View className="flex-1 justify-end bg-black/10">
+            <View className="flex-1 justify-end ">
 
                 <View className="bg-white p-4 rounded-t-3xl space-y-4 ">
                     <View className="w-[100px] h-[6px] bg-gray-300 rounded-full self-center mb-5" />
 
-                    <Text className=" text-gray-900 font-semibold font-beVN text-2xl mb-10">Chỉnh sửa ảnh đại diện</Text>
+                    <Text className=" text-gray-900 font-semibold font-beVNSemibold text-2xl mb-10">Chỉnh sửa ảnh đại diện</Text>
 
                     <TouchableOpacity onPress={onPickFromGallery} className="flex-row items-center gap-3">
-                        <Ionicons name="images-outline" size={20} color="#8B3A00" />
-                        <Text className="text-base font-beVN text-[#8B3A00]">Chọn từ thư viện</Text>
+                        <Ionicons name="images-outline" size={20} color="#000" />
+                        <Text className="text-base font-beVN text-black">Chọn từ thư viện</Text>
                     </TouchableOpacity>
 
                     <View className='h-[1px] bg-gray-200 my-4' />
 
                     <TouchableOpacity onPress={onTakePhoto} className="flex-row items-center gap-3">
-                        <Ionicons name="camera-outline" size={20} color="#8B3A00" />
-                        <Text className="text-base font-beVN text-[#8B3A00] ">Chụp ảnh</Text>
+                        <Ionicons name="camera-outline" size={20} color="#000" />
+                        <Text className="text-base font-beVN text-black ">Chụp ảnh</Text>
                     </TouchableOpacity>
                     <View className='h-[1px] bg-gray-200 my-4' />
 

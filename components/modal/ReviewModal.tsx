@@ -36,7 +36,7 @@ export default function WriteReviewModal({
             >
                 <View className="bg-white p-4 rounded-2xl max-h-[100%]">
 
-                    <Text className="text-2xl font-semibold font-beVN my-4">Viết đánh giá</Text>
+                    <Text className="text-2xl font-semibold font-beVNSemibold my-4">Viết đánh giá</Text>
                     <View className="flex-col gap-1">
                         <Text className="font-medium text-gray-800 mb-2 font-beVN">Bạn chỉ có thể gửi đánh giá hoặc xếp
                             hạng địa điểm này nếu bạn đã đặt chỗ/trải nghiệm thông qua ứng dụng Faifo. Trước khi được
@@ -75,7 +75,7 @@ export default function WriteReviewModal({
                         contentContainerStyle={{paddingBottom: 14}}
                     >
                         <View className="w-[90px] h-1 bg-gray-300 rounded-full self-center mb-3"/>
-                        <Text className="text-2xl font-semibold font-beVN">Viết đánh giá</Text>
+                        <Text className="text-2xl font-semibold font-beVNSemibold">Viết đánh giá</Text>
                         <View className="h-[1px] w-full bg-gray-300 my-10"/>
 
                         <View className="flex-col gap-1">
@@ -107,13 +107,13 @@ export default function WriteReviewModal({
                                 onPress={onClose}
                                 className="p-4 border border-[#F99F04] rounded-3xl w-[48%]"
                             >
-                                <Text className="text-center text-[#F99F04] font-semibold">Huỷ</Text>
+                                <Text className="text-center text-[#F99F04] font-beVNSemibold font-semibold">Huỷ</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
                                 onPress={handleSubmit}
                                 className="bg-[#F99F04] p-4 rounded-3xl w-[48%]"
                             >
-                                <Text className="text-center text-white font-semibold">Gửi đánh giá</Text>
+                                <Text className="text-center text-white font-semibold font-beVNSemibold">Gửi đánh giá</Text>
                             </TouchableOpacity>
                         </View>
                     </ScrollView>

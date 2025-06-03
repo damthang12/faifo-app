@@ -72,10 +72,14 @@ export default function OnboardingStep5() {
 
   return (
       <View className="flex flex-col items-center bg-white w-full h-full px-6 ">
-        <TouchableOpacity onPress={handleBack}
-                          className="top-[59px] w-full flex justify-center">
-          <Image source={ArrLeft} className="h-6 w-6 "/>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={handleBack}
+                            className="top-[59px] w-full flex flex-row gap-5 items-center">
+              <Image source={ArrLeft} className="h-6 w-6" />
+              <View className=" flex items-start ">
+                  <View className="h-[21px] bg-[#F99F04] w-1/3 absolute z-10 rounded-full" />
+                  <View className="h-[21px] bg-gray-100 w-[346px] relative rounded-full" />
+              </View>
+          </TouchableOpacity>
         <View className="w-full h-full top-[110px] gap-10">
           <View className="flex  justify-center w-full flex-row">
             {/* Logo bên cạnh */}
@@ -90,8 +94,8 @@ export default function OnboardingStep5() {
           </View>
 
           <View className="w-full  flex flex-col justify-center gap-2">
-            <Text className="text-[40px] text-[#8B3A00] font-phudu uppercase font-semibold">bạn bao nhiêu tuổi?</Text>
-            <TextInput placeholder="Nhập số tuổi của bạn" className="text-sm w-full text-[#A4A7AE] border border-gray-400 rounded-[12px] p-4 font-beVN"></TextInput>
+            <Text className="text-[40px] text-[#8B3A00] font-phudu uppercase font-semibold ">bạn bao nhiêu tuổi?</Text>
+            <TextInput placeholder="Nhập số tuổi của bạn" className="text-sm w-full text-[#181D27] border border-gray-400 rounded-[12px] p-4 font-beVN"></TextInput>
 
 
           </View>
@@ -101,7 +105,7 @@ export default function OnboardingStep5() {
         <View className=" w-full absolute bottom-8 flex flex-col gap-4">
           <TouchableOpacity onPress={handleSkip}
                             className="h-[52px] w-full bg-[#F99F04] flex items-center justify-center  rounded-[32px]">
-            <Text className="text-xl font-medium text-[#FFFFFF] font-beVN">Tiếp theo</Text>
+            <Text className="text-xl font-medium text-[#FFFFFF] font-beVNSemibold">Tiếp theo</Text>
           </TouchableOpacity>
         </View>
 

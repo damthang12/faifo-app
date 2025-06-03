@@ -9,6 +9,8 @@ import OK from '@/assets/images/camera/OK.png';
 import ArrLeft from "@/assets/images/arrow-left.png";
 import {useRouter} from "expo-router";
 import {Ionicons} from "@expo/vector-icons";
+import ArrowLeftIcon from "@/assets/Icon/ArrowLeft";
+import ChatBotModal from "@/components/modal/ChatBotModal";
 
 
 const TEXTS = [{description: 'Bạn có muốn nghe về truyền thuyết con Cù nằm dưới cầu không?'}, {description: 'Bạn có biết vì sao người Nhật dựng cầu mà lại thờ thần Bắc Đế của người Hoa?'}];
@@ -18,6 +20,8 @@ export default function FaifoScreen() {
     const [imageUri, setImageUri] = useState<string | null>(null);
     const [aiResponse, setAiResponse] = useState('');
     const [errorModal, setErrorModal] = useState(false);
+    const [showChatbot, setShowChatbot] = useState(false);
+    const [searchText, setSearchText] = useState('');
     const [resultModal, setResultModal] = useState(false);
     const [loading, setLoading] = useState(false);
     const cameraRef = useRef<any>(null);
@@ -36,15 +40,9 @@ export default function FaifoScreen() {
             const photo = await cameraRef.current.takePictureAsync({base64: true});
             setImageUri(photo.uri);
 
-            const resized = await ImageManipulator.manipulateAsync(
-                photo.uri,
-                [{resize: {width: 512}}],
-                {compress: 0.6, base64: true}
-            );
-
             const result = await askGeminiWithImage(
                 `data:image/jpeg;base64,${photo.base64}`,
-                `Đây là địa danh nào ở Hội An, và có thông tin lịch sử nào không?`
+                `Đây là địa danh nào ở Hội An, và có thông tin lịch sử nào không? chỉ trả lời tiếng việt`
             );
 
             if (result && result !== 'Không có phản hồi.') {
@@ -73,69 +71,34 @@ export default function FaifoScreen() {
     }
 
     const handleSearch = (text: string) => {
-        router.push({ pathname: '/(app)/chatbot', params: { query: text } })
-        setResultModal(false);
+        setShowChatbot(true);
+        setSearchText(text)
     }
 
-    return (
-        <View className="flex-1">
-            <CameraView
-                ref={cameraRef}
-                facing="back"
-                style={{ flex: 1 }}
-                className="px-4"
-            >
-                {/* Bọc toàn bộ UI overlay lại */}
-                <View pointerEvents="box-none" className="absolute inset-0 z-50">
+    const handleClose = () => {
+        setImageUri('')
+    }
 
-                    {/* Header */}
-                    <View className="flex-row justify-between items-center mt-[60px] px-4">
-                        <TouchableOpacity onPress={() => router.back()}>
-                            <Image source={ArrLeft} className="h-6 w-6" />
-                        </TouchableOpacity>
-                        <Text className="text-xl text-white font-beVN font-semibold">Ống kính Faifo</Text>
-                        <View className="w-6 h-6" />
-                    </View>
 
-                    {/* Overlay center frame */}
-                    <View className="absolute inset-0 justify-center items-center">
-                        <Image source={OK} className="w-[369px] h-[327px]" />
-                    </View>
+    const renderView = () => {
+        if (imageUri) {
 
-                    {/* Footer */}
-                    <View className="absolute bottom-10 w-full items-center gap-4 px-4">
-                        <Text className="text-white text-xl font-beVN">Nhấn chụp để khám phá</Text>
-                        <TouchableOpacity
-                            onPress={takePhoto}
-                            className="w-[80px] h-[80px] items-center justify-center bg-[#FFFFFFB2]/70 rounded-full"
-                        >
-                            <CameraIcon size={42} />
-                        </TouchableOpacity>
-                    </View>
-                </View>
+            return (
 
-                {/* Loading overlay */}
-                {loading && (
-                    <View className="absolute inset-0 bg-black/50 items-center justify-center z-50">
-                        <ActivityIndicator size="large" color="#fff" />
-                        <Text className="text-white mt-2">Đang xử lý...</Text>
-                    </View>
-                )}
-            </CameraView>
-
-            {/* Modal: Kết quả AI */}
-            <Modal visible={resultModal} animationType="slide" transparent style={{height: '100%'}}>
                 <ScrollView scrollEnabled={false}>
 
                     <View className="flex-1 justify-center bg-black/60 w-full h-full">
                         <View className="bg-white  rounded-xl pb-10">
                             <View className="flex-col">
-                                <View className="flex-row justify-between items-center absolute px-4 mt-[60px] z-10 w-full ">
-                                    <TouchableOpacity onPress={() => setResultModal(false)} className="border border-gray-900 rounded-full">
+                                <View
+                                    className="flex-row justify-between items-center absolute px-4 mt-[60px] z-10 w-full ">
+                                    <TouchableOpacity onPress={() => handleClose()}
+                                                      className="border border-gray-900 rounded-full">
                                         <Ionicons name="close" size={20} color="#000"/>
                                     </TouchableOpacity>
-                                    <Text className="text-xl text-black font-beVN font-semibold">Ống kính Faifo</Text>
-                                    <View className="w-6 h-6" />
+                                    <Text className="text-xl text-black font-beVNSemibold font-semibold">Ống kính
+                                        Faifo</Text>
+                                    <View className="w-6 h-6"/>
                                 </View>
                                 {imageUri && (
                                     <Image
@@ -148,35 +111,88 @@ export default function FaifoScreen() {
 
                             {/* Kết quả AI */}
                             <View className="px-4 mt-4 ">
-                                <Text className="text-xl font-semibold font-phudu text-[#8B3A00] mb-3">Kết quả từ Faifo AI:</Text>
-                                <View className="bg-[#F7E9CE80]/50 p-4 rounded-xl" style={{ height: 350 }}>
+                                <Text className="text-xl font-semibold font-phudu text-[#8B3A00] mb-3">Kết quả
+                                    từ Faifo AI:</Text>
+                                <View className="bg-[#F7E9CE80]/50 p-4 rounded-xl" style={{height: 350}}>
                                     <ScrollView>
-                                        <Text className="text-base  text-gray-700">
+                                        <Text className="text-base font-beVNSemibold text-gray-900">
                                             {aiResponse}
                                         </Text>
                                     </ScrollView>
                                 </View>
                             </View>
 
-                           <ScrollView showsVerticalScrollIndicator={false}
-                                                                   horizontal className="flex-row  w-full px-4 my-5 ">
-                               {TEXTS.map((text, i) => (
-                                   <View key={i} className="pr-4">
-                                       <TouchableOpacity
-                                           onPress={()=>handleSearch(text?.description)}
-                                           className="  p-3 rounded-2xl items-center border border-gray-300 w-[330px]">
-                                           <Text className="text-black font-semibold font-beVN">{text.description}</Text>
-                                       </TouchableOpacity>
-                                   </View>
-                               ))}
-                           </ScrollView>
-
+                            <ScrollView showsVerticalScrollIndicator={false}
+                                        horizontal className="flex-row  w-full px-4 my-5 ">
+                                {TEXTS.map((text, i) => (
+                                    <View key={i} className="pr-4">
+                                        <TouchableOpacity
+                                            onPress={() => handleSearch(text?.description)}
+                                            className="  p-3 rounded-2xl items-center border border-gray-300 w-[330px]">
+                                            <Text
+                                                className="text-black font-semibold font-beVNSemibold">{text.description}</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                ))}
+                            </ScrollView>
                         </View>
                     </View>
                 </ScrollView>
 
-            </Modal>
+            )
+        }
 
+        return (
+            <CameraView
+                ref={cameraRef}
+                facing="back"
+                style={{flex: 1}}
+                className="px-4"
+            >
+                {/* Bọc toàn bộ UI overlay lại */}
+                <View pointerEvents="box-none" className="absolute inset-0 z-50">
+
+                    {/* Header */}
+                    <View className="flex-row justify-between items-center mt-[60px] px-4">
+                        <TouchableOpacity onPress={() => router.back()}>
+                            <ArrowLeftIcon size={24}/>
+                        </TouchableOpacity>
+                        <Text className="text-xl text-white font-beVNSemibold font-semibold">Ống kính Faifo</Text>
+                        <View className="w-6 h-6"/>
+                    </View>
+
+                    {/* Overlay center frame */}
+                    <View className="absolute inset-0 justify-center items-center">
+                        <Image source={OK} className="w-[369px] h-[327px]"/>
+                    </View>
+
+                    {/* Footer */}
+                    <View className="absolute bottom-10 w-full items-center gap-4 px-4">
+                        <Text className="text-white text-xl font-beVN">Nhấn chụp để khám phá</Text>
+                        <TouchableOpacity
+                            onPress={takePhoto}
+                            className="w-[80px] h-[80px] items-center justify-center bg-[#FFFFFFB2]/70 rounded-full"
+                        >
+                            <CameraIcon size={42}/>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
+                {/* Loading overlay */}
+                {loading && (
+                    <View className="absolute inset-0 bg-black/50 items-center justify-center z-50">
+                        <ActivityIndicator size="large" color="#fff"/>
+                        <Text className="text-white mt-2">Đang xử lý...</Text>
+                    </View>
+                )}
+            </CameraView>
+
+        )
+    }
+
+    return (
+        <View className="flex-1">
+            {renderView()}
             {/* Modal: Không nhận diện được */}
             <Modal visible={errorModal} animationType="fade" transparent>
                 <View className="flex-1 justify-center items-center bg-black/50 p-6">
@@ -192,6 +208,8 @@ export default function FaifoScreen() {
                     </View>
                 </View>
             </Modal>
+
+            <ChatBotModal searchText={searchText} isVisible={showChatbot} onClose={() => setShowChatbot(false)}/>
         </View>
     );
 }

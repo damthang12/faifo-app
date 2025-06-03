@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import ArrLeft from '@/assets/images/arrow-left.png';
+import ArrowLeftIcon from "@/assets/Icon/ArrowLeft";
 
 export default function InviteFriendScreen() {
     const router = useRouter();
@@ -17,9 +18,9 @@ export default function InviteFriendScreen() {
             {/* Header */}
             <View className="flex-row items-center justify-between mb-6">
                 <TouchableOpacity onPress={() => router.back()}>
-                    <Image source={ArrLeft} className="h-6 w-6" />
+                    <ArrowLeftIcon size={24} color='#000' />
                 </TouchableOpacity>
-                <Text className="text-xl font-semibold">Mời bạn bè</Text>
+                <Text className="text-xl font-semibold font-beVNSemibold">Mời bạn bè</Text>
                 <View className="w-6 h-6" />
             </View>
 

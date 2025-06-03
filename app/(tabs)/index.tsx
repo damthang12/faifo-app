@@ -5,11 +5,11 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import bgHeader from '@/assets/images/home/header-bg.png';
 import vh from '@/assets/images/home/vh.png';
-import lh from '@/assets/images/home/lễ-hội.png';
+import lh from '@/assets/images/home/lễ-hội.png';
 import at from '@/assets/images/home/am-thuc.png';
 import ci from '@/assets/images/home/check-in.png';
 import qln from '@/assets/images/home/lưu-niệm.png';
-import bt from '@/assets/images/home/bảo-tàng.png';
+import bt from '@/assets/images/home/bảo-tàng.png';
 import ln from '@/assets/images/home/làng-nghề.png';
 import {PlaceCard} from "@/components/PlaceCard";
 import {useEffect, useState} from "react";
@@ -17,6 +17,7 @@ import FilterModal from "@/components/modal/FilterModal";
 import {PLACES_SECTIONS} from "@/constants/MockData";
 import {useRouter} from "expo-router";
 import FT from "@/assets/Icon/FT";
+import Search from "@/assets/Icon/Search";
 
 
 export const TABS = [
@@ -64,21 +65,28 @@ export default function HomeScreen() {
           <View className="pt-10 px-4">
             <Text className="text-base font-beVN text-[#8B3A00] font-medium">Chào mừng đến với</Text>
             <Text className="text-[40px] text-[#8B3A00] font-semibold uppercase font-phudu">Hội An</Text>
-            <View className="flex-row items-center space-x-3 mt-4 gap-4">
-              <View className="flex-1 bg-white rounded-3xl px-4 py-2 h-11">
+            <View className="flex-row items-center w-full gap-4 mt-4">
+              {/* Search box */}
+              <View className="flex-row bg-white rounded-3xl px-4 py-2 h-11 items-center gap-2 flex-1">
+                <Search size={24} color="#717680" />
                 <TextInput
                     value={search}
                     onChangeText={setSearch}
                     placeholder="Tìm kiếm địa điểm..."
-                    className="text-base"
+                    className="text-base flex-1"
+                    placeholderTextColor="#888"
                 />
               </View>
-              <Pressable className="bg-white flex items-center justify-center w-11 h-11 rounded-full"
-                         onPress={() => setFilterVisible(true)}
+
+              {/* Filter button */}
+              <Pressable
+                  className="bg-white items-center justify-center w-11 h-11 rounded-full"
+                  onPress={() => setFilterVisible(true)}
               >
                 <FT size={24} color="#000" />
               </Pressable>
             </View>
+
             <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-10" contentContainerStyle={{ gap: 32 }}>
               {TABS.map((tab) => (
                   <Pressable
@@ -86,8 +94,8 @@ export default function HomeScreen() {
                       className="flex flex-col items-center justify-center gap-4 "
                         onPress={() => setSearch(tab.title)}
                   >
-                    <Image source={tab.img} className="h-[48px] w-[48px] " />
-                    <Text className="text-white font-bold text-base font-beVN">{tab.title}</Text>
+                    <Image source={tab.img} className="h-[53px] w-[48px] object-fill" />
+                    <Text className="text-white font-bold text-base font-beVNBold">{tab.title}</Text>
                   </Pressable>
               ))}
             </ScrollView>
@@ -113,7 +121,7 @@ export default function HomeScreen() {
                       showPagination={false}
                       data={section.items}
                       renderItem={({ item }) => (
-                          <PlaceCard item={item} />
+                          <PlaceCard section={section.id} item={item} />
                       )}
                       keyExtractor={(item) => item.id}
                       snapToAlignment="start"

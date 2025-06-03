@@ -58,7 +58,7 @@ export default function PasswordScreen() {
               onPress={handleSkip}
               className="h-[52px] w-full bg-[#F99F04] items-center justify-center rounded-[32px]"
           >
-            <Text className="text-xl font-semibold text-white font-beVN">Tiếp theo</Text>
+            <Text className="text-xl font-semibold text-white font-beVNSemibold">Tiếp theo</Text>
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>

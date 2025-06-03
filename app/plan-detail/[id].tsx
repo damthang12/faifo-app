@@ -124,7 +124,7 @@ export default function PlanDetailScreen() {
                             padding: 16,
                         }}
                     >
-                        <Text className="text-2xl font-semibold text-white font-beVN mb-1">
+                        <Text className="text-2xl font-semibold text-white font-beVNSemibold mb-1">
                             {trip?.place}
                         </Text>
                         <Text className="text-white font-beVN mb-1">
@@ -149,7 +149,7 @@ export default function PlanDetailScreen() {
                             className={` py-1 ${activeTab === tab ? ' border-b border-b-[#F99F04]' : ''}`}
                         >
                             <Text
-                                className={`${activeTab === tab ? 'text-[#F99F04] ' : 'text-gray-600'} font-semibold text-[20px] font-beVN`}>{tab}</Text>
+                                className={`${activeTab === tab ? 'text-[#F99F04] ' : 'text-gray-600'} font-semibold text-[20px] font-beVNSemibold`}>{tab}</Text>
                         </TouchableOpacity>
                     ))}
                 </View>
@@ -168,7 +168,7 @@ export default function PlanDetailScreen() {
                                     >
                                         {tab.image(isActive)}
                                         <Text
-                                            className={isActive ? 'text-white font-semibold' : 'text-black'}>{tab.title}</Text>
+                                            className={isActive ? 'text-white font-semibold font-beVNSemibold' : 'text-black'}>{tab.title}</Text>
                                     </Pressable>
                                 );
                             })}
@@ -200,7 +200,7 @@ export default function PlanDetailScreen() {
                                             resizeMode="cover"
                                         />
                                         <View className="p-4 flex gap-2">
-                                            <Text className="text-base font-semibold">{place.name}</Text>
+                                            <Text className="text-base font-semibold font-beVNSemibold">{place.name}</Text>
                                             <Text className="text-base font-medium text-gray-600">Thời gian dự kiến: 1.5
                                                 - 2 giờ</Text>
                                             <AddToItineraryButton place={place} tripId={trip?.id || ''}/>
@@ -235,12 +235,12 @@ export default function PlanDetailScreen() {
                     >
                         <View className="bg-white p-4 rounded-t-2xl">
                             <TouchableOpacity className="py-4 border-b border-gray-200">
-                                <Text className="text-center text-base text-red-500 font-semibold">Xoá kế hoạch</Text>
+                                <Text className="text-center text-base text-red-500 font-semibold font-beVNSemibold">Xoá kế hoạch</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
                                 onPress={updateTrip}
                                 className="py-4">
-                                <Text className="text-center text-base text-gray-700 font-semibold">
+                                <Text className="text-center text-base text-gray-700 font-semibold font-beVNSemibold">
                                     Cập nhật chuyến đi
                                 </Text>
                             </TouchableOpacity>

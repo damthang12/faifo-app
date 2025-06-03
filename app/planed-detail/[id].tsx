@@ -112,7 +112,7 @@ export default function PlanedDetailScreen() {
                             padding: 16,
                         }}
                     >
-                        <Text className="text-2xl font-semibold text-white font-beVN mb-1">
+                        <Text className="text-2xl font-semibold text-white font-beVNSemibold mb-1">
                             {trip?.name}
                         </Text>
                         <Text className="text-white font-beVN mb-1">
@@ -137,7 +137,7 @@ export default function PlanedDetailScreen() {
                             className={` py-1 ${activeTab === tab ? ' border-b border-b-[#F99F04]' : ''}`}
                         >
                             <Text
-                                className={`${activeTab === tab ? 'text-[#F99F04] ' : 'text-gray-600'} font-semibold text-[20px] font-beVN`}>{tab}</Text>
+                                className={`${activeTab === tab ? 'text-[#F99F04] ' : 'text-gray-600'} font-semibold text-[20px] font-beVNSemibold`}>{tab}</Text>
                         </TouchableOpacity>
                     ))}
                 </View>
@@ -156,7 +156,7 @@ export default function PlanedDetailScreen() {
                                     >
                                         {tab.image(isActive)}
                                         <Text
-                                            className={isActive ? 'text-white font-semibold' : 'text-black'}>{tab.title}</Text>
+                                            className={isActive ? 'text-white font-semibold font-beVNSemibold' : 'text-black'}>{tab.title}</Text>
                                     </Pressable>
                                 );
                             })}

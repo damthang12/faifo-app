@@ -68,7 +68,7 @@ export function ItineraryDropdown() {
     return (
         <View className="my-4  rounded-2xl shadow">
             <TouchableOpacity onPress={toggle} className="flex-row items-center justify-between mb-2">
-                <Text className="text-xl font-bold text-[#8B3A00] font-beVN">{itinerarys.items[0].plan}</Text>
+                <Text className="text-xl font-bold text-[#8B3A00] font-beVNSemibold">{itinerarys.items[0].plan}</Text>
                 <Ionicons name={expanded ? 'chevron-up' : 'chevron-down'} size={24} color="#351904"/>
             </TouchableOpacity>
 
@@ -112,9 +112,9 @@ export function ItineraryDropdown() {
                                             {/* Nội dung lịch trình */}
                                             <View className="flex-1 pb-6 font-beVN">
                                                 <Text className="text-sm text-gray-700 font-beVN">{item.time}</Text>
-                                                <Text className="font-bold text-gray-900 mt-1 font-beVN">{item.title}</Text>
+                                                <Text className="font-bold text-gray-900 mt-1 font-beVNBold">{item.title}</Text>
                                                 {item.location && (
-                                                    <Text className="text-xs text-gray-500 mt-1 font-beVN">
+                                                    <Text className="text-sm text-gray-500 mt-1 font-beVN">
                                                         Địa điểm: {item.location}
                                                     </Text>
                                                 )}
@@ -130,7 +130,7 @@ export function ItineraryDropdown() {
                             onPress={handleAddItinerary}
                             className="mt-4 bg-[#FFF1CB] p-4 rounded-full items-center"
                         >
-                            <Text className="text-[#8B3A00] font-semibold font-beVN">
+                            <Text className="text-[#8B3A00] font-semibold font-beVNSemibold">
                                 Thêm lịch trình vào chuyến đi
                             </Text>
                         </TouchableOpacity>

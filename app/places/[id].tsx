@@ -98,14 +98,14 @@ export default function PlaceDetailScreen() {
             </View>
 
             <View className="p-4 flex-1 gap-2">
-                <Text className="text-2xl font-semibold text-[#8B3A00] font-beVN my-5">{place?.place}</Text>
+                <Text className="text-2xl font-semibold text-[#8B3A00] font-beVNSemibold my-5">{place?.place}</Text>
                 <View className='flex-row  items-center gap-2'>
                     <DollarIcon size={24}/>
-                    <Text className="text-base text-[#D97706] font-semibold font-beVN">{place?.price || 0}</Text>
+                    <Text className=" text-[#351904] font-semibold font-beVNSemibold">{place?.price || 0}</Text>
                 </View>
                 <View className='flex-row  items-center gap-2'>
                     <ClockIcon size={24}/>
-                    <Text className="text-sm text-gray-500 font-beVN">Giờ mở cửa: {place?.openTime}</Text>
+                    <Text className=" text-gray-500 font-beVN">Giờ mở cửa: {place?.openTime}</Text>
                 </View>
                 <View className='flex-row  items-center justify-between gap-2'>
                     <View className='flex-row  items-center gap-2'>
@@ -120,13 +120,28 @@ export default function PlaceDetailScreen() {
                     </TouchableOpacity>
 
                 </View>
-                <Text className="text-gray-600 mt-2">⭐ {place?.rating} ({place?.reviewCount} đánh giá)</Text>
+                <View className="flex-row items-center gap-2 mb-4">
+                    <View className="flex-row">
+                        {[...Array(5)].map((_, index) => (
+                            <Ionicons
+                                key={index}
+                                name={index < Math.round(4) ? 'star' : 'star-outline'}
+                                size={16}
+                                color="#FBBF24"
+                                style={{marginRight: 2}}
+                            />
+                        ))}
+                    </View>
+                    <Text className="text-sm text-gray-800 font-beVN ">(1924 đánh giá)</Text>
+
+
+                </View>
 
 
                 <View className=" my-4 p-4 flex-1 gap-2 bg-[#FB9506] rounded-[20px]">
                     <Text className="text-xl font-beVN text-white font-semibold">Thông tin thú vị</Text>
                     <Text
-                        className=" text-white font-semibold font-beVN">{place?.info || 'Thông tin đang được cập nhật'}</Text>
+                        className=" text-white font-semibold font-beVNSemibold">{place?.info || 'Thông tin đang được cập nhật'}</Text>
                 </View>
 
                 <View className="h-[1px] w-full bg-gray-300"/>
@@ -178,11 +193,11 @@ export default function PlaceDetailScreen() {
 
                 <View className="flex flex-row mb-10 justify-between">
                     <TouchableOpacity className=" w-auto  p-5 rounded-full items-center border border-[#F99F04]">
-                        <Text className="text-[#F99F04] text-xl font-semibold font-beVN">Thêm vào lịch trình</Text>
+                        <Text className="text-[#F99F04] text-xl font-semibold font-beVNSemibold">Thêm vào lịch trình</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => router.push(`/booking/${place.id}`)}
                                       className=" w-[44%] bg-[#F99F04] p-5 rounded-full items-center">
-                        <Text className="text-white text-xl font-semibold font-beVN">Đặt chỗ</Text>
+                        <Text className="text-white text-xl font-semibold font-beVNSemibold">Đặt chỗ</Text>
                     </TouchableOpacity>
                 </View>
 

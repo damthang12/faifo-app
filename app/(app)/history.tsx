@@ -3,6 +3,7 @@ import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {useRouter} from 'expo-router';
 import ArrLeft from "@/assets/images/arrow-left.png";
 import {useTranslation} from "react-i18next";
+import ArrowLeftIcon from "@/assets/Icon/ArrowLeft";
 
 export default function HistoryScreen() {
     const router = useRouter();
@@ -19,9 +20,9 @@ export default function HistoryScreen() {
             {/* Header */}
             <View className="flex-row items-center justify-between mb-6">
                 <TouchableOpacity onPress={handleBack}>
-                    <Image source={ArrLeft} className="h-6 w-6" />
+                    <ArrowLeftIcon size={24} color='#000' />
                 </TouchableOpacity>
-                <Text className="text-xl font-semibold">{t('history')}</Text>
+                <Text className="text-xl font-semibold font-beVNSemibold">{t('history')}</Text>
                 <View className="w-6 h-6" />
             </View>
             <ScrollView  contentContainerStyle={{height: '100%'}}>

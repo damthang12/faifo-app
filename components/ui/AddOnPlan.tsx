@@ -103,7 +103,7 @@ export default function PlanningList() {
                     onPress={() => {}}
                     className="border border-[#F99F04] px-4 py-3 rounded-full items-center w-[48%]"
                 >
-                    <Text className="text-[#F99F04] text-[16px] font-semibold font-beVN">Trợ giúp từ Faifan</Text>
+                    <Text className="text-[#F99F04] text-[16px] font-semibold font-beVNSemibold">Trợ giúp từ Faifan</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => {}}

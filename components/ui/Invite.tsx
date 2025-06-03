@@ -29,7 +29,7 @@ export default function Invite({ currentMembers, onInvite }: InviteProps) {
                 showsVerticalScrollIndicator={false}
             >
                 {/* Current Members Section */}
-                <Text className="text-lg font-semibold font-beVN mb-4">Thành viên chuyến đi</Text>
+                <Text className="text-lg font-semibold font-beVNSemibold mb-4">Thành viên chuyến đi</Text>
                 {currentMembers?.map((member, index) => (
                     <View key={index} className="flex-row items-center gap-3 mb-4">
                         <View className="w-[52px] h-[52px] rounded-full bg-gray-200 overflow-hidden">
@@ -42,7 +42,7 @@ export default function Invite({ currentMembers, onInvite }: InviteProps) {
                             )}
                         </View>
                         <View>
-                            <Text className="text-gray-900 font-semibold font-beVN">{member.name}</Text>
+                            <Text className="text-gray-900 font-semibold font-beVNSemibold">{member.name}</Text>
                             <Text className="text-gray-500 font-beVN">{member.email}</Text>
                         </View>
                     </View>
@@ -51,7 +51,7 @@ export default function Invite({ currentMembers, onInvite }: InviteProps) {
                 <View className="w-full h-[1px] bg-gray-300 my-6" />
 
                 {/* Invite Form */}
-                <Text className="text-lg font-semibold font-beVN mb-2">Mời bạn bè</Text>
+                <Text className="text-lg font-semibold font-beVNSemibold mb-2">Mời bạn bè</Text>
                 <View className="flex-row items-center gap-2 ">
                     <TextInput
                         value={email}

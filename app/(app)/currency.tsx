@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import ArrLeft from '@/assets/images/arrow-left.png';
+import ArrowLeftIcon from "@/assets/Icon/ArrowLeft";
 
 const currencies = [
     { name: 'Australian Dollar', symbol: 'AU$' },
@@ -35,9 +36,9 @@ export default function CurrencyScreen() {
             {/* Header */}
             <View className="flex-row items-center justify-between mb-6">
                 <TouchableOpacity onPress={() => router.back()}>
-                    <Image source={ArrLeft} className="h-6 w-6" />
+                    <ArrowLeftIcon size={24} color='#000' />
                 </TouchableOpacity>
-                <Text className="text-xl font-semibold">Tiền tệ</Text>
+                <Text className="text-xl font-semibold font-beVNSemibold">Tiền tệ</Text>
                 <View className="w-6 h-6" />
             </View>
 

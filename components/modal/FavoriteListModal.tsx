@@ -98,7 +98,7 @@ export default function FavoriteListModal({
                         contentContainerStyle={{paddingBottom: 14}}
                     >
                         <View className="w-[90px] h-[6px] bg-gray-300 rounded-full self-center mb-5"/>
-                        <Text className="text-2xl font-semibold font-beVN">Thêm vào danh sách yêu thích</Text>
+                        <Text className="text-2xl font-semibold font-beVNSemibold">Thêm vào danh sách yêu thích</Text>
                         <View className="h-[1px] w-full bg-gray-300 my-7"/>
                         <View className="flex-col gap-1">
                             <Text className="font-medium text-gray-500 mb-2 font-beVN">
@@ -130,7 +130,7 @@ export default function FavoriteListModal({
                                                     </View>
                                                 ))}
                                             </View>
-                                            <Text className="font-semibold text-[#8B3A00] text-sm font-beVN mb-10 ">
+                                            <Text className="font-semibold text-[#8B3A00] text-sm font-beVNSemibold mb-10 ">
                                                 {item.name}
                                             </Text>
                                         </TouchableOpacity>
@@ -162,7 +162,7 @@ export default function FavoriteListModal({
                         contentContainerStyle={{paddingBottom: 14}}
                     >
                         <View className="w-[90px] h-1 bg-gray-300 rounded-full self-center mb-3"/>
-                        <Text className=" text-gray-900 font-semibold font-beVN text-2xl mb-10">Tạo danh sách yêu thích
+                        <Text className=" text-gray-900 font-semibold font-beVNSemibold text-2xl mb-10">Tạo danh sách yêu thích
                             mới</Text>
 
                         <Text className="font-medium text-sm text-gray-600 mb-1">Tên danh sách</Text>
@@ -210,7 +210,7 @@ export default function FavoriteListModal({
 
                                 className="flex-1 bg-[#F99F04] py-3 rounded-full items-center"
                             >
-                                <Text className="text-white text-xl font-beVN font-semibold">Tạo danh sách yêu
+                                <Text className="text-white text-xl font-beVNSemibold font-semibold">Tạo danh sách yêu
                                     thích</Text>
                             </TouchableOpacity>
                         </View>

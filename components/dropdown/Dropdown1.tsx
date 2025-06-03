@@ -45,7 +45,7 @@ export default function ExpandableSection1({ title, lines, isChatBot }: Props) {
                 onPress={toggle}
                 className="flex-row justify-between items-center py-3 "
             >
-                <Text className="text-xl font-beVN font-semibold text-[#8B3A00]">{title}</Text>
+                <Text className="text-xl font-beVNSemibold font-semibold text-[#8B3A00]">{title}</Text>
                 <Ionicons
                     name={expanded ? 'chevron-up' : 'chevron-down'}
                     size={24}
@@ -75,7 +75,7 @@ export default function ExpandableSection1({ title, lines, isChatBot }: Props) {
                 </View>
                 {isChatBot && (
                     <TouchableOpacity className="mt-4 bg-[#FFF1CB] p-5 rounded-full items-center">
-                        <Text className="text-[#8B3A00] font-semibold font-beVN">Thêm chuyện với Faifan</Text>
+                        <Text className="text-[#8B3A00] font-medium font-beVN">Trò chuyện với Faifan</Text>
                     </TouchableOpacity>
                 )}
             </Animated.View>

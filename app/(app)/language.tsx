@@ -4,6 +4,7 @@ import {useRouter} from "expo-router";
 import ArrLeft from "@/assets/images/arrow-left.png";
 import {useLanguageStore} from "@/store/useLanguageStore";
 import {useTranslation} from "react-i18next";
+import ArrowLeftIcon from "@/assets/Icon/ArrowLeft";
 
 const LANGUAGES = [
     { code: 'vi', label: '🇻🇳 Tiếng Việt (VI)' },
@@ -30,9 +31,9 @@ const {t} = useTranslation()
             {/* Header */}
             <View className="flex-row items-center justify-between mb-6">
                 <TouchableOpacity onPress={handleBack}>
-                    <Image source={ArrLeft} className="h-6 w-6" />
+                    <ArrowLeftIcon size={24} color='#000' />
                 </TouchableOpacity>
-                <Text className="text-xl font-semibold">{t('profile_language')}</Text>
+                <Text className="text-xl font-semibold font-beVNSemibold">{t('profile_language')}</Text>
                 <View className="w-6 h-6" />
             </View>
             <ScrollView contentContainerStyle={{ paddingVertical: 24, paddingHorizontal: 16 }}>
@@ -42,7 +43,7 @@ const {t} = useTranslation()
                         className="p-6 rounded-xl flex-row items-center justify-between border-b border-gray-300"
                         onPress={() => handleSelectLanguage(lang.code)}
                     >
-                        <Text className="text-xl font-semibold font-beVN">{lang.label}</Text>
+                        <Text className="text-xl font-semibold font-beVNSemibold">{lang.label}</Text>
                         <View
                             className={`w-6 h-6 rounded-full border-2 ${
                                 language === lang.code ? 'border-orange-500 ' : 'border-gray-400'

@@ -217,7 +217,7 @@ export default function MapScreen() {
                         className={`px-4 py-2 rounded-full flex-row justify-center items-center gap-2 ${isActive ? 'bg-[#F99F04]' : 'bg-white'}`}
                     >
                       {tab.image(isActive) }
-                      <Text className={isActive ? 'text-white font-semibold' : 'text-black'}>{tab.title}</Text>
+                      <Text className={isActive ? 'text-white font-semibold font-beVNSemibold' : 'text-black'}>{tab.title}</Text>
                     </Pressable>
                 );
               })}
@@ -244,7 +244,7 @@ export default function MapScreen() {
                             resizeMode="cover"
                         />
                         <View className="p-2 flex-1 justify-center gap-2">
-                          <Text className="text-base font-semibold">{place.name}</Text>
+                          <Text className="text-base font-semibold font-beVNSemibold">{place.name}</Text>
                           <Text className="text-sm text-gray-500">
                             ⭐ {place.rating} ({place.reviewCount} đánh giá)
                           </Text>

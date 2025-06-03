@@ -41,7 +41,7 @@ export default function LoginScreen() {
               <Image source={logoStep} className="h-[292px] w-full  " resizeMode="contain"/>
               <View className=" w-full max-w-[348px] flex flex-col items-center justify-center gap-2 z-20">
                 <Text className="text-2xl font-semibold text-[#8B3A00] font-phudu uppercase">đang đăng nhập...</Text>
-                <Text className="text-base font-bold  font-beVN text-center">Faifan đang đăng nhập tài khoản của bạn. Xin vui lòng chờ xíu nhé!</Text>
+                <Text className="text-base font-bold  font-beVNSemibold text-center">Faifan đang đăng nhập tài khoản của bạn. Xin vui lòng chờ xíu nhé!</Text>
               </View>
             </View>
           </View>
@@ -67,23 +67,23 @@ export default function LoginScreen() {
 
           <View className="w-full  flex flex-col justify-center gap-4">
             <View className="w-full  flex flex-col justify-center gap-2">
-              <Text className="text-sm text-[#181D27] font-beVN">Email</Text>
+              <Text className="text-sm text-[#181D27] font-beVNSemibold">Email</Text>
               <TextInput placeholder="Nhập email của bạn" className="text-sm w-full text-[#A4A7AE] border border-gray-400 rounded-[12px] p-4 font-beVN"></TextInput>
             </View>
 
             <View className="w-full  flex flex-col justify-center gap-2">
-              <Text className="text-sm text-[#181D27] font-beVN">Mật khẩu</Text>
+              <Text className="text-sm text-[#181D27] font-beVNSemibold">Mật khẩu</Text>
               <TextInput placeholder="Nhập mật khẩu" className="text-sm w-full text-[#A4A7AE] border border-gray-400 rounded-[12px] p-4 font-beVN"></TextInput>
             </View>
 
             <View className="w-full  flex flex-col justify-center gap-12 items-center">
               <TouchableOpacity onPress={handleLogin}
                                 className="h-[52px] w-full bg-[#F99F04] flex items-center justify-center  rounded-[32px] top-5">
-                <Text className="text-xl font-medium text-[#FFFFFF] font-beVN">Đăng nhập</Text>
+                <Text className="text-xl font-medium text-[#FFFFFF] font-beVNSemibold">Đăng nhập</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={handlePassword}
                                 className=" w-full flex items-center justify-center  ">
-                <Text className=" text-[#F99F04] font-semibold font-beVN">Quên mật khẩu?</Text>
+                <Text className=" text-[#F99F04] font-semibold font-beVNSemibold">Quên mật khẩu?</Text>
               </TouchableOpacity>
             </View>
 
@@ -97,16 +97,16 @@ export default function LoginScreen() {
           <Text className="text-gray-400">Hoặc</Text>
           <TouchableOpacity onPress={handlePassword}
                             className="h-[52px] w-full border border-[#A4A7AE] flex items-center justify-center  rounded-[32px]">
-            <Text className="text-xl font-medium text-gray-500 font-beVN">Đăng nhập với Google</Text>
+            <Text className="text-xl font-medium text-gray-500 font-beVNSemibold">Đăng nhập với Google</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={handlePassword}
                             className="h-[52px] w-full border border-[#A4A7AE]  flex items-center justify-center  rounded-[32px]">
-            <Text className="text-xl font-medium text-gray-500 font-beVN">Đăng nhập với Facebook</Text>
+            <Text className="text-xl font-medium text-gray-500 font-beVNSemibold">Đăng nhập với Facebook</Text>
           </TouchableOpacity>
           <Text className="text-base  text-[#535862] text-center font-beVN">
             Bằng cách tiếp tục, bạn đồng ý với{' '}
-            <Text className="text-black font-semibold">Điều khoản Sử dụng</Text> và{' '}
-            <Text className="text-black font-semibold">Chính sách Bảo mật</Text> của chúng tôi.
+            <Text className="text-black font-semibold font-beVNSemibold">Điều khoản Sử dụng</Text> và{' '}
+            <Text className="text-black font-semibold font-beVNSemibold">Chính sách Bảo mật</Text> của chúng tôi.
           </Text>
         </View>
       </View>

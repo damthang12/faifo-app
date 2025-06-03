@@ -6,8 +6,12 @@ import bgHeader from '@/assets/images/bg-search.png';
 import {useEffect, useMemo, useState} from "react";
 import FilterModal from "@/components/modal/FilterModal";
 import {PLACES_SECTIONS} from "@/constants/MockData";
-import ArrLeft from "@/assets/images/arrow-left.png";
 import {useLocalSearchParams, useRouter} from "expo-router";
+import Search from "@/assets/Icon/Search";
+import ArrowLeftIcon from "@/assets/Icon/ArrowLeft";
+import FT from "@/assets/Icon/FT";
+import ClockIcon from "@/assets/Icon/Clock";
+import DollarIcon from "@/assets/Icon/Dollar";
 
 
 export default function SearchScreen() {
@@ -82,30 +86,35 @@ export default function SearchScreen() {
             <View className="absolute top-0 left-0 w-full z-10 bg-[#F99F04] pb-4 " style={{paddingTop: insets.top}}>
                 <Image source={bgHeader} className="h-[189px] w-[220px] absolute z-0 right-0"/>
                     <View className="flex-row items-center space-x-3 mt-4 gap-4 px-4">
-                        <View className="flex-1 bg-white rounded-3xl flex-row items-center px-4 h-12">
+                        <View className="flex-1 gap-4 rounded-3xl flex-row items-center  h-12">
                             <TouchableOpacity onPress={handleBack}>
-                                <Image source={ArrLeft} className="h-5 w-5" />
+                                <ArrowLeftIcon size={24}/>
                             </TouchableOpacity>
-                            <TextInput
-                                placeholder="Tìm kiếm địa điểm..."
-                                className=" w-full ml-3"
-                                value={search}
-                                onChangeText={handleSearch}
-                            />
+
+                            <View className="flex-1 bg-white rounded-3xl flex-row items-center px-4 h-12">
+                                <Search size={24} color="#717680" />
+                                <TextInput
+                                    placeholder="Tìm kiếm địa điểm..."
+                                    className=" w-full ml-3"
+                                    value={search}
+                                    onChangeText={handleSearch}
+                                />
+                            </View>
                         </View>
+
 
                         <Pressable
                             className="bg-white items-center justify-center w-11 h-11 rounded-full"
                             onPress={() => setFilterVisible(true)}
                         >
-                            <Ionicons name="filter" size={24} color="#000" />
+                            <FT size={24}/>
                         </Pressable>
                     </View>
             </View>
 
             <View className="flex-1 mt-[160px] rounded-t-[32px] bg-white px-4">
                 <View className="my-7">
-                    <Text className='text-[#8B3A00] text-xl font-semibold uppercase'>
+                    <Text className='text-[#8B3A00] text-xl font-phudu font-semibold uppercase'>
                         {items} Kết quả
                     </Text>
                 </View>
@@ -115,14 +124,14 @@ export default function SearchScreen() {
                             {section.items.map((item) => (
                                 <Pressable key={item.id}
                                            onPress={() => router.push(`/places/${item.id}`)}
-                                      className="w-full h-[200px] rounded-2xl bg-gray-100 flex-row gap-4 items-center mb-4">
+                                      className="w-full h-[200px] rounded-2xl items-start bg-gray-100 flex-row gap-4 mb-4">
                                     <Image
                                         source={item.image}
                                         className="w-full max-w-[164px] h-full rounded-l-2xl"
                                         resizeMode="cover"
                                     />
-                                    <View className="flex-1 flex-col gap-3">
-                                        <Text className="font-semibold text-base text-[#351904]">
+                                    <View className="flex-1 flex-col gap-3 py-5">
+                                        <Text className="font-semibold text-base text-gray-900 font-beVNSemibold">
 
                                         {item.place}
                                         </Text>
@@ -136,25 +145,23 @@ export default function SearchScreen() {
                                                     color={i < item.rating ? '#FBBF24' : '#E5E7EB'}
                                                 />
                                             ))}
-                                            <Text className="text-xs text-gray-500 ml-1">({item.reviewCount} đánh
+                                            <Text className="text-xs text-gray-800 ml-1 font-beVN">({item.reviewCount} đánh
                                                 giá)</Text>
                                         </View>
 
                                         <View className="flex-row items-center gap-2">
-                                            <Ionicons
-                                                name="time"
+                                            <ClockIcon
                                                 size={20}
                                                 color="#252B37"
                                             />
-                                            <Text className="text-sm text-gray-500">Giờ mở cửa: {item.openTime}</Text>
+                                            <Text className="text-sm text-gray-500 font-beVN">Giờ mở cửa: {item.openTime}</Text>
                                         </View>
                                         <View className="flex-row items-center gap-2">
-                                            <Ionicons
-                                                name="logo-usd"
+                                            <DollarIcon
                                                 size={20}
                                                 color="#252B37"
                                             />
-                                            <Text className="text-base text-[#D97706] font-semibold">{item.price}</Text>
+                                            <Text className="text-base text-[#351904] font-semibold font-beVNSemibold">{item.price}</Text>
                                         </View>
 
                                     </View>

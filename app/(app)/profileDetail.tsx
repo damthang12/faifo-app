@@ -76,7 +76,7 @@ export default function ProfileEditScreen() {
                 <TouchableOpacity onPress={handleBack} className="">
                     <Image source={ArrLeft} className="h-6 w-6"/>
                 </TouchableOpacity>
-                <Text className="  text-xl font-semibold"> Thông tin tài khoản</Text>
+                <Text className="  text-xl font-semibold font-beVNSemibold"> Thông tin tài khoản</Text>
                 <View className="h-6 w-6"/>
             </View>
 
@@ -90,13 +90,13 @@ export default function ProfileEditScreen() {
                     }
                     className="w-[120px] h-[120px] rounded-full mb-4"
                 />
-                <Text className=" text-gray-900 font-semibold text-sm">Chỉnh sửa ảnh đại diện</Text>
+                <Text className=" text-gray-900 font-semibold font-beVNSemibold text-sm">Chỉnh sửa ảnh đại diện</Text>
             </TouchableOpacity>
 
             {/* Trường thông tin */}
             <View className="space-y-4 flex-col gap-4">
                 <View>
-                    <Text className="font-semibold text-sm text-gray-600 mb-1">Tên người dùng</Text>
+                    <Text className="font-semibold font-beVNSemibold text-sm text-gray-600 mb-1">Tên người dùng</Text>
                     <TextInput
                         value={name}
                         onChangeText={setName}
@@ -105,7 +105,7 @@ export default function ProfileEditScreen() {
                 </View>
 
                 <View>
-                    <Text className="font-semibold text-sm text-gray-600 mb-1">Email</Text>
+                    <Text className="font-semibold font-beVNSemibold text-sm text-gray-600 mb-1">Email</Text>
                     <TextInput
                         value={email}
                         editable={false}
@@ -114,7 +114,7 @@ export default function ProfileEditScreen() {
                 </View>
 
                 <View>
-                    <Text className="font-semibold text-sm text-gray-600 mb-1">Quốc gia</Text>
+                    <Text className="font-semibold font-beVNSemibold text-sm text-gray-600 mb-1">Quốc gia</Text>
                     <TextInput
                         value={country}
                         onChangeText={setCountry}
@@ -123,7 +123,7 @@ export default function ProfileEditScreen() {
                 </View>
 
                 <View>
-                    <Text className="font-semibold text-sm text-gray-600 mb-1">Số điện thoại</Text>
+                    <Text className="font-semibold font-beVNSemibold text-sm text-gray-600 mb-1">Số điện thoại</Text>
                     <TextInput
                         value={phone}
                         onChangeText={setPhone}
@@ -132,7 +132,7 @@ export default function ProfileEditScreen() {
                 </View>
 
                 <View>
-                    <Text className="font-semibold text-sm text-gray-600 mb-1">Sinh nhật</Text>
+                    <Text className="font-semibold font-beVNSemibold text-sm text-gray-600 mb-1">Sinh nhật</Text>
                     <TouchableOpacity onPress={showDatePicker}>
                         <View className="flex-row items-center border border-gray-300 rounded-xl px-3 py-3">
                             <View className="flex-1">

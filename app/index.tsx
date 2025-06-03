@@ -38,7 +38,7 @@ export default function OnboardingScreen() {
   if (step === 'splash') {
     return (
         <View className="flex items-center justify-center w-full h-full bg-[#F99F04]">
-          <Image source={logoFaifo} style={{ width: 178, height: 273 }} resizeMode="contain" />
+          <Image source={logoFaifo} style={{ width: 304, height: 100 }} resizeMode="contain" />
         </View>
     );
   }
@@ -57,7 +57,7 @@ export default function OnboardingScreen() {
                     className="p-6 rounded-xl flex-row items-center justify-between border-b border-gray-300"
                     onPress={() => handleSelectLanguage(lang.code)}
                 >
-                  <Text className="text-xl font-semibold font-beVN">{lang.label}</Text>
+                  <Text className="text-xl font-semibold font-beVNSemibold">{lang.label}</Text>
                   <View
                       className={`w-6 h-6 rounded-full border-2 ${
                           language === lang.code ? 'border-orange-500 ' : 'border-gray-400'
@@ -70,7 +70,7 @@ export default function OnboardingScreen() {
           </View>
           </View>
         <TouchableOpacity onPress={handleSkip}  className="absolute bottom-10 h-[52px] w-full bg-[#F99F04] flex items-center justify-center  rounded-[32px]">
-          <Text className="text-xl font-semibold text-[#FFFFFF] font-beVN">Tiếp theo</Text>
+          <Text className="text-xl font-semibold text-[#FFFFFF] font-beVNSemibold">Tiếp theo</Text>
         </TouchableOpacity>
 
       </View>

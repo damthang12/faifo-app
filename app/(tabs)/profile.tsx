@@ -73,7 +73,7 @@ export default function ProfileScreen() {
 
                 <View className=" mb-6 items-center justify-center gap-2">
                     <Image source={Avtar} width={120} height={120} className="rounded-full w-[120px] h-[120px]"/>
-                    <Text className="text-xl font-bold text-black font-beVN mt-1">{user.name}</Text>
+                    <Text className="text-xl font-bold text-black font-beVNBold mt-1">{user.name}</Text>
                     <Text className="text-gray-600 text-sm">{user.email}</Text>
                 </View>
 
@@ -81,11 +81,11 @@ export default function ProfileScreen() {
                 <View className="flex-row items-center justify-center w-full mb-3 p-4 bg-[#F99F04] rounded-xl">
                     <View className="w-1/2 flex-col items-center justify-center gap-2">
                         <Text className="text-white text-sm font-beVN">Quốc gia</Text>
-                        <Text className="text-white font-beVN">{user.country}</Text>
+                        <Text className="text-white font-beVNSemibold">{user.country}</Text>
                     </View>
                     <View className="w-1/2 flex-col items-center justify-center gap-2">
                         <Text className="text-white text-sm font-beVN">Ngày tham gia</Text>
-                        <Text className="text-white font-beVN">{user.joinDate}</Text>
+                        <Text className="text-white font-beVNSemibold">{user.joinDate}</Text>
                     </View>
                 </View>
 
@@ -99,7 +99,7 @@ export default function ProfileScreen() {
                         >
                             <View className="flex-row items-center gap-3">
                                 <Ionicons name={opt.icon} size={20} color="#8B3A00"/>
-                                <Text className="text-lg font-bold text-gray-700 font-beVN">{opt.label}</Text>
+                                <Text className="text-lg font-bold text-gray-700 font-beVNBold">{opt.label}</Text>
                             </View>
                             <Ionicons name="chevron-forward" size={18} color="#ccc"/>
                         </TouchableOpacity>

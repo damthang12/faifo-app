@@ -12,7 +12,18 @@ module.exports = {
             },
             fontFamily: {
                 phudu: ['Phudu'],
-                beVN: ['BeVN'],
+                beVNThin: ['BeVN-Thin'],
+                beVNExtralight: ['BeVN-ExtraLight'],
+                beVNLight: ['BeVN-Light'],
+                beVN: ['BeVN-Regular'],
+                beVNMedium: ['BeVN-Medium'],
+                beVNSemibold: ['BeVN-SemiBold'],
+                beVNBold: ['BeVN-Bold'],
+                beVNExtrabold: ['BeVN-ExtraBold'],
+                beVNBlack: ['BeVN-Black'],
+            },
+            boxShadow: {
+                'tab': '0px 8px 20px rgba(0, 0, 0, 0.5)',
             },
 
         },

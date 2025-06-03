@@ -63,9 +63,9 @@ export default function CreatePlanModal({ isVisible, onClose }: { isVisible: boo
                 <View className="bg-white p-6 rounded-t-3xl max-h-[100%]">
                     <View className="w-[90px] h-[6px] bg-gray-300 rounded-full self-center mb-5" />
                     <ScrollView>
-                        <Text className="text-xl font-bold mb-4">Tạo chuyến đi mới</Text>
+                        <Text className="text-xl font-bold font-beVNSemibold mb-4">Tạo chuyến đi mới</Text>
 
-                        <Text className="font-semibold mb-1">Ảnh </Text>
+                        <Text className="font-semibold font-beVNSemibold mb-1">Ảnh </Text>
                         <TouchableOpacity
                             onPress={handlePickImage}
                             className="mb-4 border border-dashed border-gray-400 rounded-xl p-4 items-center justify-center h-40 w-full"
@@ -82,7 +82,7 @@ export default function CreatePlanModal({ isVisible, onClose }: { isVisible: boo
                         </TouchableOpacity>
 
                         {/* Tên chuyến đi */}
-                        <Text className="font-semibold mb-1">Tên chuyến đi</Text>
+                        <Text className="font-semibold font-beVNSemibold mb-1">Tên chuyến đi</Text>
                         <TextInput
                             placeholder="Đặt tên chuyến đi của bạn"
                             value={tripName}
@@ -141,7 +141,7 @@ export default function CreatePlanModal({ isVisible, onClose }: { isVisible: boo
 
 
                         {/* Ghi chú */}
-                        <Text className="font-semibold mb-1">Ghi chú</Text>
+                        <Text className="font-semibold font-beVNSemibold mb-1">Ghi chú</Text>
                         <TextInput
                             multiline
                             placeholder="Nhập ghi chú cho chuyến đi"
@@ -161,7 +161,7 @@ export default function CreatePlanModal({ isVisible, onClose }: { isVisible: boo
                         </View>
 
                         <TouchableOpacity className="bg-[#F99F04] p-4 rounded-full mt-4" onPress={handleSubmit}>
-                            <Text className="text-center text-xl text-white font-bold">Tạo chuyến đi mới</Text>
+                            <Text className="text-center text-xl text-white font-bold font-beVNSemibold">Tạo chuyến đi mới</Text>
                         </TouchableOpacity>
                     </ScrollView>
                 </View>

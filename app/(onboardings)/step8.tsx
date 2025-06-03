@@ -24,8 +24,12 @@ export default function OnboardingStep8() {
   return (
       <View className="flex flex-col items-center bg-white w-full h-full px-6 ">
         <TouchableOpacity onPress={handleBack}
-                          className="top-[59px] w-full flex justify-center">
-          <Image source={ArrLeft} className="h-6 w-6 "/>
+                          className="top-[59px] w-full flex flex-row gap-5 items-center">
+          <Image source={ArrLeft} className="h-6 w-6" />
+          <View className=" flex items-start ">
+            <View className="h-[21px] bg-[#F99F04] w-full absolute z-10 rounded-full" />
+            <View className="h-[21px] bg-gray-100 w-[346px] relative rounded-full" />
+          </View>
         </TouchableOpacity>
         <View className="w-full h-full top-[110px] gap-10">
           <View className="flex  justify-center w-full flex-row gap-2">
@@ -54,8 +58,8 @@ export default function OnboardingStep8() {
           </TouchableOpacity>
           <Text className="text-base  text-[#535862] text-center font-beVN">
             Bằng cách tiếp tục, bạn đồng ý với{' '}
-            <Text className="text-black font-semibold">Điều khoản Sử dụng</Text> và{' '}
-            <Text className="text-black font-semibold">Chính sách Bảo mật</Text> của chúng tôi.
+            <Text className="text-black font-semibold font-beVNSemibold">Điều khoản Sử dụng</Text> và{' '}
+            <Text className="text-black font-semibold font-beVNSemibold">Chính sách Bảo mật</Text> của chúng tôi.
           </Text>
         </View>
       </View>

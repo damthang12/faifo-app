@@ -93,7 +93,7 @@ export default function ChatBotScreen() {
                         <TouchableOpacity onPress={handleBack} className="">
                             <Image source={ArrLeft} className="h-6 w-6"/>
                         </TouchableOpacity>
-                        <Text className="  text-xl font-semibold"> Trò chuyện với Faifan</Text>
+                        <Text className="  text-xl font-semibold font-beVNSemibold"> Trò chuyện với Faifan</Text>
                         <View className="h-6 w-6"/>
                     </View>
 
@@ -106,7 +106,7 @@ export default function ChatBotScreen() {
                     >
                         <View className="flex flex-col items-center justify-center gap-4 px-4">
                             <Image source={Avatar} className="w-[120px] h-[120px] rounded-full"/>
-                            <Text className="text-2xl font-semibold">Chào Bạn!</Text>
+                            <Text className="text-2xl font-semibold font-beVNSemibold">Chào Bạn!</Text>
                             <Text className="text-center text-gray-600">Mình là Faifan, trợ thủ du lịch của riêng
                                 bạn</Text>
                         </View>
@@ -136,7 +136,7 @@ export default function ChatBotScreen() {
                                             onPress={() => alert('Thêm lịch trình')}
                                             className="bg-[#F99F04] py-3 px-4 rounded-2xl mt-3"
                                         >
-                                            <Text className="text-white text-center font-semibold">Thêm lịch
+                                            <Text className="text-white text-center font-semibold font-beVNSemibold">Thêm lịch
                                                 trình</Text>
                                         </TouchableOpacity>
                                     )}

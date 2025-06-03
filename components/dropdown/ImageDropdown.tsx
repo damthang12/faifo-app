@@ -53,7 +53,7 @@ export default function ImageGalleryDropdown({ images }: { images: ImageSourcePr
                 onPress={handleToggle}
                 className="flex-row justify-between items-center mb-3"
             >
-                <Text className="text-xl font-semibold text-[#8B3A00] font-beVN">Ảnh từ điểm đến</Text>
+                <Text className="text-xl font-semibold text-[#8B3A00] font-beVNSemibold">Ảnh từ điểm đến</Text>
                 <Ionicons name={expanded ? 'chevron-up' : 'chevron-down'} size={24} color="#351904" />
             </TouchableOpacity>
 

@@ -34,7 +34,7 @@ export default function PlanScreen() {
                         className={`flex-1  ${activeTab === tab ? 'border-b border-b-[#F99F04]' : ''}`}
                     >
                         <Text
-                            className={`text-center text-[19px] p-1 font-beVN font-semibold ${activeTab === tab ? 'text-[#F99F04]' : 'text-gray-600'}`}>
+                            className={`text-center text-[19px] p-1 font-beVNSemibold font-semibold ${activeTab === tab ? 'text-[#F99F04]' : 'text-gray-600'}`}>
                             {tab === 'planned' ? 'Đang lên kế hoạch' : 'Đã hoàn thành'}
                         </Text>
                     </TouchableOpacity>
@@ -49,7 +49,7 @@ export default function PlanScreen() {
                     itinerary.length === 0 ? (
                         <View className="items-center">
                             <Image source={logoStep} className="h-[290px] w-full mb-6 mt-20" resizeMode="contain"/>
-                            <Text className="text-xl font-semibold text-black font-beVN mb-2">
+                            <Text className="text-xl font-semibold text-black font-beVNSemibold mb-2">
                                 Bạn chưa có kế hoạch nào.
                             </Text>
                             <Text className="text-base font-bold font-beVN text-center mb-6">
@@ -59,7 +59,7 @@ export default function PlanScreen() {
                                 onPress={() => setShowModal(true)}
                                 className="bg-[#F99F04] p-5 rounded-full"
                             >
-                                <Text className="text-white font-bold font-beVN text-xl">Tạo chuyến đi mới</Text>
+                                <Text className="text-white font-bold font-beVNSemibold text-xl">Tạo chuyến đi mới</Text>
                             </TouchableOpacity>
                         </View>
                     ) : (
@@ -116,7 +116,7 @@ export default function PlanScreen() {
                                     onPress={() => setShowModal(true)}
                                     className="bg-[#F99F04] px-6 py-3 rounded-full"
                                 >
-                                    <Text className="text-white font-bold font-beVN text-xl">Tạo chuyến đi mới</Text>
+                                    <Text className="text-white font-bold font-beVNSemibold text-xl">Tạo chuyến đi mới</Text>
                                 </TouchableOpacity>
                             </>
                         )}

@@ -6,6 +6,7 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import 'react-native-reanimated';
 import '../global.css';
+import { StyleSheet } from 'react-native';
 
 
 import {useColorScheme} from '@/hooks/useColorScheme';
@@ -14,12 +15,22 @@ import AppLayoutWrapper from "@/components/layout/AppLayout";
 
 export default function RootLayout() {
     const colorScheme = useColorScheme();
+
+
     const [loaded] = useFonts({
-        Phudu: require('../assets/fonts/Phudu-VariableFont_wght.ttf'),
-        BeVN: require('../assets/fonts/BeVietnamPro-SemiBold.ttf'),
+        'BeVN-Thin': require('@/assets/fonts/BeVietnamPro-Thin.ttf'),
+        'BeVN-ExtraLight': require('@/assets/fonts/BeVietnamPro-ExtraLight.ttf'),
+        'BeVN-Light': require('@/assets/fonts/BeVietnamPro-Light.ttf'),
+        'BeVN-Regular': require('@/assets/fonts/BeVietnamPro-Regular.ttf'),
+        'BeVN-Medium': require('@/assets/fonts/BeVietnamPro-Medium.ttf'),
+        'BeVN-SemiBold': require('@/assets/fonts/BeVietnamPro-SemiBold.ttf'),
+        'BeVN-Bold': require('@/assets/fonts/BeVietnamPro-Bold.ttf'),
+        'BeVN-ExtraBold': require('@/assets/fonts/BeVietnamPro-ExtraBold.ttf'),
+        'BeVN-Black': require('@/assets/fonts/BeVietnamPro-Black.ttf'),
+        'Phudu': require('@/assets/fonts/Phudu-VariableFont_wght.ttf'),
     });
 
-    if (!loaded) return null;
+    if (!loaded) return null
 
     return (
         <GestureHandlerRootView style={{flex: 1}}>

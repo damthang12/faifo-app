@@ -17,6 +17,7 @@ import LN from "@/assets/Icon/LN";
 import ArrLeft from "@/assets/images/arrow-left.png";
 import {Ionicons} from "@expo/vector-icons";
 import {useFavoriteStore} from "@/store/useFavoriteStore";
+import ArrowLeftIcon from "@/assets/Icon/ArrowLeft";
 
 const TABS = ['Văn hoá', 'Checkin', 'Ẩm thực', 'Bảo tàng', 'Quà lưu niệm', 'Làng nghề'];
 
@@ -77,7 +78,7 @@ export default function FavoriteDetail() {
         <View className="flex-1 bg-white px-4 pt-20">
             <View className="flex-row items-center justify-between mb-8">
                 <TouchableOpacity onPress={() => router.back()}>
-                    <Image source={ArrLeft} className="h-6 w-6" />
+                    <ArrowLeftIcon size={24} />
                 </TouchableOpacity>
                 <Text className="text-xl font-semibold">{name}</Text>
                 <View className="w-6 h-6" />

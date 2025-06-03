@@ -53,7 +53,7 @@ export function AddToItineraryButton({ place, tripId }: { place: any, tripId?: s
                                 className="p-3 border-b border-gray-200"
                                 onPress={() => handleAddToDay(day)}
                             >
-                                <Text className="text-center text-[#8B3A00] font-semibold">{day}</Text>
+                                <Text className="text-center text-[#8B3A00] font-semibold font-beVNSemibold">{day}</Text>
                             </TouchableOpacity>
                         ))}
                         <TouchableOpacity onPress={() => setModalVisible(false)} className="mt-4 items-center">
