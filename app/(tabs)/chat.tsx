@@ -1,6 +1,6 @@
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import gradient from "@/assets/images/onboarding/Gradient.png";
-import logoStep from "@/assets/images/onboarding/step-logo.png";
+import logoStep from "@/assets/images/mascot/Mascot1.png";
 import {useRouter} from "expo-router";
 
 
@@ -45,14 +45,10 @@ export default function ChatScreen() {
           <View className=" w-full flex flex-col gap-4">
             <TouchableOpacity onPress={handleSkip}
                               className="h-[52px] w-full bg-[#F99F04] flex items-center justify-center  rounded-[32px]">
-              <Text className="text-xl font-medium text-[#FFFFFF] font-beVN">Trò chuyện với Faifan</Text>
+              <Text className="text-xl font-medium text-[#FFFFFF] font-beVNSemibold">Trò chuyện với Faifan</Text>
             </TouchableOpacity>
           </View>
         </View>
-
-
-
-
       </View>
   );
 }

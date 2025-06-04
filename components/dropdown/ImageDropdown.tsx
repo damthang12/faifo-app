@@ -12,6 +12,7 @@ import {
     Dimensions,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import {useRouter} from "expo-router";
 
 if (Platform.OS === 'android') {
     UIManager.setLayoutAnimationEnabledExperimental?.(true);
@@ -20,10 +21,11 @@ if (Platform.OS === 'android') {
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const GAP = 8;
 
-export default function ImageGalleryDropdown({ images }: { images: ImageSourcePropType[] }) {
+export default function ImageGalleryDropdown({ images, id }: { images: ImageSourcePropType[], id: string }) {
     const [expanded, setExpanded] = useState(true);
     const [showAllImages, setShowAllImages] = useState(false);
     const animation = useRef(new Animated.Value(1)).current;
+    const router = useRouter();
 
     const topImages = images.slice(0, 2);
     const bottomImages = showAllImages ? images.slice(2) : images.slice(2, 5);
@@ -95,7 +97,7 @@ export default function ImageGalleryDropdown({ images }: { images: ImageSourcePr
                             return (
                                 <TouchableOpacity
                                     key={`bottom-${index}`}
-                                    onPress={() => isLastPreview && setShowAllImages(true)}
+                                    onPress={() => isLastPreview && router.push(`/images/${id}`)}
                                     style={{
                                         width: imageWidthBottom,
                                         height: 120,

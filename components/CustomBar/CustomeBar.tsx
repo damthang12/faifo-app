@@ -34,9 +34,12 @@ const TABS: Record<string, { label: string; icon: (focused: boolean) => JSX.Elem
 };
 
 export default function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
-
+    const tabOrder = ['index', 'camera', 'chat', 'plan', 'profile'];
+    const orderedRoutes = tabOrder
+        .map(name => state.routes.find(route => route.name === name))
+        .filter((r): r is typeof state.routes[number] => r !== undefined);
     return (
-        <View className="absolute bottom-8 left-4 right-4 flex-row h-[72px] bg-white rounded-full  justify-around items-center border border-gray-200"
+        <View className="absolute bottom-8 left-4 right-4 flex-row h-[72px] bg-white rounded-full justify-around items-center border border-gray-200"
               style={{
                   elevation: 12,
                   shadowColor: '#000',
@@ -45,10 +48,10 @@ export default function CustomTabBar({ state, descriptors, navigation }: BottomT
                   shadowRadius: 10,
               }}
         >
-            {state.routes.map((route, index) => {
-                const isFocused = state.index === index;
+            {orderedRoutes.map((route, index) => {
+                const routeIndex = state.routes.findIndex(r => r.key === route?.key);
+                const isFocused = state.index === routeIndex;
                 const tab = TABS[route.name];
-
 
                 if (!tab) return null;
 
@@ -68,7 +71,7 @@ export default function CustomTabBar({ state, descriptors, navigation }: BottomT
                     <Pressable
                         key={route.key}
                         onPress={onPress}
-                        className={`flex-row items-center justify-center   rounded-full ${isFocused ? 'bg-[#8B3A00] px-4 py-2' : ''}`}
+                        className={`flex-row items-center justify-center rounded-full ${isFocused ? 'bg-[#8B3A00] px-4 py-2' : ''}`}
                         style={{ minWidth: isFocused ? 100 : 44 }}
                     >
                         {tab.icon(isFocused)}

@@ -16,7 +16,7 @@ export async function askChatGPT(message: string): Promise<string> {
                     {
                         role: 'system',
                         content:
-                            'Bạn là trợ lý du lịch thông minh. Chỉ cung cấp thông tin liên quan đến Hội An, Việt Nam. Nếu người dùng hỏi về khu vực ngoài Hội An, vui lòng lịch sự từ chối và đề nghị đặt câu hỏi khác liên quan đến Hội An.',
+                            'Bạn là trợ lý du lịch thông minh Faifan. Chỉ cung cấp thông tin liên quan đến Hội An, Việt Nam. Nếu người dùng hỏi về khu vực ngoài Hội An, vui lòng lịch sự từ chối và đề nghị đặt câu hỏi khác liên quan đến Hội An.',
                     },
                     {
                         role: 'user',

@@ -26,17 +26,15 @@ export default function PeopleCountModal({ isVisible, onClose, onSelect, selecte
             style={{ justifyContent: 'flex-end', margin: 0 }}
         >
             <View className="bg-white rounded-t-3xl p-6">
-                <Text className="text-lg font-bold text-center mb-4">Số người tham gia</Text>
-                <View className="flex-row flex-wrap justify-center gap-4 mb-6">
+                <Text className="text-2xl text-gray-900 font-beVNSemibold font-semibold  text-left mb-4">Số người tham gia</Text>
+                <View className="flex-col items-center justify-center gap-4 mb-6">
                     {[1, 2, 3, 4, 5, 6].map((num) => (
                         <TouchableOpacity
                             key={num}
                             onPress={() => setSelectedCount(num)}
-                            className={`w-12 h-12 rounded-full items-center justify-center border ${
-                                selectedCount === num ? 'bg-[#F99F04] border-[#F99F04]' : 'border-gray-300'
-                            }`}
+                            className={`w-12 h-12 items-center justify-center  `}
                         >
-                            <Text className={selectedCount === num ? 'text-white font-bold' : 'text-gray-700'}>
+                            <Text className={`font-beVNSemibold ${selectedCount === num ? 'text-[#F99F04] text-3xl' : 'text-gray-700'}`}>
                                 {num}
                             </Text>
                         </TouchableOpacity>
@@ -45,9 +43,9 @@ export default function PeopleCountModal({ isVisible, onClose, onSelect, selecte
 
                 <TouchableOpacity
                     onPress={handleConfirm}
-                    className="bg-[#F99F04] py-3 rounded-full items-center"
+                    className="bg-[#F99F04] py-4 rounded-full items-center"
                 >
-                    <Text className="text-white text-base font-bold">Xác nhận</Text>
+                    <Text className="text-white text-xl font-beVNSemibold ">Xác nhận</Text>
                 </TouchableOpacity>
             </View>
         </Modal>

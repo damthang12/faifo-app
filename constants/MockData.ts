@@ -97,6 +97,10 @@ export interface Booking {
     originalPrice?: string;
     isCanceled?: boolean;
     isBooking?: boolean;
+    image?: ImageSourcePropType;
+    location?: string
+
+
 }
 
 export interface Place {
@@ -107,7 +111,8 @@ export interface Place {
 }
 
 export interface Images {
-    url: string;
+    partner?: ImageSourcePropType[];
+    user?: ImageSourcePropType[];
 }
 
 export interface Include {
@@ -123,7 +128,7 @@ export interface Item {
     openTime: string;
     image: ImageSourcePropType;
     info?: string;
-    images?: Images[]
+    images?: Images
     location?: string
     category?: string;
     booking?: Booking[];
@@ -179,7 +184,10 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 800.000đ',
                 openTime: '09:00 - 19:00',
                 image: LGOHA1,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
                 location: "Á Đông Silk, 62 Nguyễn Thái Học",
                 info: "Hội An đã từng là một thương cảng lớn, nơi các thương nhân từ khắp nơi trên thế giới đến trao đổi hàng hoá, trong đó có lụa và vải vóc. Lụa Hội An, được coi là một trong những chất liệu cao cấp, đã và đang trở thành biểu tượng của sự tinh tế trong nghề may.",
                 booking: [
@@ -189,15 +197,21 @@ export const PLACES_SECTIONS: Place[] = [
                         time: ['09:00', '10:00', '11:00'],
                         infoCancel: 'Hủy miễn phí trước 24 giờ',
                         price: '',
+                        image: LGOHA1,
                         originalPrice: '800.000đ',
+                        location: "Á Đông Silk, 62 Nguyễn Thái Học",
+
                     },
                     {
                         id: 'booking-002',
                         name: 'May đồ lấy ngay và thuê áo dài',
                         time: ['18:00', '19:00', '20:00'],
                         infoCancel: 'Hủy miễn phí trước 24 giờ',
+                        image: LGOHA1,
                         price: '1.250.000đ',
                         originalPrice: '1.550.000đ',
+                        location: "Á Đông Silk, 62 Nguyễn Thái Học",
+
                     },
                 ],
                 overview: {
@@ -245,7 +259,10 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 300.000đ',
                 openTime: '18:00 - 22:00',
                 image: LGOHA2,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
 
                 booking: [
                     {
@@ -255,6 +272,8 @@ export const PLACES_SECTIONS: Place[] = [
                         infoCancel: 'Hủy miễn phí trước 24 giờ',
                         price: '300.000đ',
                         originalPrice: '350.000đ',
+                        location: "Á Đông Silk, 62 Nguyễn Thái Học",
+
                     }
                 ],
                 overview: {
@@ -301,7 +320,12 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 282.000đ',
                 openTime: '18:00 - 22:00',
                 image: LGOHA3,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
+
+
                 booking: [
                     {
                         id: 'booking-001',
@@ -354,7 +378,12 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 30.000đ',
                 openTime: '08:00 - 17:00',
                 image: LGOHA4,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
+
+
                 booking: [
                     {
                         id: 'booking-001',
@@ -413,7 +442,12 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 100.000đ',
                 openTime: '08:00 - 21:00',
                 image: DCB1,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
+
+
                 location: "10c Bà Triệu, Phường Cẩm Phổ",
                 booking: [
                     {
@@ -469,7 +503,12 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 10.000đ',
                 openTime: '07:00 - 18:00',
                 image: DCB2,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
+
+
                 location: "101 Nguyễn Thái Học, Phường Minh An",
                 isMaintained: true,
                 booking: [
@@ -532,7 +571,12 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 10.000đ',
                 openTime: '07:00 - 18:00',
                 image: DCB3,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
+
+
                 location: "8 Trần Cao Vân, Phường Cẩm Phổ",
                 booking: [
                     {
@@ -587,7 +631,10 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 10.000đ',
                 openTime: '07:00 - 18:00',
                 image: DCB4,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
                 booking: [
                     {
                         id: 'booking-001',
@@ -657,7 +704,10 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: MVDL1,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}]
+                images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
 
             },
             {
@@ -668,7 +718,12 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: MVDL2,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
+
+
 
             },
             {
@@ -679,7 +734,12 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: MVDL3,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
+
+
 
             },
             {
@@ -690,7 +750,12 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: MVDL4,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
+
+
 
             },
         ],
@@ -707,7 +772,12 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: XH1,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
+
+
                 booking: [
                     {
                         id: 'booking-001',
@@ -756,7 +826,12 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: XH2,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
+
+
                 overview: {
                     title: 'Tổng quan',
                     description: [
@@ -794,7 +869,12 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Từ 500.000đ',
                 openTime: 'Cả ngày',
                 image: XH3,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
+
+
                 overview: {
                     title: 'Tổng quan',
                     description: [
@@ -833,7 +913,12 @@ export const PLACES_SECTIONS: Place[] = [
                 price: 'Miễn phí',
                 openTime: 'Cả ngày',
                 image: XH4,
-                images: [{url: DLG1}, {url: DLG2}, {url: DLG3}],
+                 images: {
+                    partner: [DLG1, DLG2, DLG3],
+                    user: [DLG1, DLG2, DLG3],
+                },
+
+
                 booking: [
                     {
                         id: 'booking-001',

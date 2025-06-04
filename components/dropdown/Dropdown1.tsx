@@ -1,12 +1,13 @@
 import { useRef, useState } from 'react';
 import {
     Animated,
-    Easing,
+    Easing, Pressable,
     Text,
     TouchableOpacity,
     View,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import {useRouter} from "expo-router";
 
 type Props = {
     title: string;
@@ -17,6 +18,7 @@ type Props = {
 export default function ExpandableSection1({ title, lines, isChatBot }: Props) {
     const [expanded, setExpanded] = useState(true);
     const animation = useRef(new Animated.Value(1)).current;
+    const router = useRouter();
 
     const maxHeight = lines.length * 100 + 20; // tùy chỉnh cao 1 dòng + padding
 
@@ -74,9 +76,10 @@ export default function ExpandableSection1({ title, lines, isChatBot }: Props) {
                     ))}
                 </View>
                 {isChatBot && (
-                    <TouchableOpacity className="mt-4 bg-[#FFF1CB] p-5 rounded-full items-center">
-                        <Text className="text-[#8B3A00] font-medium font-beVN">Trò chuyện với Faifan</Text>
-                    </TouchableOpacity>
+                    <Pressable onPress={() => router.push('/(app)/chatbot')} className="mt-4 bg-[#FFF1CB] p-5 rounded-full items-center">
+
+                        <Text className="text-[#8B3A00] font-medium font-beVNSemibold">Trò chuyện với Faifan</Text>
+                    </Pressable>
                 )}
             </Animated.View>
 

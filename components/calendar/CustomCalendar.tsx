@@ -61,17 +61,17 @@ export default function CalendarModal({
                     />
 
                     <View className="flex-row justify-between mt-4 mb-5">
-                        <TouchableOpacity onPress={onClose} className="p-3 rounded-full bg-gray-200 w-[45%] items-center">
-                            <Text className="text-xl font-semibold font-beVNtext-gray-700">Huỷ</Text>
+                        <TouchableOpacity onPress={onClose} className="p-4   w-[45%] items-center">
+                            <Text className="text-xl font-semibold font-beVNSemibold text-gray-700 underline">Xoá bộ lọc</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() => {
                                 if (selectedDate) onSelectDate(selectedDate);
                                 onClose();
                             }}
-                            className="p-3 rounded-full bg-[#F99F04] w-[45%] items-center"
+                            className="p-4 rounded-full bg-[#F99F04] w-[45%] items-center"
                         >
-                            <Text className="text-white text-xl font-semibold font-beVN">Áp dụng</Text>
+                            <Text className="text-white text-xl font-semibold font-beVNSemibold">Áp dụng</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

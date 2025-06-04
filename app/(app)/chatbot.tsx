@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     View,
     Text,
@@ -17,13 +17,18 @@ import SendIcon from "@/assets/Icon/Send";
 import Avatar from "@/assets/images/Avatar.png";
 
 
+const TEXTS = [{description: 'Giúp tôi lên kế hoạch'}, {description: 'Hội An ăn gì ngon'}, {description: 'Quán ăn địa phương ngon'}, {description: 'Văn hoá địa phương'}];
+
+
 export default function ChatBotScreen() {
     const router = useRouter();
     const [messages, setMessages] = useState<{ role: string; content: string }[]>([]);
+    const [searchText, setSearchText] = useState('');
     const [input, setInput] = useState('');
     const [loading, setLoading] = useState(false);
     const [showAddPlan, setShowAddPlan] = useState(false);
     const {query} = useLocalSearchParams();
+
 
 
 
@@ -76,9 +81,14 @@ export default function ChatBotScreen() {
 
     const handleBack = () => {
         setTimeout(() => {
-            router.push('/(tabs)/chat');
+            router.back();
         }, 300);
     };
+
+
+    const handleSearch = (text: string) => {
+        setSearchText(text)
+    }
 
 
     return (
@@ -142,27 +152,47 @@ export default function ChatBotScreen() {
                                     )}
                                 </View>
 
-                                {msg.role === 'user' && (
-                                    <Image source={Avatar} className="w-8 h-8 rounded-full"/>
-                                )}
+                                {/*{msg.role === 'user' && (*/}
+                                {/*    <Image source={Avatar} className="w-8 h-8 rounded-full"/>*/}
+                                {/*)}*/}
                             </View>
                         ))}
                     </ScrollView>
 
-                    {/* Input */}
-                    <View className="flex-row items-center gap-2 mb-6 border rounded-3xl h-[52px] px-4 mt-3">
-                        <TextInput
-                            className="flex-1"
-                            value={input}
-                            onChangeText={setInput}
-                            placeholder="Hỏi Faifan bất kỳ điều gì về Hội An..."
-                            returnKeyType="send"
-                            onSubmitEditing={handleSend}
-                        />
-                        <Pressable onPress={handleSend} className="py-2 rounded-lg justify-center">
-                            <SendIcon size={24}/>
-                        </Pressable>
+                    <View>
+
+                        <ScrollView showsVerticalScrollIndicator={false}
+                                    horizontal className="flex-row  w-full   ">
+                            {TEXTS.map((text, i) => (
+                                <View key={i} className="pr-4">
+                                    <TouchableOpacity
+                                        onPress={() => handleSearch(text?.description)}
+                                        className="  p-3 rounded-2xl items-center border border-gray-300 ">
+                                        <Text
+                                            className="text-black font-beVNMedium">{text.description}</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            ))}
+                        </ScrollView>
+
+                        {/* Input */}
+                        <View className="flex-row items-center gap-2 mb-6 border border-gray-300 rounded-3xl h-[52px] px-4 mt-3">
+                            <TextInput
+                                className="flex-1"
+                                value={input}
+                                onChangeText={setInput}
+                                placeholder="Hỏi Faifan bất kỳ điều gì về Hội An..."
+                                returnKeyType="send"
+                                onSubmitEditing={handleSend}
+                            />
+                            <Pressable onPress={handleSend} className="py-2 rounded-lg justify-center">
+                                <SendIcon size={24}/>
+                            </Pressable>
+                        </View>
+
                     </View>
+
+
                 </View>
             </TouchableWithoutFeedback>
         </KeyboardAvoidingView>

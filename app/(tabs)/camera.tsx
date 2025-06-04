@@ -1,5 +1,5 @@
 import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
-import logoStep from '@/assets/images/MascotKH.png';
+import logoStep from '@/assets/images/mascot/Mascot1.png';
 import {useRouter} from "expo-router";
 
 

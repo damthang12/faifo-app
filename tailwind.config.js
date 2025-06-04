@@ -25,7 +25,9 @@ module.exports = {
             boxShadow: {
                 'tab': '0px 8px 20px rgba(0, 0, 0, 0.5)',
             },
-
+            screens: {
+                tablet: '768px',
+            },
         },
     },
     plugins: [],

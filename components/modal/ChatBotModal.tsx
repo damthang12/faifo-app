@@ -154,15 +154,15 @@ export default function ChatBotModal({
                                         )}
                                     </View>
 
-                                    {msg.role === 'user' && (
-                                        <Image source={Avatar} className="w-8 h-8 rounded-full"/>
-                                    )}
+                                    {/*{msg.role === 'user' && (*/}
+                                    {/*    <Image source={Avatar} className="w-8 h-8 rounded-full"/>*/}
+                                    {/*)}*/}
                                 </View>
                             ))}
                         </ScrollView>
 
                         {/* Input */}
-                        <View className="flex-row items-center gap-2 mb-6 border rounded-3xl h-[52px] px-4 mt-3">
+                        <View className="flex-row items-center gap-2 mb-6 border border-gray-300 rounded-3xl h-[52px] px-4 mt-3">
                             <TextInput
                                 className="flex-1"
                                 value={input}
