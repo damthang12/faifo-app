@@ -5,7 +5,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import bgHeader from '@/assets/images/home/header-bg.png';
 import vh from '@/assets/images/home/vh.png';
-import lh from '@/assets/images/home/lễ-hội.png';
+import lh from '@/assets/images/home/le-hoi.png';
 import at from '@/assets/images/home/am-thuc.png';
 import ci from '@/assets/images/home/check-in.png';
 import qln from '@/assets/images/home/lưu-niệm.png';
