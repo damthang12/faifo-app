@@ -3,6 +3,15 @@ import {View, Text, TouchableOpacity, ScrollView, Image} from 'react-native';
 import ArrLeft from "@/assets/images/arrow-left.png";
 import {useRouter} from "expo-router";
 import {useBookingStore} from "@/store/useBookingStore";
+import ClockIcon from "@/assets/Icon/Clock";
+import CI from "@/assets/Icon/CI";
+import {ObjectMap} from "@sinclair/typebox";
+import Map = ObjectMap.Map;
+import PlanIcon from "@/assets/Icon/Map";
+import MapIcon from "@/assets/Icon/Map";
+import CheckInIcon from "@/assets/Icon/Checkin";
+import dayjs from "dayjs";
+import {formatDate} from "@/constants/contanst";
 
 const tabs = ['Đang giữ chỗ', 'Hoàn thành', 'Đã huỷ'];
 
@@ -20,6 +29,8 @@ export default function BookingManagementScreen() {
             router.back();
         }, 300);
     };
+
+
     return (
         <View className="flex-1 bg-white pt-20 px-4">
             {/* Header */}
@@ -52,21 +63,35 @@ export default function BookingManagementScreen() {
                 {filteredBookings.map((b, index) => (
                     <View
                         key={index}
-                        className="mb-4 p-4  rounded-xl border border-gray-200 space-y-2"
+                        className="mb-4 p-4  rounded-xl border border-gray-200 "
                     >
                      <View className='flex-row justify-between'>
-                         <Text className="text-gray-800 font-beVNSemibold">{b.date}</Text>
-                         <Text className="text-gray-800 font-beVNSemibold">{b.id}</Text>
+                         <Text className="text-gray-800 font-beVNSemibold">{formatDate(b.date)}</Text>
+                         <Text className="text-gray-800 font-beVNSemibold">#{b.id}</Text>
                      </View>
                         <View className='w-full h-[1px] bg-gray-300 my-4'/>
 
-                        <View>
-                            <Image source={b.img} className="h-6 w-6"/>
+                        <View className="flex-row items-center gap-3 mb-4">
+                            <View className="h-full max-h-[96px] w-full max-w-[96px]">
+                                <Image source={b.img} className="h-full w-full rounded-3xl"/>
+
+                            </View>
 
 
-                            <Text className="text-lg font-semibold">{b.name}</Text>
-                            <Text className="text-sm text-neutral-600">~ {b.time}</Text>
-                            <Text className="text-sm text-neutral-600">{b.location}</Text>
+                            <View className="gap-2 justify-start h-full flex-col">
+                                <Text className="text-lg font-semibold">{b.name}</Text>
+                                <View className="flex-row gap-2 items-center">
+                                    <ClockIcon size={24}/>
+                                    <Text className="text-sm text-gray-800 font-beVN">~ {b.time} </Text>
+
+                                </View>
+                                <View className="flex-row gap-2 items-center">
+                                    <CheckInIcon size={24} color="#000"/>
+
+                                    <Text className="text-sm text-gray-800 font-beVN">{b.location}</Text>
+                                </View>
+                            </View>
+
 
                         </View>
 
@@ -74,12 +99,30 @@ export default function BookingManagementScreen() {
                         {/* Actions */}
                         {b.status === 'Đang giữ chỗ' && (
                             <View className="flex-row justify-between mt-2 items-center gap-2">
-                                <TouchableOpacity className="px-6 py-4 w-[47%] border border-[#F99F04] rounded-full">
-                                    <Text className="text-[#F99F04] font-beVNSemibold text-center">Huỷ giữ chỗ</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity className="px-6 py-4 w-[47%] bg-[#F99F04] rounded-full">
-                                    <Text className="text-white font-beVNSemibold text-center">Chỉ đường</Text>
-                                </TouchableOpacity>
+                                {b.isCancel ? (
+                                    <>
+                                        <TouchableOpacity className="px-6 py-3 w-[47%] border border-[#F99F04] rounded-full">
+                                            <Text className="text-[#F99F04] font-beVNSemibold text-center">Đặt lại lịch</Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity className="px-6 py-3 w-[47%] bg-[#F99F04] rounded-full">
+                                            <Text className="text-white font-beVNSemibold text-center">Chỉ đường</Text>
+                                        </TouchableOpacity>
+                                    </>
+
+                                ) : (
+                                    <>
+                                        <TouchableOpacity className="px-6 py-3 w-[47%] border border-[#F99F04] rounded-full">
+                                            <Text className="text-[#F99F04] font-beVNSemibold text-center">Huỷ giữ chỗ</Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity className="px-6 py-3 w-[47%] bg-[#F99F04] rounded-full">
+                                            <Text className="text-white font-beVNSemibold text-center">Viết đánh giá</Text>
+                                        </TouchableOpacity>
+                                    </>
+
+
+                                )}
+
+
                             </View>
                         )}
                     </View>

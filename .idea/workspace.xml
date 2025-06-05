@@ -5,26 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c302d3bd-7989-4001-96d0-7193c4b3d6ac" name="Changes" comment="update code">
-      <change afterPath="$PROJECT_DIR$/app/booking/booked.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/booking/success.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/images/[id].tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/mascot/Mascot10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/useBookingStore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/noti/Error.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/noti/NoSupport.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/contanst.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(app)/chatbot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/chatbot.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/camera.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/camera.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/chat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(login)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(login)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/booking/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/booking/[id].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/places/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/places/[id].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CustomBar/CustomeBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CustomBar/CustomeBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/CustomCalendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/CustomCalendar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/dropdown/Dropdown1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/dropdown/Dropdown1.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/dropdown/ImageDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/dropdown/ImageDropdown.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/modal/ChatBotModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/ChatBotModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/modal/PeopleCount.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/PeopleCount.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/MockData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/MockData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/booking/booked.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/booking/booked.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Icon/Checkin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Icon/Checkin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Icon/Clock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Icon/Clock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Icon/Map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Icon/Map.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modal/FilterModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/FilterModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,20 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/u2u2/Dev/u2u/faifo-app/app/booking",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "/Users/u2u2/Dev/u2u/faifo-app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/u2u2/Dev/u2u/faifo-app/app/booking&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/u2u2/Dev/u2u/faifo-app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/booking" />

@@ -2,7 +2,7 @@ import * as React from "react";
 import Svg, {Path} from "react-native-svg";
 
 
-export default function PlanIcon({size = 25, color = "white"}) {
+export default function MapIcon({size = 25, color = "white"}) {
     return (
         <Svg width={size} height={size} viewBox="0 0 25 24" fill="none">
             <Path d="M8.6665 2V5" stroke={color} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>

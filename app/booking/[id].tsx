@@ -10,6 +10,8 @@ import PeopleCountModal from "@/components/modal/PeopleCount";
 import Profile from "@/assets/Icon/Profile";
 import {useBookingStore} from "@/store/useBookingStore";
 import KHHA from '@/assets/images/detail/KHHA.png';
+import dayjs from "dayjs";
+import {formatDate} from "@/constants/contanst";
 
 export default function BookingScreen() {
     const {t} = useTranslation()
@@ -65,15 +67,15 @@ export default function BookingScreen() {
             </View>
 
             <ScrollView contentContainerStyle={{marginTop: 12}}>
-                <View className="flex-row gap-4 justify-between mb-5">
+                <View className="flex-row gap-2 justify-between mb-5">
                     <TouchableOpacity
                         onPress={() => setCalendarVisible(true)}
-                        className="w-[47%] border border-gray-300 p-3 rounded-3xl flex-row justify-between items-center"
+                        className="w-[55%] border border-gray-300 p-3 rounded-3xl flex-row justify-between items-center"
                     >
                         <View className="flex-row gap-2 items-center">
                             <Ionicons name="calendar-outline" size={24} color="#000"/>
                             <Text className="text-gray-900 font-beVNSemibold text-base">
-                                {selectedDate ? selectedDate : 'Chọn ngày'}
+                                {selectedDate ? formatDate(selectedDate) : 'Chọn ngày'}
                             </Text>
                         </View>
                         <Ionicons name="chevron-down" size={20} color="#000"/>
@@ -82,7 +84,7 @@ export default function BookingScreen() {
                     {/* Số người */}
                     <TouchableOpacity
                         onPress={() => setShowModal(true)}
-                        className="flex-row items-center p-3 border justify-between border-gray-300 w-[47%] rounded-3xl ">
+                        className="flex-row items-center p-3 border justify-between border-gray-300 w-[40%] rounded-3xl ">
 
 
                         <View className="flex-row gap-2 items-center">
@@ -181,8 +183,10 @@ export default function BookingScreen() {
             <CalendarModal
                 isVisible={calendarVisible}
                 onClose={() => setCalendarVisible(false)}
-                onSelectDate={(date) => setSelectedDate(date)}
-            />
+                onSelectDate={(date) => {
+                    const formatted = dayjs(date).format('YYYY-MM-DDTHH:mm');
+                    setSelectedDate(formatted);
+                }}            />
 
             <PeopleCountModal
                 isVisible={showModal}

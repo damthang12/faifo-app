@@ -3,6 +3,7 @@ import Modal from 'react-native-modal';
 import {useState} from 'react';
 import {Ionicons} from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
+import {router} from "expo-router";
 
 const ACTIVITIES = [
     'Ẩm thực', 'Văn hoá', 'Làng nghề', 'Mua sắm', 'Tham quan thiên nhiên', 'Bảo tàng',
@@ -25,6 +26,11 @@ export default function FilterModal({isVisible, onClose}: { isVisible: boolean; 
     const toggle = (value: string, list: string[], setList: (val: string[]) => void) => {
         setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
     };
+
+    const handleFilter = () => {
+        onClose()
+        router.push('/noti/Error')
+    }
 
     return (
         <Modal
@@ -165,7 +171,7 @@ export default function FilterModal({isVisible, onClose}: { isVisible: boolean; 
                     <Pressable onPress={onClose} className="px-4 py-3 ">
                         <Text className='underline font-semibold text-xl text-gray-700 font-beVNSemibold'>Xoá bộ lọc</Text>
                     </Pressable>
-                    <Pressable onPress={onClose} className="px-10 py-4 bg-[#F99F04] rounded-[32px]">
+                    <Pressable onPress={handleFilter} className="px-10 py-4 bg-[#F99F04] rounded-[32px]">
                         <Text className="font-bold text-white font-beVNSemibold text-xl">Áp dụng</Text>
                     </Pressable>
                 </View>

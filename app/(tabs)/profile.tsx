@@ -26,7 +26,7 @@ export default function ProfileScreen() {
         {
             label: 'Quản lý đặt chỗ',
             icon: 'calendar-outline' as const,
-            onPress: () => router.push('/(app)/profileDetail'),
+            onPress: () => router.push('/booking/booked'),
         },
         {
             label: 'Danh sách yêu thích',

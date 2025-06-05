@@ -30,6 +30,18 @@ export default function LoginScreen() {
     }, 300);
   };
 
+  const handleLoginGG = () => {
+    setTimeout(() => {
+      router.push('/noti/NoSupport');
+    }, 300);
+  };
+
+  const handleLoginFb = () => {
+    setTimeout(() => {
+      router.push('/noti/NoSupport');
+    }, 300);
+  };
+
 
   if (step === 'success') {
     return (
@@ -95,11 +107,11 @@ export default function LoginScreen() {
 
         <View className=" w-full absolute bottom-8 flex flex-col items-center gap-4">
           <Text className="text-gray-400">Hoặc</Text>
-          <TouchableOpacity onPress={handlePassword}
+          <TouchableOpacity onPress={handleLoginGG}
                             className="h-[52px] w-full border border-[#A4A7AE] flex items-center justify-center  rounded-[32px]">
             <Text className="text-xl font-medium text-gray-500 font-beVNSemibold">Đăng nhập với Google</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={handlePassword}
+          <TouchableOpacity onPress={handleLoginFb}
                             className="h-[52px] w-full border border-[#A4A7AE]  flex items-center justify-center  rounded-[32px]">
             <Text className="text-xl font-medium text-gray-500 font-beVNSemibold">Đăng nhập với Facebook</Text>
           </TouchableOpacity>
