@@ -45,6 +45,8 @@ expo-env.d.ts
 # @end expo-cli
 *.idea
 *.xml
+.idea
+.xml
 
 yarn.lock
 
