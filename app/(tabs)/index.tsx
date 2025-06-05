@@ -9,7 +9,7 @@ import lh from '@/assets/images/home/lễ-hội.png';
 import at from '@/assets/images/home/am-thuc.png';
 import ci from '@/assets/images/home/check-in.png';
 import qln from '@/assets/images/home/lưu-niệm.png';
-import bt from '@/assets/images/home/bảo-tàng.png';
+import bt from '@/assets/images/home/bao-tang.png';
 import ln from '@/assets/images/home/làng-nghề.png';
 import {PlaceCard} from "@/components/PlaceCard";
 import {useEffect, useState} from "react";
