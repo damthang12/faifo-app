@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c302d3bd-7989-4001-96d0-7193c4b3d6ac" name="Changes" comment="update code">
+      <change afterPath="$PROJECT_DIR$/components/Toast.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(app)/FaifoCamera.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/FaifoCamera.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(login)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(login)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step3.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step4.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step5.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step5.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step6.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step6.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step7.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step7.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step8.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step8.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/camera.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/camera.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/plan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/plan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/PlaceCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/PlaceCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modal/FavoriteListModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/FavoriteListModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modal/FilterModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/FilterModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/useFavoriteStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/useFavoriteStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +30,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -22,6 +43,31 @@
     &quot;assignee&quot;: &quot;damthang12&quot;
   }
 }</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="dev-v2" />
+                    <option name="lastUsedInstant" value="1749200439" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1749200438" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/damthang12/faifo-app.git&quot;,
@@ -41,7 +87,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "dev-v2",
     "last_opened_file_path": "/Users/u2u2/Dev/u2u/faifo-app/assets/images/home",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

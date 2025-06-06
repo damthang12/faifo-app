@@ -111,8 +111,7 @@ export default function FaifoScreen() {
 
                             {/* Kết quả AI */}
                             <View className="px-4 mt-4 ">
-                                <Text className="text-xl font-semibold font-phudu text-[#8B3A00] mb-3">Kết quả
-                                    từ Faifo AI:</Text>
+                                <Text className="text-xl font-semibold font-phudu text-[#8B3A00] mb-3">Thông tin từ trợ lý ảo Faifan:</Text>
                                 <View className="bg-[#F7E9CE80]/50 p-4 rounded-xl" style={{height: 350}}>
                                     <ScrollView>
                                         <Text className="text-base font-beVNSemibold text-gray-900">

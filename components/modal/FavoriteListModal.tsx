@@ -9,6 +9,7 @@ import DS2 from "@/assets/images/detail/DS2.png";
 import DS3 from "@/assets/images/detail/DS3.png";
 import DS4 from "@/assets/images/detail/DS4.png";
 import * as ImagePicker from "expo-image-picker";
+import {useToast} from "@/components/Toast";
 
 export default function FavoriteListModal({
                                               isVisible,
@@ -21,14 +22,11 @@ export default function FavoriteListModal({
 
 }) {
     const DEFAULT_IMAGES = [DS1, DS2, DS3, DS4];
-
     const [step, setStep] = useState(1);
     const [newListName, setNewListName] = useState('');
     const [selectedImages, setSelectedImages] = useState<any[]>([]);
-
-    const {lists, addItemToList} = useFavoriteStore();
-    const {createFavoriteList} = useFavoriteStore()
-
+    const {showToast} = useToast()
+    const {lists, addItemToList, createFavoriteList} = useFavoriteStore();
 
     const handleAdd = (listId: string) => {
         const newListName = {
@@ -42,6 +40,7 @@ export default function FavoriteListModal({
             category: "Văn hoá",
         };
         addItemToList(listId, newListName);
+        showToast('Đã thêm vào lịch trình', 'success')
         onClose();
     };
 
@@ -65,7 +64,6 @@ export default function FavoriteListModal({
             alert('Bạn cần chọn ít nhất 4 ảnh cho danh sách.');
             return;
         }
-
         createFavoriteList(newListName.trim(), randomId, imagesToSave);
         setNewListName('');
         setSelectedImages([]);
@@ -88,6 +86,7 @@ export default function FavoriteListModal({
     }
 
 
+
     const renderStepContent = () => {
         if (step === 1) {
             return (
@@ -104,10 +103,10 @@ export default function FavoriteListModal({
                             <Text className="font-medium text-gray-500 mb-2 font-beVN">
                                 Chọn danh sách yêu thích có sẵn hoặc tạo mới
                             </Text>
-                            <View className="flex-row flex-wrap gap-2">
+                            <View className="    justify-between w-auto  h-auto ">
                                 {/* Grid image picker */}
 
-                                <View className="flex-row gap-2 ">
+                                <View className="flex-row gap-2 h-auto w-auto justify-between">
 
                                     {lists.map((item, index) => (
                                         <TouchableOpacity
@@ -116,21 +115,20 @@ export default function FavoriteListModal({
                                             className="  rounded-xl overflow-hidden gap-3"
                                         >
                                             <View
-                                                className="w-[120px] h-[120px] flex-row flex-wrap gap-x-1 gap-y-1 items-center justify-center rounded-2xl border border-[#F99F04] p-2">
-                                                {item.images?.map((image, imgIndex) => (
+                                                className="w-[120px] h-[120px] flex-row flex-wrap gap-x-1 gap-y-1 items-center justify-center rounded-2xl border border-gray-300 p-2">
+                                                {item?.images?.map((image, imgIndex) => (
                                                     <View
                                                         key={imgIndex}
                                                         className="w-[50px] h-[50px] bg-gray-100 rounded-xl overflow-hidden"
                                                     >
                                                         <Image
-                                                            source={image}
-                                                            className="w-full h-full"
+                                                            source={typeof image === 'string' ? { uri: image } : image}                                                            className="w-full h-full"
                                                             resizeMode="cover"
                                                         />
                                                     </View>
                                                 ))}
                                             </View>
-                                            <Text className="font-semibold text-[#8B3A00] text-sm font-beVNSemibold mb-10 ">
+                                            <Text className="font-semibold text-gray-800 text-sm font-beVNSemibold mb-4 ">
                                                 {item.name}
                                             </Text>
                                         </TouchableOpacity>
