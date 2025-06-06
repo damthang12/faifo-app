@@ -49,7 +49,7 @@ export default function OnboardingStep5() {
         <View className="flex items-center bg-white w-full h-full px-6 ">
           <TouchableOpacity onPress={handleBack}
                             className="top-[59px] w-full flex justify-center">
-            <Image source={ArrLeft} className="h-6 w-6 "/>
+            {/*<Image source={ArrLeft} className="h-6 w-6 "/>*/}
           </TouchableOpacity>
           <View className="top-[150px] w-full flex justify-center items-center z-10">
             <Image source={DialogueBox} className="h-[105px] w-full max-w-[304px] relative" resizeMode="contain"/>

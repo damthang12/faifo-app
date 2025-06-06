@@ -25,6 +25,10 @@ module.exports = {
             boxShadow: {
                 'tab': '0px 8px 20px rgba(0, 0, 0, 0.5)',
             },
+
+            bgGradient: {
+                background: 'linear-gradient(0deg, rgba(185, 255, 152, 0.30) 0%, rgba(185, 255, 152, 0.30) 100%), #FFF'
+            },
             screens: {
                 tablet: '768px',
             },

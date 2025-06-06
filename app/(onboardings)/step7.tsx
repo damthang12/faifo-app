@@ -26,7 +26,7 @@ export default function OnboardingStep7() {
         <TouchableOpacity onPress={handleBack}
                           className="top-[59px] w-full flex flex-row gap-5 items-center">
           <Image source={ArrLeft} className="h-6 w-6" />
-          <View className=" flex items-start ">
+          <View className=" flex items-start w-auto">
             <View className="h-[21px] bg-[#F99F04] w-2/3 absolute z-10 rounded-full" />
             <View className="h-[21px] bg-gray-100 w-[346px] relative rounded-full" />
           </View>
@@ -46,7 +46,7 @@ export default function OnboardingStep7() {
 
           <View className="w-full  flex flex-col justify-center gap-2">
             <Text className="text-[40px] text-[#8B3A00] font-phudu uppercase font-semibold">email của bạn là?</Text>
-            <TextInput placeholder="Nhập email của bạn" className="text-sm w-full text-[#A4A7AE] border border-gray-400 rounded-[12px] p-4 font-beVN"></TextInput>
+            <TextInput placeholder="Nhập email của bạn" className="text-sm w-full text-[#181D27] border border-gray-400 rounded-[12px] p-4 font-beVN"></TextInput>
           </View>
 
         </View>

@@ -40,7 +40,7 @@ export function PlaceCard({item, section}: PropTypes) {
     return (
         <Pressable
             onPress={() => router.push(`/places/${item.id}`)}
-            className="mr-4  overflow-hidden w-[280px] h-[272px]">
+            className="mr-4  overflow-hidden w-[280px] h-full max-h-[272px]">
             <View className="relative">
                 <Image
                     source={item.image}

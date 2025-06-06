@@ -29,7 +29,7 @@ export default function CameraScreen() {
                     </Text>
                     <TouchableOpacity
                         onPress={() => router.push('/(app)/FaifoCamera')}
-                        className="bg-[#F99F04] p-5 rounded-full"
+                        className="bg-[#F99F04] px-4 py-3 rounded-full"
                     >
                         <Text className="text-white font-bold font-beVNSemibold text-xl">Bắt đầu ngay</Text>
                     </TouchableOpacity>

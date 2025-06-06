@@ -9,7 +9,8 @@ import gradient from "@/assets/images/onboarding/Gradient.png";
 export default function LoginScreen() {
   const router = useRouter();
   const [step, setStep] = useState<'login' | 'success'>('login');
-
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
     setStep('success');
@@ -53,7 +54,7 @@ export default function LoginScreen() {
               <Image source={logoStep} className="h-[292px] w-full  " resizeMode="contain"/>
               <View className=" w-full max-w-[348px] flex flex-col items-center justify-center gap-2 z-20">
                 <Text className="text-2xl font-semibold text-[#8B3A00] font-phudu uppercase">đang đăng nhập...</Text>
-                <Text className="text-base font-bold  font-beVNSemibold text-center">Faifan đang đăng nhập tài khoản của bạn. Xin vui lòng chờ xíu nhé!</Text>
+                <Text className="text-base font-bold  font-beVNSemibold text-center">Faifan đang đăng nhập tài khoản của bạn.{'\n'} Xin vui lòng chờ xíu nhé!</Text>
               </View>
             </View>
           </View>
@@ -80,12 +81,33 @@ export default function LoginScreen() {
           <View className="w-full  flex flex-col justify-center gap-4">
             <View className="w-full  flex flex-col justify-center gap-2">
               <Text className="text-sm text-[#181D27] font-beVNSemibold">Email</Text>
-              <TextInput placeholder="Nhập email của bạn" className="text-sm w-full text-[#A4A7AE] border border-gray-400 rounded-[12px] p-4 font-beVN"></TextInput>
+              <TextInput placeholder="Nhập email của bạn" className="text-sm w-full text-[#181D27] border border-gray-400 rounded-[12px] p-4 font-beVN"></TextInput>
             </View>
 
-            <View className="w-full  flex flex-col justify-center gap-2">
+            <View className="w-full flex flex-col justify-center gap-2">
               <Text className="text-sm text-[#181D27] font-beVNSemibold">Mật khẩu</Text>
-              <TextInput placeholder="Nhập mật khẩu" className="text-sm w-full text-[#A4A7AE] border border-gray-400 rounded-[12px] p-4 font-beVN"></TextInput>
+
+              <View className="relative">
+                <TextInput
+                    textContentType="password"
+                    secureTextEntry={!showPassword}
+                    placeholder="Nhập mật khẩu"
+                    value={password}
+                    onChangeText={setPassword}
+                    className=" w-full text-[#181D27] border border-gray-400 rounded-[12px] p-4 pr-12 font-beVN"
+                />
+
+                {/*<TouchableOpacity*/}
+                {/*    className="absolute right-4 top-4"*/}
+                {/*    onPress={() => setShowPassword(!showPassword)}*/}
+                {/*>*/}
+                {/*  {showPassword ? (*/}
+                {/*      <Eye size={20} color="#181D27" />*/}
+                {/*  ) : (*/}
+                {/*      <EyeOff size={20} color="#181D27" />*/}
+                {/*  )}*/}
+                {/*</TouchableOpacity>*/}
+              </View>
             </View>
 
             <View className="w-full  flex flex-col justify-center gap-12 items-center">

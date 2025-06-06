@@ -103,17 +103,17 @@ export default function HomeScreen() {
         </View>
 
         <View className="flex-1 mt-[351px] rounded-t-[32px] bg-white pl-4">
-          <ScrollView contentContainerStyle={{ paddingBottom: 80 }} className="mt-5">
+          <ScrollView contentContainerStyle={{ paddingBottom: 80 }} className="mt-10">
             {PLACES_SECTIONS.filter((section) => ["section-1", "section-2", "section-3", "section-4"].includes(section.id)).map((section) => (
                 <View key={section.id} className=" mb-10">
-                  <View className="flex-row items-center justify-between mb-3">
+                  <View className="flex-row items-center justify-between mb-5">
                     <Text className="text-2xl font-semibold text-[#351904] uppercase font-phudu">
                       {section.title}
                     </Text>
                     <Pressable
                         onPress={() => setSearch(section.title)}
-                        className="flex-row items-center space-x-1">
-                      <Text className="text-sm text-[#8B3A00] font-medium">Xem thêm</Text>
+                        className="flex-row items-center gap-1 pr-4">
+                      <Text className="text-sm text-[#8B3A00] font-medium ">Xem thêm</Text>
                       <Ionicons name="chevron-forward" size={16} color="#8B3A00" />
                     </Pressable>
                   </View>

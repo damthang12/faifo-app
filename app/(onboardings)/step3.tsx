@@ -41,8 +41,8 @@ export default function OnboardingStep3() {
         <TouchableOpacity onPress={handleBack}
                           className="top-[59px] w-full flex flex-row gap-5 items-center">
           <Image source={ArrLeft} className="h-6 w-6" />
-          <View className=" flex items-start ">
-            <View className="h-[21px] bg-[#F99F04] w-1/2 absolute z-10 rounded-full" />
+          <View className=" flex items-start w-auto ">
+            <View className="h-[21px] bg-[#F99F04]  w-1/2 absolute z-10 rounded-full" />
             <View className="h-[21px] bg-gray-100 w-[346px] relative rounded-full" />
           </View>
         </TouchableOpacity>

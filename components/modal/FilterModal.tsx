@@ -32,6 +32,14 @@ export default function FilterModal({isVisible, onClose}: { isVisible: boolean; 
         router.push('/noti/Error')
     }
 
+    const clearFilter = () => {
+        setSelectedActivities([])
+        setSelectedTimes([])
+        setSelectedGroups([])
+        setPrice(0)
+
+    }
+
     return (
         <Modal
             isVisible={isVisible}
@@ -168,7 +176,7 @@ export default function FilterModal({isVisible, onClose}: { isVisible: boolean; 
                 </ScrollView>
                 {/* Actions */}
                 <View className="flex-row justify-between mb-6">
-                    <Pressable onPress={onClose} className="px-4 py-3 ">
+                    <Pressable onPress={clearFilter} className="px-4 py-3 ">
                         <Text className='underline font-semibold text-xl text-gray-700 font-beVNSemibold'>Xoá bộ lọc</Text>
                     </Pressable>
                     <Pressable onPress={handleFilter} className="px-10 py-4 bg-[#F99F04] rounded-[32px]">
