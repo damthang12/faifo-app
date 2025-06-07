@@ -10,6 +10,7 @@ interface TripStore {
     hasItineraryItem: (itemId: string) => boolean;
     addPlannedTrip: (plan: Planning) => void;
     updatePlannedTrip: (tripId: string, updatedTrip: Planning) => void;
+    removeItineraryItem: (tripId: string) => void;
 
 }
 
@@ -88,4 +89,8 @@ export const useTripStore = create<TripStore>((set, get) => ({
                 day.itinerary.some(item => item.id === itemId)
             )
         ),
+    removeItineraryItem: (tripId: string) =>
+        set((state) => ({
+            itinerary: state.itinerary.filter(trip => trip.id !== tripId),
+        })),
 }));

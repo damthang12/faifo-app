@@ -1,5 +1,6 @@
 // store/useFavoriteStore.ts
 import { create } from 'zustand';
+import {ImageSourcePropType} from "react-native";
 
 export interface FavoriteItem {
     id: string;
@@ -8,7 +9,7 @@ export interface FavoriteItem {
     reviewCount: number;
     openTime: string;
     expendTime?: string;
-    image: any;
+    image: ImageSourcePropType;
     location?: string;
     category: string;
 }
@@ -16,7 +17,7 @@ export interface FavoriteItem {
 export interface FavoriteList {
     id?: string;
     name: string;
-    images?: any[];
+    images?: ImageSourcePropType[];
     items: Record<string, FavoriteItem[]>; // category -> items
 }
 

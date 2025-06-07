@@ -1,10 +1,10 @@
-import {Image, Pressable, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Pressable, ScrollView, Text, TouchableOpacity, View, Alert} from 'react-native';
 import React, {useState} from 'react';
 import {Ionicons} from '@expo/vector-icons';
 import ArrLeft from "@/assets/images/arrow-left.png";
 import {useLocalSearchParams, useRouter} from "expo-router";
 import {useTranslation} from "react-i18next";
-import {Booking, PLACES_SECTIONS} from "@/constants/MockData";
+import {PLACES_SECTIONS} from "@/constants/MockData";
 import CalendarModal from "@/components/calendar/CustomCalendar";
 import PeopleCountModal from "@/components/modal/PeopleCount";
 import Profile from "@/assets/Icon/Profile";
@@ -41,7 +41,13 @@ export default function BookingScreen() {
     };
 
     const handleBooking = () => {
-
+        if (!selectedDate || !selectedTime || selectedBookingId) {
+            Alert.alert(
+                'Thiếu thông tin',
+                'Vui lòng chọn ngày và giờ trước khi đặt chỗ.'
+            );
+            return;
+        }
         addBooking({
             id: selectedBookingId ?? '',
             name: place,
@@ -103,7 +109,10 @@ export default function BookingScreen() {
 
                 {/* Danh sách lựa chọn */}
                 {bookings?.booking?.map((b, idx) => (
-                    <View key={idx} className="mb-6 p-4 border border-[#F99F04] rounded-2xl">
+                    <View key={idx}
+                          className={`mb-6 p-4 border  rounded-2xl ${
+                              selectedBookingId === b.id ? ' border-[#F99F04] bg-[#FFECB81A]' : 'border-gray-300'
+                          }`}>
                         <View className="flex-row gap-2 items-center justify-between mb-4">
 
                             <Text className="font-medium font-beVNMedium text-[#000000] ">{b.name}</Text>

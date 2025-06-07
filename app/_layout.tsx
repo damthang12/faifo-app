@@ -11,6 +11,7 @@ import { StyleSheet } from 'react-native';
 
 import {useColorScheme} from '@/hooks/useColorScheme';
 import AppLayoutWrapper from "@/components/layout/AppLayout";
+import {ToastProvider} from "@/components/Toast";
 
 
 export default function RootLayout() {
@@ -33,29 +34,26 @@ export default function RootLayout() {
     if (!loaded) return null
 
     return (
-        <GestureHandlerRootView style={{flex: 1}}>
-            <SafeAreaProvider>
-                <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-                    <AppLayoutWrapper>
-                        <Stack screenOptions={{headerShown: false}}>
-                            <Stack.Screen name="(tabs)"/>
-                            <Stack.Screen name="(onboardings)"/>
-                            <Stack.Screen name="(onboardings)/step1"/>
-                            <Stack.Screen name="(onboardings)/step2"/>
-                            <Stack.Screen name="(onboardings)/step3"/>
-                            <Stack.Screen name="(onboardings)/step4"/>
-                            <Stack.Screen name="(onboardings)/step5"/>
-                            <Stack.Screen name="(onboardings)/step6"/>
-                            <Stack.Screen name="(onboardings)/step7"/>
-                            <Stack.Screen name="(login)"/>
-                            <Stack.Screen name="(app)"/>
-                            <Stack.Screen name="+not-found"/>
-                        </Stack>
-                        <StatusBar style="auto"/>
-                    </AppLayoutWrapper>
-                </ThemeProvider>
-            </SafeAreaProvider>
-        </GestureHandlerRootView>
+        <ToastProvider>
+            <GestureHandlerRootView style={{flex: 1}}>
+                <SafeAreaProvider>
+                    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+                        <AppLayoutWrapper>
+                            <Stack screenOptions={{headerShown: false}}>
+                                <Stack.Screen name="(tabs)"/>
+                                <Stack.Screen name="(onboardings)"/>
+                                <Stack.Screen name="(login)"/>
+                                <Stack.Screen name="(app)"/>
+                                <Stack.Screen name="(noti)"/>
+                                <Stack.Screen name="+not-found"/>
+                            </Stack>
+                            <StatusBar style="auto"/>
+                        </AppLayoutWrapper>
+                    </ThemeProvider>
+                </SafeAreaProvider>
+            </GestureHandlerRootView>
+        </ToastProvider>
+
     );
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import {useToast} from "@/components/Toast";
 
 class InviteProps {
     currentMembers?: {
@@ -13,12 +14,14 @@ class InviteProps {
 
 export default function Invite({ currentMembers, onInvite }: InviteProps) {
     const [email, setEmail] = useState('');
-
+    const {showToast} = useToast()
     const handleInvite = () => {
         if (email) {
             onInvite?.(email);
             setEmail('');
         }
+        showToast('Mời bạn bè thành công! Họ sẽ nhận được thông tin và có thể tham gia vào hành trình cùng bạn. Cùng Faifan tạo ra một chuyến đi tuyệt vời nhé!', 'success')
+
     };
 
     return (

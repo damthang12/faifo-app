@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 import {View, Text, TouchableOpacity, ScrollView, Image} from 'react-native';
 import CreatePlanModal from '@/components/modal/CreatePlanModal';
 import logoStep from '@/assets/images/MascotKH.png';
@@ -14,6 +14,9 @@ export default function PlanScreen() {
     const [showModal, setShowModal] = useState(false);
     const {itinerary} = useTripStore();
 
+    const planData = useMemo(() => {
+        return itinerary
+    }, [itinerary])
 
     return (
         <View className="flex-1 bg-white px-4 pt-20">
@@ -46,30 +49,30 @@ export default function PlanScreen() {
                 showsVerticalScrollIndicator={false}
                         className="flex-1  ">
                 {activeTab === 'planned' ? (
-                    itinerary.length === 0 ? (
+                    planData.length === 0 ? (
                         <View className="items-center">
                             <Image source={logoStep} className="h-[290px] w-full mb-6 mt-20" resizeMode="contain"/>
                             <Text className="text-xl font-semibold text-black font-beVNSemibold mb-2">
                                 Bạn chưa có kế hoạch nào.
                             </Text>
-                            <Text className="text-base font-bold font-beVN text-center mb-6">
+                            <Text className="text-center text-gray-500 font-beVN mb-4">
                                 Thử tạo một kế hoạch du lịch hoàn hảo với sự hỗ trợ từ Faifan nhé.
                             </Text>
                             <TouchableOpacity
                                 onPress={() => setShowModal(true)}
-                                className="bg-[#F99F04] p-5 rounded-full"
+                                className="bg-[#F99F04] px-4 py-3 rounded-full"
                             >
                                 <Text className="text-white font-bold font-beVNSemibold text-xl">Tạo chuyến đi mới</Text>
                             </TouchableOpacity>
                         </View>
                     ) : (
-                        itinerary.map((trip) => (
+                        planData.map((trip) => (
 
                             <TouchableOpacity key={trip.id}
                                               onPress={() => router.push(`/plan-detail/${trip.id}`)}
                             >
                                 <Image source={trip.image ? trip.image : logoStep}
-                                       className="w-full h-[200px] rounded-xl mb-4"/>
+                                       className="w-full h-[200px] rounded-xl mb-6"/>
                                 <Text className="text-xl font-bold">{trip.place}</Text>
                                 <Text className="text-gray-500">
                                     {trip.startDate} - {trip.endDate}
@@ -90,7 +93,7 @@ export default function PlanScreen() {
                                     <View className="w-full mb-6">
                                         <Image
                                             source={trip.image}
-                                            className=" max-w-full h-[200px] rounded-2xl mb-4"
+                                            className=" max-w-full h-[200px] rounded-2xl mb-6"
                                         />
 
                                         <Text className="text-xl font-bold mb-1">{trip.name}</Text>
@@ -102,19 +105,16 @@ export default function PlanScreen() {
                             ))
                         ) : (
                             <>
-                                <Image
-                                    source={logoStep}
-                                    className="h-[290px] w-full mb-6 mt-20"
-                                    resizeMode="contain"
-                                />
-                                <Text className="text-lg font-bold mb-2">Chưa có kế hoạch nào hoàn thành</Text>
-                                <Text className="text-center text-gray-500 mb-4">
+                                <Image source={logoStep} className="h-[290px] w-full mb-6 mt-20" resizeMode="contain"/>
+
+                                <Text className="text-xl font-semibold text-black font-beVNSemibold mb-2">Chưa có kế hoạch nào hoàn thành</Text>
+                                <Text className="text-center text-gray-500 font-beVN mb-4">
                                     Hãy lên kế hoạch cho chuyến đi tiếp theo và để Faifan giúp bạn lên lịch trình hoàn
                                     hảo nhất!
                                 </Text>
                                 <TouchableOpacity
                                     onPress={() => setShowModal(true)}
-                                    className="bg-[#F99F04] px-6 py-3 rounded-full"
+                                    className="bg-[#F99F04] px-4 py-3 rounded-full"
                                 >
                                     <Text className="text-white font-bold font-beVNSemibold text-xl">Tạo chuyến đi mới</Text>
                                 </TouchableOpacity>
