@@ -1,9 +1,9 @@
 // app/(tabs)/plan-detail/[id].tsx
 import {useLocalSearchParams, useRouter} from 'expo-router';
-import {useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {Animated, Image, Modal, Pressable, ScrollView, Text, TouchableOpacity, View,} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
-import {ACTIVITIES_DATA, TRIPS} from "@/constants/MockData";
+import {ACTIVITIES_DATA} from "@/constants/MockData";
 import {BlurView} from "expo-blur";
 import VH from "@/assets/Icon/VH";
 import AT from "@/assets/Icon/AT";
@@ -15,8 +15,12 @@ import Invite from "@/components/ui/Invite";
 import PlanningList from "@/components/ui/AddOnPlan";
 import {AddToItineraryButton} from "@/components/ui/AddToItineraryButton";
 import {useTripStore} from "@/store/useTripStore";
-import CreatePlanModal from "@/components/modal/CreatePlanModal";
 import UpdatePlanModal from "@/components/modal/UpdatePlanModal";
+import Profile from "@/assets/Icon/Profile";
+import CalendarIcon from "@/assets/Icon/Calendar";
+import EditIcon from "@/assets/Icon/EditIcon";
+import RemoveIcon from "@/assets/Icon/RemoveIcon";
+import UpdateIcon from "@/assets/Icon/UpdateIcon";
 
 const TABS = ['Lịch trình', 'Gợi ý hoạt động', 'Mời bạn bè'];
 
@@ -57,10 +61,11 @@ export default function PlanDetailScreen() {
     const {id} = useLocalSearchParams();
 
     const router = useRouter();
-    const {itinerary} = useTripStore();
+    const {itinerary, removeItineraryItem} = useTripStore();
 
     const [activeTab, setActiveTab] = useState('Lịch trình');
     const [settingsVisible, setSettingsVisible] = useState(false);
+    const [isRemove, setRemove] = useState(false);
     const [updateVisible, setUpdateVisible] = useState(false);
     const [selectedTab, setSelectedTab] = useState<TabKey | ''>({
         title: 'Văn hoá',
@@ -68,7 +73,6 @@ export default function PlanDetailScreen() {
     });
     const [search, setSearch] = useState('');
     const trip = itinerary.find(item => item.id === id);
-
 
 
 
@@ -82,6 +86,18 @@ export default function PlanDetailScreen() {
     const updateTrip = () => {
         setSettingsVisible(false)
         setUpdateVisible(true)
+    }
+
+    const handleRemove = () => {
+        removeItineraryItem(trip?.id as string)
+        setRemove(false)
+        setSettingsVisible(false)
+        router.push('/(tabs)/plan')
+    }
+
+    const handleCf = () => {
+        setRemove(true)
+        setSettingsVisible(false)
     }
 
 
@@ -122,17 +138,37 @@ export default function PlanDetailScreen() {
                         style={{
                             flex: 1,
                             padding: 16,
+                            gap: 8
                         }}
                     >
-                        <Text className="text-2xl font-semibold text-white font-beVNSemibold mb-1">
+                        <Text className="text-2xl font-semibold text-white font-beVNSemibold mb-4">
                             {trip?.place}
                         </Text>
-                        <Text className="text-white font-beVN mb-1">
-                            {trip?.startDate} - {trip?.endDate}
-                        </Text>
-                        <Text className="text-white font-beVN">
-                            {trip?.participants} người tham gia
-                        </Text>
+                        <View className="flex-row gap-2 items-center">
+                            <CalendarIcon size={24}/>
+                            <Text className="text-white font-beVN ">
+                                {trip?.startDate} - {trip?.endDate}
+                            </Text>
+
+                        </View>
+
+                        <View className="flex-row gap-2 items-center">
+                            <Profile size={24} color="#fff"/>
+                            <Text className="text-white font-beVN">
+                                {trip?.participants} người tham gia
+                            </Text>
+
+                        </View>
+
+                        <View className="flex-row gap-2 items-center">
+                            <EditIcon size={24}/>
+                            <Text className="text-white font-beVN ">
+                                _
+                            </Text>
+
+                        </View>
+
+
                     </BlurView>
                 </View>
             </View>
@@ -178,13 +214,13 @@ export default function PlanDetailScreen() {
                 )}
 
                 {/*/!* Body content *!/*/}
-                <View className="px-4 h-full">
+                <View className=" h-full ">
                     {activeTab === 'Lịch trình' && (
                         <PlanningList/>
                     )}
                     {activeTab === 'Gợi ý hoạt động' && selectedTab && (
 
-                        <View className=" flex-col  h-full w-full ">
+                        <View className=" flex-col  h-full w-full px-4">
                             <ScrollView
                                 contentContainerStyle={{gap: 12, flexDirection: 'column', paddingBottom: 180}}
                                 className="flex flex-col w-full  "
@@ -200,10 +236,12 @@ export default function PlanDetailScreen() {
                                             resizeMode="cover"
                                         />
                                         <View className="p-4 flex gap-2">
-                                            <Text className="text-base font-semibold font-beVNSemibold">{place.name}</Text>
+                                            <Text
+                                                className="text-base font-semibold font-beVNSemibold">{place.name}</Text>
                                             <Text className="text-base font-medium text-gray-600">Thời gian dự kiến: 1.5
                                                 - 2 giờ</Text>
-                                            <AddToItineraryButton place={place} tripId={trip?.id || ''}/>
+                                            <AddToItineraryButton className="p-3" place={place}
+                                                                  tripId={trip?.id || ''}/>
 
                                         </View>
                                     </View>
@@ -233,17 +271,63 @@ export default function PlanDetailScreen() {
                         className="flex-1 bg-black/30 justify-end"
                         onPress={() => setSettingsVisible(false)}
                     >
-                        <View className="bg-white p-4 rounded-t-2xl">
-                            <TouchableOpacity className="py-4 border-b border-gray-200">
-                                <Text className="text-center text-base text-red-500 font-semibold font-beVNSemibold">Xoá kế hoạch</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity
-                                onPress={updateTrip}
-                                className="py-4">
-                                <Text className="text-center text-base text-gray-700 font-semibold font-beVNSemibold">
-                                    Cập nhật chuyến đi
-                                </Text>
-                            </TouchableOpacity>
+                        <View className="bg-white flex-col items-center p-5 rounded-t-2xl pb-10">
+
+                            <View className="h-[6px] w-[100px] bg-gray-300 rounded-2xl"/>
+                            <View className="w-full flex flex-col ">
+                                <Text className="text-left font-beVNBold text-2xl  text-gray-900 mb-4">Cài đặt</Text>
+                                <TouchableOpacity
+                                    onPress={updateTrip}
+                                    className="flex-row items-center gap-2">
+                                    <UpdateIcon size={24}/>
+
+                                    <Text
+                                        className=" p-4 text-base text-gray-700  font-beVN">
+                                        Cập nhật thông tin chuyến đi
+                                    </Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    onPress={handleCf}
+                                    className="flex-row items-center gap-2">
+                                    <RemoveIcon size={24}/>
+                                    <Text
+                                        className=" text-base p-4 text-gray-700  font-beVN">
+                                        Xoá kế hoạch du lịch</Text>
+                                </TouchableOpacity>
+
+
+                            </View>
+
+                        </View>
+                    </Pressable>
+                </Modal>
+
+
+
+                <Modal visible={isRemove} transparent animationType="fade">
+                    <Pressable
+                        className="flex-1 bg-black/30 justify-center p-4"
+                        onPress={() => setRemove(false)}
+                    >
+                        <View className="bg-white flex-col items-center gap-5 p-5 rounded-2xl pb-10">
+                            <Text className=" font-beVNBold text-2xl  text-gray-900 mb-4">Xoá kế hoạch du lịch này</Text>
+                            <Text className=" font-beVN  text-center text-gray-900 mb-4">Bạn có chắc chắn muốn xóa kế hoạch du lịch này không? Sau khi xóa, thông tin sẽ không thể khôi phục.</Text>
+
+                            <View className=" flex flex-row w-full justify-between ">
+                                <TouchableOpacity
+                                    onPress={() => setRemove(false)}
+                                    className=" w-[47%]   px-4 py-3 rounded-full items-center border border-[#F99F04]">
+                                    <Text className="text-[#F99F04] text-xl font-semibold font-beVNSemibold">Huỷ</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity
+                                    onPress={handleRemove}
+                                    className=" w-[47%]  bg-[#F99F04] px-4 py-3  rounded-full items-center">
+                                    <Text className="text-white text-xl font-semibold font-beVNSemibold">Xoá</Text>
+                                </TouchableOpacity>
+
+                            </View>
+
                         </View>
                     </Pressable>
                 </Modal>

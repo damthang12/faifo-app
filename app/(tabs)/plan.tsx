@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 import {View, Text, TouchableOpacity, ScrollView, Image} from 'react-native';
 import CreatePlanModal from '@/components/modal/CreatePlanModal';
 import logoStep from '@/assets/images/MascotKH.png';
@@ -14,6 +14,9 @@ export default function PlanScreen() {
     const [showModal, setShowModal] = useState(false);
     const {itinerary} = useTripStore();
 
+    const planData = useMemo(() => {
+        return itinerary
+    }, [itinerary])
 
     return (
         <View className="flex-1 bg-white px-4 pt-20">
@@ -46,7 +49,7 @@ export default function PlanScreen() {
                 showsVerticalScrollIndicator={false}
                         className="flex-1  ">
                 {activeTab === 'planned' ? (
-                    itinerary.length === 0 ? (
+                    planData.length === 0 ? (
                         <View className="items-center">
                             <Image source={logoStep} className="h-[290px] w-full mb-6 mt-20" resizeMode="contain"/>
                             <Text className="text-xl font-semibold text-black font-beVNSemibold mb-2">
@@ -63,7 +66,7 @@ export default function PlanScreen() {
                             </TouchableOpacity>
                         </View>
                     ) : (
-                        itinerary.map((trip) => (
+                        planData.map((trip) => (
 
                             <TouchableOpacity key={trip.id}
                                               onPress={() => router.push(`/plan-detail/${trip.id}`)}

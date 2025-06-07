@@ -5,23 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c302d3bd-7989-4001-96d0-7193c4b3d6ac" name="Changes" comment="update code">
-      <change afterPath="$PROJECT_DIR$/components/Toast.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(noti)/MaintenanceScreen.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Icon/Calendar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Icon/EditIcon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Icon/RemoveIcon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Icon/UpdateIcon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/modal/PlanModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(app)/FaifoCamera.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/FaifoCamera.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(app)/invite.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/invite.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(login)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(login)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step3.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step4.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step5.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step5.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step6.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step6.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step7.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step7.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(onboardings)/step8.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step8.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/camera.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/camera.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/plan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/plan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/PlaceCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/PlaceCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/modal/FavoriteListModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/FavoriteListModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/booking/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/booking/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/booking/booked.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/booking/booked.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/noti/Error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(noti)/Error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/noti/NoSupport.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(noti)/NoSupport.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/places/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/places/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/plan-detail/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/plan-detail/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Toast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Toast.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/modal/FilterModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/FilterModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/useFavoriteStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/useFavoriteStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/AddOnPlan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/AddOnPlan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/AddToItineraryButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/AddToItineraryButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/Invite.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/Invite.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/useTripStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/useTripStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +94,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "dev-v2",
-    "last_opened_file_path": "/Users/u2u2/Dev/u2u/faifo-app/assets/images/home",
+    "last_opened_file_path": "/Users/u2u2/Dev/u2u/faifo-app/assets/Icon",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -99,11 +105,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/Icon" />
+      <recent name="$PROJECT_DIR$/app/noti" />
       <recent name="$PROJECT_DIR$/assets/images/home" />
       <recent name="$PROJECT_DIR$/app/booking" />
       <recent name="$PROJECT_DIR$/assets/images/mascot" />
-      <recent name="$PROJECT_DIR$/app/(app)" />
-      <recent name="$PROJECT_DIR$/components/modal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
@@ -177,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749114150394</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update code">
+      <option name="closed" value="true" />
+      <created>1749201652905</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1749201652905</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

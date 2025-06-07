@@ -30,7 +30,7 @@ export default function FilterModal({isVisible, onClose}: { isVisible: boolean; 
 
     const handleFilter = () => {
         onClose()
-        router.push('/noti/Error')
+        router.push('/(noti)/Error')
     }
 
     const clearFilter = () => {

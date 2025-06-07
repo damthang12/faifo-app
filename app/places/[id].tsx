@@ -1,4 +1,4 @@
-import {Animated, Image, Platform, ScrollView, Share, Text, TouchableOpacity, View,StatusBar} from 'react-native';
+import {Animated, Image, Platform, Share, StatusBar, Text, TouchableOpacity, View} from 'react-native';
 import {SwiperFlatList} from 'react-native-swiper-flatlist';
 import {useLocalSearchParams, useRouter} from 'expo-router';
 import {Item, PLACES_SECTIONS} from "@/constants/MockData";
@@ -99,12 +99,12 @@ export default function PlaceDetailScreen() {
 
                         <TouchableOpacity
                             onPress={() => router.back()}
-                            className="absolute top-12 left-4 z-50 bg-white/80 p-2 rounded-full"
+                            className="absolute top-12 left-4 bg-white/80 p-2 rounded-full"
                         >
                             <Ionicons name="arrow-back" size={20} color="#000"/>
                         </TouchableOpacity>
 
-                        <View className="absolute top-12 right-4 z-50 flex-row space-x-3 gap-2">
+                        <View className="absolute top-12 right-4 flex-row space-x-3 gap-2">
                             <TouchableOpacity
                                 onPress={() => setShowFavoriteModal(true)}
                                 className="bg-white/80 p-2 rounded-full"
@@ -232,11 +232,12 @@ export default function PlaceDetailScreen() {
 
             </Animated.ScrollView>
             <View className="flex flex-row my-7 justify-between px-4">
-                <TouchableOpacity className=" w-auto  p-5 rounded-full items-center border border-[#F99F04]">
+                <TouchableOpacity className=" w-auto  px-4 py-3 rounded-full items-center border border-[#F99F04]">
                     <Text className="text-[#F99F04] text-xl font-semibold font-beVNSemibold">Thêm vào lịch trình</Text>
                 </TouchableOpacity>
+
                 <TouchableOpacity onPress={() => router.push(`/booking/${place.id}`)}
-                                  className=" w-[44%] bg-[#F99F04] p-5 rounded-full items-center">
+                                  className=" w-[46%] bg-[#F99F04] px-4 py-3  rounded-full items-center">
                     <Text className="text-white text-xl font-semibold font-beVNSemibold">Đặt chỗ</Text>
                 </TouchableOpacity>
             </View>

@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
-import {View, Text, TouchableOpacity, ScrollView, Image} from 'react-native';
+import React, {useState} from 'react';
+import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import ArrLeft from "@/assets/images/arrow-left.png";
 import {useRouter} from "expo-router";
 import {useBookingStore} from "@/store/useBookingStore";
 import ClockIcon from "@/assets/Icon/Clock";
-import CI from "@/assets/Icon/CI";
-import {ObjectMap} from "@sinclair/typebox";
-import Map = ObjectMap.Map;
-import PlanIcon from "@/assets/Icon/Map";
-import MapIcon from "@/assets/Icon/Map";
 import CheckInIcon from "@/assets/Icon/Checkin";
-import dayjs from "dayjs";
 import {formatDate} from "@/constants/contanst";
 
 const tabs = ['Đang giữ chỗ', 'Hoàn thành', 'Đã huỷ'];
@@ -49,7 +43,7 @@ export default function BookingManagementScreen() {
                         key={tab}
                         onPress={() => setActiveTab(tab)}
                         className={`px-4 py-2 ${
-                            activeTab === tab ? 'bg-primary border-b border-b-[#F99F04]' : ''
+                            activeTab === tab ? ' border-b border-b-[#F99F04]' : ''
                             
                         }`}
                     >

@@ -33,13 +33,13 @@ export default function LoginScreen() {
 
   const handleLoginGG = () => {
     setTimeout(() => {
-      router.push('/noti/NoSupport');
+      router.push('/(noti)/NoSupport');
     }, 300);
   };
 
   const handleLoginFb = () => {
     setTimeout(() => {
-      router.push('/noti/NoSupport');
+      router.push('/(noti)/NoSupport');
     }, 300);
   };
 

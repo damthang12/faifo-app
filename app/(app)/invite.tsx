@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
-import { useRouter } from 'expo-router';
-import ArrLeft from '@/assets/images/arrow-left.png';
+import React, {useState} from 'react';
+import {Image, ScrollView, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {useRouter} from 'expo-router';
 import ArrowLeftIcon from "@/assets/Icon/ArrowLeft";
+import {useToast} from "@/components/Toast";
 
 export default function InviteFriendScreen() {
     const router = useRouter();
     const [email, setEmail] = useState('');
-
+    const {showToast} = useToast()
     const handleSendInvite = () => {
         // TODO: logic gửi lời mời
         console.log('Send invite to:', email);
+        showToast('Mời bạn bè thành công! Họ sẽ nhận được thông tin và có thể tham gia vào hành trình cùng bạn. Cùng Faifan tạo ra một chuyến đi tuyệt vời nhé!', 'success')
+
     };
 
     return (
@@ -18,13 +20,18 @@ export default function InviteFriendScreen() {
             {/* Header */}
             <View className="flex-row items-center justify-between mb-6">
                 <TouchableOpacity onPress={() => router.back()}>
-                    <ArrowLeftIcon size={24} color='#000' />
+                    <ArrowLeftIcon size={24} color='#000'/>
                 </TouchableOpacity>
                 <Text className="text-xl font-semibold font-beVNSemibold">Mời bạn bè</Text>
-                <View className="w-6 h-6" />
+                <View className="w-6 h-6"/>
             </View>
 
-            <ScrollView contentContainerStyle={{ paddingBottom: 100, flexDirection: 'column', alignItems: 'center', height: '100%' }}>
+            <ScrollView contentContainerStyle={{
+                paddingBottom: 100,
+                flexDirection: 'column',
+                alignItems: 'center',
+                height: '100%'
+            }}>
                 <Text className="text-[#8B3A00] text-center max-w-[300px] text-2xl font-semibold font-phudu mt-[80px]">
                     Mời bạn bè tham gia Faifo để nhận nhiều đặc quyền
                 </Text>
@@ -36,7 +43,6 @@ export default function InviteFriendScreen() {
                 <Text className="text-gray-700 font-beVN text-center text-base mb-8">
                     Chuyến đi của bạn sẽ thêm phần thú vị nếu có bạn bè cùng tham gia!
                 </Text>
-
 
 
                 {/* Input email */}
