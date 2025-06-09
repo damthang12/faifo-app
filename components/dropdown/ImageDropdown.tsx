@@ -34,6 +34,8 @@ export default function ImageGalleryDropdown({ images, id }: { images: ImageSour
     const imageWidthTop = (SCREEN_WIDTH - GAP * 5) / 2; // 2 ảnh top
     const imageWidthBottom = (SCREEN_WIDTH - GAP * 6) / 3; // 3 ảnh bottom
 
+    console.log(images.length)
+
     useEffect(() => {
         Animated.timing(animation, {
             toValue: expanded ? 1 : 0,

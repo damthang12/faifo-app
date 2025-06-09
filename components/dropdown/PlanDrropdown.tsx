@@ -1,10 +1,12 @@
-import {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Animated, LayoutAnimation, Platform, Text, TouchableOpacity, UIManager, View} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
 import {itinerarys} from "@/constants/MockData";
 import HA from '@/assets/images/plan/hoi-an.png';
 import {useTripStore} from "@/store/useTripStore";
 import {Planning} from "@/types/type";
+import {useToast} from "@/components/Toast";
+import {router} from "expo-router";
 
 if (Platform.OS === 'android') {
     UIManager.setLayoutAnimationEnabledExperimental?.(true);
@@ -20,6 +22,7 @@ export function ItineraryDropdown() {
     const [expanded, setExpanded] = useState(true);
     const animation = useRef(new Animated.Value(1)).current;
     const {addPlannedTrip, itinerary, updateTripItinerary} = useTripStore()
+    const {showToast } = useToast()
     useEffect(() => {
         Animated.timing(animation, {
             toValue: expanded ? 1 : 0,
@@ -36,6 +39,10 @@ export function ItineraryDropdown() {
     // const handleAddItinerary = () => {
     //     useTripStore.getState().addItineraryItems(itinerary);
     // };
+
+    const handleSeeMore = () => {
+        router.push('/(noti)/MaintenanceScreen')
+    }
 
     const handleAddItinerary = () => {
         const existingTrip = itinerary.find(
@@ -59,6 +66,16 @@ export function ItineraryDropdown() {
             };
 
             addPlannedTrip(newTrip);
+            showToast('Lịch trình này đã được thêm vào trong chuyến đi này của bạn. Bạn có thể xem hoặc chỉnh sửa lại nếu muốn.','success',
+                (
+                    <TouchableOpacity
+                        onPress={handleSeeMore}
+                        className="p-3 bg-white border-gray-400 border w-[143px] rounded-[32px]  mt-3">
+
+                        <Text className="text-gray-900 font-beVN font-semibold text-center "> Xem lịch trình</Text>
+                    </TouchableOpacity>
+                )
+                )
         }
     };
 

@@ -60,26 +60,29 @@ export default function PlanScreen() {
                             </Text>
                             <TouchableOpacity
                                 onPress={() => setShowModal(true)}
-                                className="bg-[#F99F04] px-4 py-3 rounded-full"
+                                className="bg-[#F99F04] p-5 rounded-full"
                             >
                                 <Text className="text-white font-bold font-beVNSemibold text-xl">Tạo chuyến đi mới</Text>
                             </TouchableOpacity>
                         </View>
                     ) : (
-                        planData.map((trip) => (
+                       <View className="flex-col gap-8">
+                           { planData.map((trip) => (
 
-                            <TouchableOpacity key={trip.id}
-                                              onPress={() => router.push(`/plan-detail/${trip.id}`)}
-                            >
-                                <Image source={trip.image ? trip.image : logoStep}
-                                       className="w-full h-[200px] rounded-xl mb-6"/>
-                                <Text className="text-xl font-bold">{trip.place}</Text>
-                                <Text className="text-gray-500">
-                                    {trip.startDate} - {trip.endDate}
-                                </Text>
-                            </TouchableOpacity>
+                               <TouchableOpacity key={trip.id}
+                                                 onPress={() => router.push(`/plan-detail/${trip.id}`)}
+                               >
+                                   <Image source={trip.image ? trip.image : logoStep}
+                                          className="w-full h-[200px] rounded-xl mb-4"/>
+                                   <Text className="text-xl font-bold">{trip.place}</Text>
+                                   <Text className="text-gray-500">
+                                       {trip.startDate} - {trip.endDate}
+                                   </Text>
+                               </TouchableOpacity>
 
-                        ))
+                           ))}
+
+                       </View>
 
                     )
                 ) : (
@@ -114,7 +117,7 @@ export default function PlanScreen() {
                                 </Text>
                                 <TouchableOpacity
                                     onPress={() => setShowModal(true)}
-                                    className="bg-[#F99F04] px-4 py-3 rounded-full"
+                                    className="bg-[#F99F04] p-5 rounded-full"
                                 >
                                     <Text className="text-white font-bold font-beVNSemibold text-xl">Tạo chuyến đi mới</Text>
                                 </TouchableOpacity>

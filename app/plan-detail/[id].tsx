@@ -75,7 +75,7 @@ export default function PlanDetailScreen() {
     const trip = itinerary.find(item => item.id === id);
 
 
-
+    console.log(itinerary)
     const animation = useRef(new Animated.Value(0)).current;
 
 

@@ -21,7 +21,7 @@ export default function ChatScreen() {
 
 
   return (
-      <View className="flex items-center bg-white w-full h-full px-6 ">
+      <View className="flex items-center bg-white w-full h-full px-4 ">
         {/*<TouchableOpacity onPress={handleBack}*/}
         {/*                  className="top-[59px] w-full flex justify-center">*/}
         {/*  <Image source={ArrLeft} className="h-6 w-6 "/>*/}
@@ -42,9 +42,9 @@ export default function ChatScreen() {
             </View>
           </View>
 
-          <View className=" w-full flex flex-col gap-4">
+          <View className="  flex flex-col ">
             <TouchableOpacity onPress={handleSkip}
-                              className="h-[52px] w-full bg-[#F99F04] flex items-center justify-center  rounded-[32px]">
+                              className="p-4  bg-[#F99F04] flex items-center justify-center  rounded-[32px]">
               <Text className="text-xl font-medium text-[#FFFFFF] font-beVNSemibold">Trò chuyện với Faifan</Text>
             </TouchableOpacity>
           </View>

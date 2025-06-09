@@ -32,6 +32,10 @@ export default function PlanningList() {
         router.push('/(noti)/MaintenanceScreen')
     }
 
+    const handleSp = () => {
+        router.push('/(app)/chatbot')
+    }
+
     return (
         <View className="flex-1 justify-between pb-[100px] bg-white">
             <ScrollView
@@ -51,8 +55,7 @@ export default function PlanningList() {
                 ) : (
                     itinerary.map((planning) => {
                         return planning.items.map((dayBlock, dayIdx) => {
-                            // ✅ Bỏ qua nếu không có day
-                            if (!dayBlock.day) return null;
+                            if (!dayBlock.day && !dayBlock.plan) return null;
 
                             const expanded = expandedPlanning[dayBlock.day];
 
@@ -64,7 +67,7 @@ export default function PlanningList() {
                                         className="flex-row items-center justify-between mb-2 "
                                     >
                                         <Text className="text-lg font-beVNBold text-gray-700">
-                                            {dayBlock.day}
+                                            {dayBlock.day ? dayBlock.day : dayBlock.plan}
                                         </Text>
                                         <Ionicons
                                             name={expanded ? 'chevron-up' : 'chevron-down'}
@@ -88,11 +91,11 @@ export default function PlanningList() {
                                                             </View>
                                                             {!isLast && <View className="w-[2px] flex-1 bg-[#F99F04]" />}
                                                         </View>
-                                                        <View className="flex-1 pb-5 font-beVN">
-                                                            <Text className="text-sm text-gray-700">{item.time}</Text>
-                                                            <Text className="font-bold text-gray-900 mt-1">{item.title}</Text>
+                                                        <View className="flex-1 pb-5 ">
+                                                            <Text className="text-sm font-beVNtext-gray-700">{item.time}</Text>
+                                                            <Text className="font-bold font-beVNBold text-gray-900 mt-2">{item.title}</Text>
                                                             {item.location && (
-                                                                <Text className="text-xs text-gray-500 mt-1">
+                                                                <Text className="text-sm font-beVN text-gray-900 mt-1">
                                                                     Địa điểm: {item.location}
                                                                 </Text>
                                                             )}
@@ -112,18 +115,18 @@ export default function PlanningList() {
 
 
             {/* Bottom Fixed Buttons */}
-            <View className="flex-row justify-between px-4">
+            <View className="flex-row justify-between w-auto px-4">
                 <TouchableOpacity
-                    onPress={() => {}}
-                    className="border border-[#F99F04] px-4 py-3 rounded-full items-center w-[48%]"
+                    onPress={handleSp}
+                    className="border border-[#F99F04] px-4 py-3  rounded-full items-center w-[46%]"
                 >
-                    <Text className="text-[#F99F04] text-[16px] font-semibold font-beVNSemibold">Trợ giúp từ Faifan</Text>
+                    <Text className="text-[#F99F04] text-xl font-semibold font-beVNSemibold">Trợ giúp từ Faifan</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={handleAction}
-                    className="bg-[#F99F04] px-4 py-3 rounded-full w-[48%] items-center"
+                    className="bg-[#F99F04] px-4 py-3 rounded-full w-[49%] items-center"
                 >
-                    <Text className="text-white text-[16px] font-beVNSemibold ">{itinerary.length > 0 ? "Chỉnh sửa lịch trình" : " Thêm lịch trình" }</Text>
+                    <Text className="text-white text-xl font-beVNSemibold ">{itinerary.length > 0 ? "Chỉnh sửa lịch trình" : " Thêm lịch trình" }</Text>
                 </TouchableOpacity>
             </View>
         </View>

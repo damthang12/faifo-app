@@ -73,8 +73,52 @@ import KH12 from '@/assets/images/plan/KH12.png';
 import KH13 from '@/assets/images/plan/KH13.png';
 
 
+import NM1 from '@/assets/images/plan/NhaMay/partner-1.png';
+import NM2 from '@/assets/images/plan/NhaMay/partner-2.png';
+import NM3 from '@/assets/images/plan/NhaMay/partner-3.png';
+import NM4 from '@/assets/images/plan/NhaMay/partner-4.png';
+import NM5 from '@/assets/images/plan/NhaMay/user-1.png';
+import NM6 from '@/assets/images/plan/NhaMay/user-2.png';
+import NM7 from '@/assets/images/plan/NhaMay/user-3.png';
+import NM8 from '@/assets/images/plan/NhaMay/user-4.png';
+
+import TD1 from '@/assets/images/plan/ThaDen/tha-den-1.png';
+import TD2 from '@/assets/images/plan/ThaDen/tha-den-2.png';
+import TD3 from '@/assets/images/plan/ThaDen/tha-den-3.png';
+import TD4 from '@/assets/images/plan/ThaDen/tha-den-4.png';
+import TD5 from '@/assets/images/plan/ThaDen/tha-den-5.png';
+import TD6 from '@/assets/images/plan/ThaDen/tha-den-6.png';
+import TD7 from '@/assets/images/plan/ThaDen/tha-den-7.png';
+import TD8 from '@/assets/images/plan/ThaDen/tha-den-8.png';
+
+import TA1 from '@/assets/images/plan/ThueAo/thue-ao-1.png';
+import TA2 from '@/assets/images/plan/ThueAo/thue-ao-2.png';
+import TA3 from '@/assets/images/plan/ThueAo/thue-ao-3.png';
+import TA4 from '@/assets/images/plan/ThueAo/thue-ao-4.png';
+import TA5 from '@/assets/images/plan/ThueAo/thue-ao-5.png';
+import TA6 from '@/assets/images/plan/ThueAo/thue-ao-6.png';
+import TA7 from '@/assets/images/plan/ThueAo/thue-ao-7.png';
+import TA8 from '@/assets/images/plan/ThueAo/thue-ao-8.png';
+
+import TQ1 from '@/assets/images/plan/ThamQuan/tham-quan-1.png';
+import TQ2 from '@/assets/images/plan/ThamQuan/tham-quan-2.png';
+import TQ3 from '@/assets/images/plan/ThamQuan/tham-quan-3.png';
+import TQ4 from '@/assets/images/plan/ThamQuan/tham-quan-4.png';
+import TQ5 from '@/assets/images/plan/ThamQuan/tham-quan-5.png';
+import TQ6 from '@/assets/images/plan/ThamQuan/tham-quan-6.png';
+import TQ7 from '@/assets/images/plan/ThamQuan/tham-quan-7.png';
+import TQ8 from '@/assets/images/plan/ThamQuan/tham-quan-8.png';
+import TQ9 from '@/assets/images/plan/ThamQuan/tham-quan-9.png';
+import TQ10 from '@/assets/images/plan/ThamQuan/tham-quan-10.png';
+
+
+
+
+
+
 import {ImageSourcePropType} from "react-native";
-import {ItineraryItem, Planning} from "@/types/type";
+import {Planning} from "@/types/type";
+import {useTranslation} from "react-i18next";
 
 type Activities = {
     id: string;
@@ -185,8 +229,8 @@ export const PLACES_SECTIONS: Place[] = [
                 openTime: '09:00 - 19:00',
                 image: LGOHA1,
                 images: {
-                    partner: [DLG1, DLG2, DLG3],
-                    user: [DLG1, DLG2, DLG3],
+                    partner: [DLG1, DLG2, DLG3, NM1, NM2, NM3, NM4],
+                    user: [NM5, NM6, NM7,NM8],
                 },
                 location: "Á Đông Silk, 62 Nguyễn Thái Học",
                 info: "Hội An đã từng là một thương cảng lớn, nơi các thương nhân từ khắp nơi trên thế giới đến trao đổi hàng hoá, trong đó có lụa và vải vóc. Lụa Hội An, được coi là một trong những chất liệu cao cấp, đã và đang trở thành biểu tượng của sự tinh tế trong nghề may.",
@@ -260,9 +304,10 @@ export const PLACES_SECTIONS: Place[] = [
                 openTime: '18:00 - 22:00',
                 image: LGOHA2,
                  images: {
-                    partner: [DLG1, DLG2, DLG3],
-                    user: [DLG1, DLG2, DLG3],
+                    partner: [TD1, TD2, TD3,TD4,TD5,TD6,TD7,TD8],
+                    user: [TD5, TD6, TD7,TD8],
                 },
+                info: 'Sau khi đèn hoa đăng cháy hết sẽ được gom lại và đưa lên bờ, hoàn toàn không làm ô nhiễm sông Hoài, vì vậy các bạn có thể hoàn toàn yên tâm tham gia hoạt động này.',
 
                 booking: [
                     {
@@ -321,11 +366,11 @@ export const PLACES_SECTIONS: Place[] = [
                 openTime: '18:00 - 22:00',
                 image: LGOHA3,
                  images: {
-                    partner: [DLG1, DLG2, DLG3],
-                    user: [DLG1, DLG2, DLG3],
+                    partner: [TA1, TA2, TA3,TA4,TA5,TA6],
+                    user: [TA5, TA6, TA7,TA8],
                 },
-
-
+                info: 'Các cửa tiệm cho thuê áo dài tại Hội An thường có các dịch vụ đi kèm như chụp hình, trang điểm và thậm chí may trang phục lấy trong ngày, nếu có nhu cầu bạn có thể liên hệ trước với cửa hàng.',
+                location: 'Áo dài Thuỷ - 101 Nguyễn Thái Học',
                 booking: [
                     {
                         id: 'booking-001',
@@ -379,10 +424,10 @@ export const PLACES_SECTIONS: Place[] = [
                 openTime: '08:00 - 17:00',
                 image: LGOHA4,
                  images: {
-                    partner: [DLG1, DLG2, DLG3],
-                    user: [DLG1, DLG2, DLG3],
+                    partner: [TQ1, TQ2, TQ3,TQ4,TQ5,TQ6],
+                    user: [TQ7,TQ8,TQ9,TQ10],
                 },
-
+                info: 'Gốm Thanh Hà nổi bật với các sản phẩm làm từ đất sét đặc biệt, được lấy từ đất sét nâu dọc sông thu Bồn có độ dẻo và kết dính cao.',
 
                 booking: [
                     {
@@ -446,7 +491,7 @@ export const PLACES_SECTIONS: Place[] = [
                     partner: [DLG1, DLG2, DLG3],
                     user: [DLG1, DLG2, DLG3],
                 },
-
+                info: 'Bánh mì Hội An đã vươn lên trở thành món ăn nổi tiếng quốc tế. Mặc dù bánh mì xuất hiện đầu tiên tại Sài Gòn, nhưng Hội An lại là nơi nâng tầm món ăn này với những biến tấu đặc biệt, thu hút du khách trong và ngoài nước.',
 
                 location: "10c Bà Triệu, Phường Cẩm Phổ",
                 booking: [
@@ -507,7 +552,7 @@ export const PLACES_SECTIONS: Place[] = [
                     partner: [DLG1, DLG2, DLG3],
                     user: [DLG1, DLG2, DLG3],
                 },
-
+                info: 'Nhà cổ Tấn Ký nổi bật với kiểu kiến trúc đặc trưng của phố cổ Hội An, gồm 3 gian và 2 chái. Các vật liệu xây dựng chủ yếu từ gỗ, đá và đất sét, tạo nên một không gian ấm cúng, vừa giữ gìn được sự mộc mạc vừa pha lẫn sự sang trọng, độc đáo.',
 
                 location: "101 Nguyễn Thái Học, Phường Minh An",
                 isMaintained: true,
@@ -575,7 +620,7 @@ export const PLACES_SECTIONS: Place[] = [
                     partner: [DLG1, DLG2, DLG3],
                     user: [DLG1, DLG2, DLG3],
                 },
-
+                info: 'Các chiếc đèn lồng ở Hội An thường có màu sắc rất đa dạng, mỗi màu sắc đều mang một ý nghĩa đặc biệt. Màu đỏ tượng trưng cho sự may mắn và thịnh vượng, màu vàng cho sự ấm áp, hạnh phúc, và màu xanh lá mang lại sự thanh thản và hòa bình.',
 
                 location: "8 Trần Cao Vân, Phường Cẩm Phổ",
                 booking: [
@@ -635,6 +680,7 @@ export const PLACES_SECTIONS: Place[] = [
                     partner: [DLG1, DLG2, DLG3],
                     user: [DLG1, DLG2, DLG3],
                 },
+                info: 'Thuở ban đầu, làng Trà Quế trồng nhiều loại rau thơm, trong đó có một loại rau được gọi là Nhự Quế, mang mùi hương nồng của quế. Đến thế kỷ XIX, nhà vua Gia Long có dịp ghé đến thưởng thức và ấn tượng với hương vị rau ở đây, nên đã đặt tên cho làng là Trà Quế.',
                 booking: [
                     {
                         id: 'booking-001',
@@ -2392,8 +2438,8 @@ export const finishItinerarys: Planning =
         items: [
             {
                 plan: 'Lịch trình dành cho bạn (1 ngày)',
-
-                day: '', itinerary: [{
+                day: '',
+                itinerary: [{
                     id: '1',
                     time: '07:30 - 09:00',
                     title: 'Khám phá phố cổ Hội An',

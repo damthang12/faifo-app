@@ -4,9 +4,11 @@ import logoStep from '../../assets/images/mascot/Mascot1.png';
 import gradient from '../../assets/images/onboarding/Gradient.png';
 import DialogueBox from "@/assets/images/onboarding/DialogueBox - md.png";
 import ArrLeft from "@/assets/images/arrow-left.png";
+import {useTranslation} from "react-i18next";
 
 export default function OnboardingStep1() {
   const router = useRouter();
+    const {t} = useTranslation()
 
   const handleSkip = () => {
     // await SecureStore.setItemAsync('language', 'en');
@@ -31,7 +33,8 @@ export default function OnboardingStep1() {
 
         <View className="top-[150px] w-full flex justify-center items-center z-10">
           <Image source={DialogueBox} className="h-[90px] w-full max-w-[175px] relative" resizeMode="contain"/>
-          <Text className="text-base text-[#000000] font-beVN absolute text-center">  Xin chào bạn,{'\n'}mình tên là Faifan.
+          <Text className="text-base text-[#000000] font-beVN absolute text-center">
+              {t('onboarding.step_1')}
           </Text>
         </View>
         <View className="top-[80px] w-full flex justify-center items-center">
@@ -42,7 +45,9 @@ export default function OnboardingStep1() {
         <View className=" w-full absolute bottom-8 flex flex-col gap-4">
           <TouchableOpacity onPress={handleSkip}
                             className="h-[52px] w-full bg-[#F99F04] flex items-center justify-center  rounded-[32px]">
-            <Text className="text-xl font-semibold text-[#FFFFFF] font-beVNSemibold">Tiếp theo</Text>
+            <Text className="text-xl font-semibold text-[#FFFFFF] font-beVNSemibold">
+                {t('onboarding.language_btn')}
+            </Text>
           </TouchableOpacity>
         </View>
 

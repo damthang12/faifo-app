@@ -4,6 +4,7 @@ import logoStep from '../../assets/images/mascot/Mascot5.png';
 import DialogueBox from "@/assets/images/onboarding/DialogueBox - sm.png";
 import ArrLeft from "@/assets/images/arrow-left.png";
 import { useState } from "react";
+import {useTranslation} from "react-i18next";
 
 
 const LANGUAGES = [
@@ -16,6 +17,7 @@ const LANGUAGES = [
 export default function OnboardingStep4() {
   const router = useRouter();
   const [selected, setSelected] = useState<string | null>(null);
+  const {t} = useTranslation()
 
 
   const handleSkip = () => {
@@ -54,13 +56,16 @@ export default function OnboardingStep4() {
             <View className="relative flex items-center justify-center z-10">
               <Image source={DialogueBox} className="h-[45px] w-[287px]" resizeMode="contain" />
               <Text className="text-base text-[#000000] font-beVN absolute text-center w-[250px] top-[10px]">
-                Bạn ghé thăm Hội An cùng ai vậy?
+                {t('onboarding.step_4')}
               </Text>
             </View>
           </View>
 
           <View className="w-full h-full">
-            <Text className="text-sm text-[#A4A7AE] font-beVN">Chọn câu trả lời</Text>
+            <Text className="text-sm text-[#A4A7AE] font-beVN">
+              {t('onboarding.step_4_choose')}
+
+            </Text>
 
             {LANGUAGES.map((lang) => (
                 <Pressable
@@ -86,7 +91,9 @@ export default function OnboardingStep4() {
         <View className=" w-full absolute bottom-8 flex flex-col gap-4">
           <TouchableOpacity onPress={handleSkip}
                             className="h-[52px] w-full bg-[#F99F04] flex items-center justify-center  rounded-[32px]">
-            <Text className="text-xl font-semibold text-[#FFFFFF] font-beVNSemibold">Hoàn thành</Text>
+            <Text className="text-xl font-semibold text-[#FFFFFF] font-beVNSemibold">
+              {t('onboarding.step_4_btn')}
+            </Text>
           </TouchableOpacity>
         </View>
 

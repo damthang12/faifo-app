@@ -3,5 +3,52 @@
   "profile_language": "Ngôn ngữ",
   "history": "Lịch sử hoạt động",
   "hello": "Xin chào",
-  "invite": "Mời bạn bè tham gia Faifo để nhận nhiều đặc quyền"
+  "invite": "Mời bạn bè tham gia Faifo để nhận nhiều đặc quyền",
+  "onboarding" : {
+    "language_btn" : "Tiếp theo",
+    "onboarding_title_1": "Khám phá Hội An theo cách riêng của bạn – chỉ với",
+    "onboarding_title_2": "một chạm",
+    "onboarding_btn_1": "Khám phá ngay",
+    "onboarding_btn_2": "Tôi đã có tài khoản",
+    "step_1": "Xin chào bạn,\nmình tên là Faifan.",
+    "step_2": "Trước khi bắt đầu cuộc hành trình \nkhám phá Hội An, Faifan sẽ cần \nmột số thông tin từ bạn.",
+    "step_3": "Bạn thích loại hình du lịch nào vậy?",
+    "step_4": "Bạn ghé thăm Hội An cùng ai thế?",
+    "step_4_choose": "Chọn câu trả lời",
+    "step_4_btn": "Hoàn thành",
+    "step_5": "Faifan đang cá nhân hoá hồ\n sơ của bạn. Chờ xíu nhé!",
+    "step_5_title": "đang tạo hồ sơ...",
+    "step_5_des": "Hệ thống đang cá nhân hoá hồ sơ của bạn.\nVui lòng đợi trong giây lát.",
+    "step_6": "Để có thể đưa ra gợi ý phù hợp,\n bạn vui lòng cho Faifan biết tuổi\n của bạn nha?",
+    "step_6_title": "bạn bao nhiêu tuổi?",
+    "step_7": "Để bắt đầu cuộc hành trình, Faifan\n cần biết bạn là ai nè?",
+    "step_7_title": "tên của bạn là gì?",
+    "step_8": "Sắp xong rồi, bạn chỉ cần nhập vài\n thông tin nữa thôi.",
+    "step_8_title": "email của bạn là?",
+    "step_9": "Chỉ còn một bước nữa thôi, bạn đã\n hoàn thành hầu hết mọi thứ rồi.",
+    "step_9_title": "tạo mật khẩu",
+    "step_9_btn": "Đăng ký tài khoản",
+    "step_10_title": "tạo tài khoản thành công!",
+    "step_10_des": "Chúc mừng bạn đã tạo tài khoản thành công. Cùng Faifan bắt đầu cuộc hành trình khám phá Hội An thôi nào!",
+    "step_10_btn": "Đi tới Hội An thôi nào!"
+  },
+  "home": {
+    "tab_1": "Văn hoá",
+    "tab_2": "Lễ hội",
+    "tab_3": "Ẩm thực",
+    "tab_4": "Checkin",
+    "tab_5": "Quà lưu niệm",
+    "tab_6": "Bảo tàng",
+    "tab_7": "Làng nghề",
+    "welcome": "Chào mừng đến với",
+    "to": "Hội An",
+
+    "section_titles": {
+      "section-1": "Điều nên làm ở Hội An",
+      "section-2": "Dành cho bạn",
+      "section-3": "Mẹo Vặt du lịch",
+      "section-4": "Xu hướng"
+    }
+  },
+  "see_more": "xem thêm"
 }

@@ -27,7 +27,7 @@ export default function SearchScreen() {
     const handleBack = () => {
         setTimeout(() => {
             router.push({
-                pathname: '/(tabs)',
+                Pathname: '/(tabs)',
                 params: {query: ''},
             });
         }, 300);

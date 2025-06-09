@@ -15,12 +15,15 @@ import {Ionicons} from '@expo/vector-icons';
 import ParticipantDropdown from "@/components/dropdown/ParticipantDropdown";
 import * as ImagePicker from 'expo-image-picker';
 import {useTripStore} from "@/store/useTripStore";
+import CalendarIcon from "@/assets/Icon/Calendar";
+import {router} from "expo-router";
 
 export default function CreatePlanModal({ isVisible, onClose }: { isVisible: boolean; onClose: () => void }) {
     const [tripName, setTripName] = useState('');
     const [startDate, setStartDate] = useState<Date | null>(null);
     const [endDate, setEndDate] = useState<Date | null>(null);
     const [isSameDay, setIsSameDay] = useState(false);
+    const [isSupport, setSupport] = useState(false);
     const [participants, setParticipants] = useState(1);
     const [notes, setNotes] = useState('');
 
@@ -55,6 +58,11 @@ export default function CreatePlanModal({ isVisible, onClose }: { isVisible: boo
         addPlannedTrip(newTrip);
         onClose();
     };
+
+    const handlePlanWithFaifan = () => {
+        router.push('/(noti)/MaintenanceScreen')
+        onClose()
+    }
 
 
     return (
@@ -102,7 +110,7 @@ export default function CreatePlanModal({ isVisible, onClose }: { isVisible: boo
                                     <Text className="text-gray-500 font-medium">
                                         {startDate ? startDate.toLocaleDateString() : 'Ngày bắt đầu'}
                                     </Text>
-                                    <Ionicons name="calendar" size={20} color="#000" />
+                                    <CalendarIcon size={20} color="#000" />
                                 </TouchableOpacity>
                             </View>
 
@@ -117,7 +125,7 @@ export default function CreatePlanModal({ isVisible, onClose }: { isVisible: boo
                                     <Text className="text-gray-500 font-medium">
                                         {endDate ? endDate.toLocaleDateString() : 'Ngày kết thúc'}
                                     </Text>
-                                    <Ionicons name="calendar" size={20} color="#000" />
+                                    <CalendarIcon size={20} color="#000" />
                                 </TouchableOpacity>
                             </View>
 
@@ -128,9 +136,9 @@ export default function CreatePlanModal({ isVisible, onClose }: { isVisible: boo
                         <View className="flex-row items-center mb-4">
                             <TouchableOpacity
                                 onPress={() => setIsSameDay(!isSameDay)}
-                                className="w-5 h-5 border border-gray-400 rounded-[6px] items-center justify-center"
+                                className={`w-5 h-5  rounded-[6px] items-center justify-center ${isSameDay ? 'bg-[#F99F04]' : 'border border-gray-800'}`}
                             >
-                                {isSameDay && <Ionicons name="checkmark" size={16} color="#F99F04" />}
+                                {isSameDay && <Ionicons name="checkmark" size={16} color="#fff" />}
                             </TouchableOpacity>
                             <Text className="ml-2 text-sm text-gray-800">Đi trong ngày</Text>
                         </View>
@@ -152,10 +160,11 @@ export default function CreatePlanModal({ isVisible, onClose }: { isVisible: boo
 
                         <View className="flex-row items-center mb-4">
                             <TouchableOpacity
-                                onPress={() => setIsSameDay(!isSameDay)}
-                                className="w-5 h-5 border border-gray-400 rounded-[6px] items-center justify-center"
+                                disabled
+                                onPress={handlePlanWithFaifan}
+                                className={`w-5 h-5  rounded-[6px] items-center justify-center ${isSupport ? 'bg-[#F99F04]' : 'border border-gray-800'}`}
                             >
-                                {isSameDay && <Ionicons name="checkmark" size={16} color="#F99F04" />}
+                                {isSupport && <Ionicons name="checkmark" size={16} color="#fff" />}
                             </TouchableOpacity>
                             <Text className="ml-2 font-medium font-beVN text-gray-800">Tạo lịch trình với sự hỗ trợ từ Faifan</Text>
                         </View>

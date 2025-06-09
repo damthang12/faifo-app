@@ -4,6 +4,7 @@ import logoStep from '../../assets/images/mascot/Mascot3.png';
 import DialogueBox from "@/assets/images/onboarding/DialogueBox - sm.png";
 import ArrLeft from "@/assets/images/arrow-left.png";
 import {useState} from "react";
+import {useTranslation} from "react-i18next";
 
 
 const LANGUAGES = [
@@ -16,6 +17,7 @@ const LANGUAGES = [
 export default function OnboardingStep3() {
   const router = useRouter();
   const [selected, setSelected] = useState<string | null>(null);
+  const {t} = useTranslation()
 
 
   const handleSkip = () => {
@@ -54,7 +56,7 @@ export default function OnboardingStep3() {
             <View className="relative flex items-center justify-center z-10">
               <Image source={DialogueBox} className="h-[45px] w-[287px]" resizeMode="contain" />
               <Text className="text-base text-[#000000] font-beVN absolute text-center w-[250px] top-[10px]">
-                Bạn thích loại hình du lịch nào nhỉ?
+                {t('onboarding.step_3')}
               </Text>
             </View>
           </View>
@@ -86,7 +88,9 @@ export default function OnboardingStep3() {
         <View className=" w-full absolute bottom-8 flex flex-col gap-4">
           <TouchableOpacity onPress={handleSkip}
                             className="h-[52px] w-full bg-[#F99F04] flex items-center justify-center  rounded-[32px]">
-            <Text className="text-xl font-semibold text-[#FFFFFF] font-beVNSemibold">Tiếp theo</Text>
+            <Text className="text-xl font-semibold text-[#FFFFFF] font-beVNSemibold">
+              {t('onboarding.language_btn')}
+            </Text>
           </TouchableOpacity>
         </View>
 

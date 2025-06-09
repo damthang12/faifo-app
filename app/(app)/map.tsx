@@ -22,6 +22,7 @@ import QLN from "@/assets/Icon/QLN";
 import LN from "@/assets/Icon/LN";
 import CI from "@/assets/Icon/CI";
 import {geocodeAddress} from "@/service/api";
+import {ACTIVITIES_DATA} from "@/constants/MockData";
 
 
 type TabKey = {
@@ -232,22 +233,29 @@ export default function MapScreen() {
                     showsHorizontalScrollIndicator={false}
                     contentContainerStyle={{ gap: 12, paddingRight: 16 }}
                 >
-                  {PLACE_DATA[selectedTab.title]?.map((place) => (
+                  {ACTIVITIES_DATA[selectedTab.title]?.map((place) => (
                       <TouchableOpacity
                           onPress={()=> handleSearch(place.name)}
                           key={place.id}
                           className="w-[320px] h-[130px] bg-white rounded-xl overflow-hidden flex-row"
                       >
                         <Image
-                            source={{ uri: place.image }}
+                            source={place.image}
                             className="w-[130px] h-full"
                             resizeMode="cover"
                         />
                         <View className="p-2 flex-1 justify-center gap-2">
                           <Text className="text-base font-semibold font-beVNSemibold">{place.name}</Text>
-                          <Text className="text-sm text-gray-500">
-                            ⭐ {place.rating} ({place.reviewCount} đánh giá)
-                          </Text>
+                          <View className="flex-row items-center gap-1">
+                            {[...Array(5)].map((_, i) => (
+                                <Ionicons
+                                    key={i}
+                                    name="star"
+                                    size={11}
+                                    color={i < place.rating ? '#FBBF24' : '#E5E7EB'}/>
+                            ))}
+                            <Text className="text-sm text-gray-500 ml-1">({place.reviewCount} đánh giá)</Text>
+                          </View>
                           <Text className="text-xs text-gray-400">Giờ mở cửa: {place.openTime}</Text>
                         </View>
                       </TouchableOpacity>
