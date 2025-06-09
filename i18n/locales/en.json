@@ -3,5 +3,53 @@
   "profile_language": "Language",
   "history": "Activity History",
   "hello": "Hello",
-  "invite": "Invite friends to Faifo to enjoy exclusive benefits"
+  "invite": "Invite friends to Faifo to enjoy exclusive benefits",
+  "onboarding" : {
+    "language_btn" : "Next",
+    "onboarding_title_1": "Explore Hoi An your way – with just",
+    "onboarding_title_2": "one touch",
+    "onboarding_btn_1": "Explore now",
+    "onboarding_btn_2": "I already have an account",
+    "step_1": "Hello, my name is Faifan",
+    "step_2": "Before starting your journey to explore Hoi An, Faifan will need some information from you.",
+    "step_3": "Bạn thích loại hình du lịch nào vậy?",
+    "step_4": "Bạn ghé thăm Hội An cùng ai thế?",
+    "step_4_choose": "Chọn câu trả lời",
+    "step_4_btn": "Hoàn thành",
+    "step_5": "Faifan đang cá nhân hoá hồ sơ của bạn. Chờ xíu nhé!",
+    "step_5_title": "đang tạo hồ sơ...",
+    "step_5_des": "Hệ thống đang cá nhân hoá hồ sơ của bạn. Vui lòng đợi trong giây lát.",
+    "step_6": "Để có thể đưa ra gợi ý phù hợp, bạn vui lòng cho Faifan biết tuổi của bạn nha?",
+    "step_6_title": "bạn bao nhiêu tuổi?",
+    "step_7": "Để bắt đầu cuộc hành trình, Faifan cần biết bạn là ai nè?",
+    "step_7_title": "tên của bạn là gì?",
+    "step_8": "Sắp xong rồi, bạn chỉ cần nhập vài thông tin nữa thôi.",
+    "step_8_title": "email của bạn là?",
+    "step_9": "Chỉ còn một bước nữa thôi, bạn đã hoàn thành hầu hết mọi thứ rồi.",
+    "step_9_title": "tạo mật khẩu",
+    "step_9_btn": "Đăng ký tài khoản",
+    "step_10_title": "tạo tài khoản thành công!",
+    "step_10_des": "Chúc mừng bạn đã tạo tài khoản thành công. Cùng Faifan bắt đầu cuộc hành trình khám phá Hội An thôi nào!",
+    "step_10_btn": "Đi tới Hội An thôi nào!"
+
+  },
+  "home": {
+    "tab_1": "Culture",
+    "tab_2": "Festival",
+    "tab_3": "Cuisine",
+    "tab_4": "Checkin",
+    "tab_5": "Souvenir",
+    "tab_6": "Museum",
+    "tab_7": "Traditional village",
+    "welcome": "Welcome to",
+    "to": "HOI AN",
+    "section_titles": {
+      "section-1": "things to do in hoi an",
+      "section-2": "for you",
+      "section-3": "travel tips",
+      "section-4": "trending"
+    }
+  },
+  "see_more": "View more"
+
 }

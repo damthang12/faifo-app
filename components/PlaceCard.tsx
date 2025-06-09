@@ -73,7 +73,8 @@ export function PlaceCard({item, section}: PropTypes) {
                                     color={i < item.rating ? '#FBBF24' : '#E5E7EB'}/>
                             ))}
                             <Text className="text-sm text-gray-800 ml-1">({item.reviewCount} đánh giá)</Text>
-                        </View><View className="flex-row items-center w-full justify-between">
+                        </View>
+                        <View className="flex-row items-center w-full justify-between">
                         <Text className="text-sm text-gray-800 font-beVN">{item.price}</Text>
                         <Text className="text-sm text-gray-800 font-beVN">Giờ mở cửa: {item.openTime}</Text>
                     </View>

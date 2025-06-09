@@ -18,20 +18,13 @@ import {PLACES_SECTIONS} from "@/constants/MockData";
 import {useRouter} from "expo-router";
 import FT from "@/assets/Icon/FT";
 import Search from "@/assets/Icon/Search";
+import {useTranslation} from "react-i18next";
 
 
-export const TABS = [
-  { id: 'tab-1', title: 'Văn hoá', img: vh },
-  { id: 'tab-2', title: 'Lễ hội', img: lh },
-  { id: 'tab-3', title: 'Ẩm thực', img: at },
-  { id: 'tab-4', title: 'Checkin', img: ci },
-  { id: 'tab-5', title: 'Quà lưu niệm', img: qln },
-  { id: 'tab-6', title: 'Bảo tàng', img: bt },
-  { id: 'tab-7', title: 'Làng nghề', img: ln },
-];
 
 export default function HomeScreen() {
   const router = useRouter();
+  const {t} = useTranslation()
 
   const insets = useSafeAreaInsets();
   const [isFilterVisible, setFilterVisible] = useState(false);
@@ -39,6 +32,18 @@ export default function HomeScreen() {
   const itemWidth = screenWidth ;
 
   const [search, setSearch] = useState('');
+
+
+
+  const TABS = [
+    { id: 'tab-1', title: t('home.tab_1'), img: vh },
+    { id: 'tab-2', title: t('home.tab_2'), img: lh },
+    { id: 'tab-3', title: t('home.tab_3'), img: at },
+    { id: 'tab-4', title: t('home.tab_4'), img: ci },
+    { id: 'tab-5', title: t('home.tab_5'), img: qln },
+    { id: 'tab-6', title: t('home.tab_6'), img: bt },
+    { id: 'tab-7', title: t('home.tab_7'), img: ln },
+  ];
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -63,8 +68,8 @@ export default function HomeScreen() {
         <View className="absolute top-0 left-0 w-full z-10 bg-[#F99F04] pb-4 h-[351px]" style={{ paddingTop: insets.top }}>
           <Image source={bgHeader} className="h-[351px] w-[340px] absolute z-0 right-0" />
           <View className="pt-10 px-4">
-            <Text className="text-base font-beVN text-[#8B3A00] font-medium">Chào mừng đến với</Text>
-            <Text className="text-[40px] text-[#8B3A00] font-semibold uppercase font-phudu">Hội An</Text>
+            <Text className="text-base font-beVN text-[#8B3A00] font-medium">{t('home.welcome')}</Text>
+            <Text className="text-[40px] text-[#8B3A00] font-semibold uppercase font-phudu">{t('home.to')}</Text>
             <View className="flex-row items-center w-full gap-4 mt-4">
               {/* Search box */}
               <View className="flex-row bg-white rounded-3xl px-4 py-2 h-11 items-center gap-2 flex-1">
@@ -108,12 +113,12 @@ export default function HomeScreen() {
                 <View key={section.id} className=" mb-10">
                   <View className="flex-row items-center justify-between mb-5">
                     <Text className="text-2xl font-semibold text-[#351904] uppercase font-phudu">
-                      {section.title}
+                      {t(`home.section_titles.${section.id}`)}
                     </Text>
                     <Pressable
                         onPress={() => setSearch(section.title)}
                         className="flex-row items-center gap-1 pr-4">
-                      <Text className="text-sm text-[#8B3A00] font-medium">Xem thêm</Text>
+                      <Text className="text-sm text-[#8B3A00] font-medium">{t('see_more')}</Text>
                       <Ionicons name="chevron-forward" size={16} color="#8B3A00" />
                     </Pressable>
                   </View>

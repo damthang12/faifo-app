@@ -41,7 +41,7 @@ export default function BookingScreen() {
     };
 
     const handleBooking = () => {
-        if (!selectedDate || !selectedTime || selectedBookingId) {
+        if (!selectedDate || !selectedTime || !selectedBookingId) {
             Alert.alert(
                 'Thiếu thông tin',
                 'Vui lòng chọn ngày và giờ trước khi đặt chỗ.'

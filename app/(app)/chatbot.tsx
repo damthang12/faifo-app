@@ -1,14 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {
-    View,
-    Text,
-    TextInput,
-    ScrollView,
-    Pressable,
+    Image,
+    Keyboard,
     KeyboardAvoidingView,
     Platform,
+    Pressable,
+    ScrollView,
+    Text,
+    TextInput,
+    TouchableOpacity,
     TouchableWithoutFeedback,
-    Keyboard, TouchableOpacity, Image,
+    View,
 } from 'react-native';
 import {askChatGPT} from "@/service/api";
 import ArrLeft from "@/assets/images/arrow-left.png";
@@ -28,8 +30,6 @@ export default function ChatBotScreen() {
     const [loading, setLoading] = useState(false);
     const [showAddPlan, setShowAddPlan] = useState(false);
     const {query} = useLocalSearchParams();
-
-
 
 
     const handleSend = async () => {
@@ -55,7 +55,7 @@ export default function ChatBotScreen() {
 
     useEffect(() => {
         if (query && typeof query === 'string' && query.trim()) {
-            const newMsg = { role: 'user', content: query.trim() };
+            const newMsg = {role: 'user', content: query.trim()};
             setMessages([newMsg]);
             setInput('');
             setLoading(true);
@@ -70,7 +70,7 @@ export default function ChatBotScreen() {
             }
 
             askChatGPT(query).then((reply) => {
-                setMessages((prev) => [...prev, { role: 'assistant', content: reply }]);
+                setMessages((prev) => [...prev, {role: 'assistant', content: reply}]);
                 setLoading(false);
             });
         } else {
@@ -146,7 +146,8 @@ export default function ChatBotScreen() {
                                             onPress={() => alert('Thêm lịch trình')}
                                             className="bg-[#F99F04] py-3 px-4 rounded-2xl mt-3"
                                         >
-                                            <Text className="text-white text-center font-semibold font-beVNSemibold">Thêm lịch
+                                            <Text className="text-white text-center font-semibold font-beVNSemibold">Thêm
+                                                lịch
                                                 trình</Text>
                                         </TouchableOpacity>
                                     )}
@@ -176,7 +177,8 @@ export default function ChatBotScreen() {
                         </ScrollView>
 
                         {/* Input */}
-                        <View className="flex-row items-center gap-2 mb-6 border border-gray-300 rounded-3xl h-[52px] px-4 mt-3">
+                        <View
+                            className="flex-row items-center gap-2 mb-6 border border-gray-300 rounded-3xl h-[52px] px-4 mt-3">
                             <TextInput
                                 className="flex-1"
                                 value={input}

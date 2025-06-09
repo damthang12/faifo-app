@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
-import {Image, Pressable, ScrollView, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import React from 'react';
+import {Pressable, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {useRouter} from "expo-router";
-import ArrLeft from "@/assets/images/arrow-left.png";
 import {useLanguageStore} from "@/store/useLanguageStore";
 import {useTranslation} from "react-i18next";
 import ArrowLeftIcon from "@/assets/Icon/ArrowLeft";

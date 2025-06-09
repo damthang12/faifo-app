@@ -70,7 +70,7 @@ export default function OnboardingScreen() {
           </View>
           </View>
         <TouchableOpacity onPress={handleSkip}  className="absolute bottom-10 h-[52px] w-full bg-[#F99F04] flex items-center justify-center  rounded-[32px]">
-          <Text className="text-xl font-semibold text-[#FFFFFF] font-beVNSemibold">Tiếp theo</Text>
+          <Text className="text-xl font-semibold text-[#FFFFFF] font-beVNSemibold">{t('onboarding.language_btn')}</Text>
         </TouchableOpacity>
 
       </View>

@@ -6,6 +6,7 @@ import gradient from '../../assets/images/onboarding/Gradient.png';
 import DialogueBox from "@/assets/images/onboarding/DialogueBox - lg-right.png";
 import ArrLeft from "@/assets/images/arrow-left.png";
 import { useEffect, useState } from "react";
+import {useTranslation} from "react-i18next";
 
 
 const LANGUAGES = [
@@ -19,6 +20,7 @@ export default function OnboardingStep5() {
   const router = useRouter();
   const [selected, setSelected] = useState<string | null>(null);
   const [step, setStep] = useState<'loading' | 'profile'>('loading');
+    const {t} = useTranslation()
 
   useEffect(() => {
     const timer = setTimeout(() => setStep('profile'), 3000);
@@ -54,7 +56,7 @@ export default function OnboardingStep5() {
           <View className="top-[150px] w-full flex justify-center items-center z-10">
             <Image source={DialogueBox} className="h-[105px] w-full max-w-[304px] relative" resizeMode="contain"/>
             <Text className="text-base text-[#000000] font-beVN absolute text-center">
-              Faifan đang cá nhân hoá hồ{'\n'} sơ của bạn. Chờ xíu nhé!
+                {t('onboarding.step_5')}
             </Text>
           </View>
           <View className="top-20 w-full flex justify-center items-center">
@@ -63,8 +65,13 @@ export default function OnboardingStep5() {
             <Image source={logoStep} className="h-[292px] w-full  absolute" resizeMode="contain"/>
           </View>
           <View className=" w-full  flex flex-col items-center justify-center gap-2">
-              <Text className="text-2xl font-semibold text-[#8B3A00] font-phudu uppercase">đang tạo hồ sơ...</Text>
-              <Text className="text-base font-bold  font-beVN text-center">Hệ thống đang cá nhân hoá hồ sơ của bạn.{'\n'} Vui lòng đợi trong giây lát.</Text>
+              <Text className="text-2xl font-semibold text-[#8B3A00] font-phudu uppercase">
+                  {t('onboarding.step_5_title')}
+
+              </Text>
+              <Text className="text-base font-bold  font-beVN text-center">
+                  {t('onboarding.step_5_des')}
+              </Text>
           </View>
         </View>
     );
@@ -88,13 +95,15 @@ export default function OnboardingStep5() {
             <View className="relative flex items-center justify-center z-10">
               <Image source={DialogueBox} className="h-[87px] w-[287px]" resizeMode="contain" />
               <Text className="text-base text-[#000000] font-beVN absolute">
-                Để có thể đưa ra gợi ý phù hợp,{'\n'} bạn vui lòng cho Faifan biết tuổi{'\n'} của bạn nha?
+                  {t('onboarding.step_6')}
               </Text>
             </View>
           </View>
 
           <View className="w-full  flex flex-col justify-center gap-2">
-            <Text className="text-[40px] text-[#8B3A00] font-phudu uppercase font-semibold ">bạn bao nhiêu tuổi?</Text>
+            <Text className="text-[40px] text-[#8B3A00] font-phudu uppercase font-semibold ">
+                {t('onboarding.step_6_title')}
+            </Text>
             <TextInput placeholder="Nhập số tuổi của bạn" className="text-sm w-full text-[#181D27] border border-gray-400 rounded-[12px] p-4 font-beVN"></TextInput>
 
 
@@ -105,7 +114,9 @@ export default function OnboardingStep5() {
         <View className=" w-full absolute bottom-8 flex flex-col gap-4">
           <TouchableOpacity onPress={handleSkip}
                             className="h-[52px] w-full bg-[#F99F04] flex items-center justify-center  rounded-[32px]">
-            <Text className="text-xl font-medium text-[#FFFFFF] font-beVNSemibold">Tiếp theo</Text>
+            <Text className="text-xl font-medium text-[#FFFFFF] font-beVNSemibold">
+                {t('onboarding.language_btn')}
+            </Text>
           </TouchableOpacity>
         </View>
 

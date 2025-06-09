@@ -3,10 +3,12 @@ import { useRouter } from 'expo-router';
 import logoStep from '../../assets/images/mascot/Mascot3.png';
 import DialogueBox from "@/assets/images/onboarding/DialogueBox-md-ritgh.png";
 import ArrLeft from "@/assets/images/arrow-left.png";
+import {useTranslation} from "react-i18next";
 
 
 export default function OnboardingStep8() {
   const router = useRouter();
+  const {t} = useTranslation()
 
   const handleSkip = () => {
     // await SecureStore.setItemAsync('language', 'en');
@@ -39,13 +41,16 @@ export default function OnboardingStep8() {
             <View className="relative flex items-center justify-center z-10">
               <Image source={DialogueBox} className="h-[87px] w-[287px]" resizeMode="contain" />
               <Text className="text-base text-[#000000] font-beVN absolute">
-                Chỉ còn một bước nữa thôi, bạn đã{'\n'} hoàn thành hầu hết mọi thứ rồi.
+                {t('onboarding.step_9')}
+
               </Text>
             </View>
           </View>
 
           <View className="w-full  flex flex-col justify-center gap-2">
-            <Text className="text-[40px] text-[#8B3A00] font-phudu uppercase font-semibold">tạo mật khẩu</Text>
+            <Text className="text-[40px] text-[#8B3A00] font-phudu uppercase font-semibold">
+              {t('onboarding.step_9_title')}
+            </Text>
             <TextInput placeholder="Nhập mật khẩu" className="text-sm w-full text-[#A4A7AE] border border-gray-400 rounded-[12px] p-4 font-beVN"></TextInput>
           </View>
 
@@ -54,7 +59,9 @@ export default function OnboardingStep8() {
         <View className=" w-full absolute bottom-8 flex flex-col gap-4">
           <TouchableOpacity onPress={handleSkip}
                             className="h-[52px] w-full bg-[#F99F04] flex items-center justify-center  rounded-[32px]">
-            <Text className="text-xl font-medium text-[#FFFFFF] font-beVN">Đăng ký tài khoản</Text>
+            <Text className="text-xl font-medium text-[#FFFFFF] font-beVNSemibold">
+              {t('onboarding.step_9_btn')}
+            </Text>
           </TouchableOpacity>
           <Text className="text-base  text-[#535862] text-center font-beVN">
             Bằng cách tiếp tục, bạn đồng ý với{' '}

@@ -3,5 +3,54 @@
   "profile_language": "언어",
   "history": "활동 기록",
   "hello": "Hello",
-  "invite": "Invite friends to Faifo to enjoy exclusive benefits"
+  "invite": "Invite friends to Faifo to enjoy exclusive benefits",
+  "onboarding" : {
+    "language_btn" : "다음",
+    "onboarding_title_1": "나만의 방식으로 호이안을 탐험하세요 – 단",
+    "onboarding_title_2": "한 번의 터치로",
+    "onboarding_btn_1": "지금 탐험하기",
+    "onboarding_btn_2": "저는 이미 계정이 있습니다",
+    "step_1": "안녕하세요, \n제 이름은 파이판입니다",
+    "step_2": "호이안을 탐험하는 여정을 시작하기 전에, 파이판은 여러분에게 몇 가지 정보를 요청할 것입니다",
+    "step_3": "Bạn thích loại hình du lịch nào vậy?",
+    "step_4": "Bạn ghé thăm Hội An cùng ai thế?",
+    "step_4_choose": "Chọn câu trả lời",
+    "step_4_btn": "Hoàn thành",
+    "step_5": "Faifan đang cá nhân hoá hồ sơ của bạn. Chờ xíu nhé!",
+    "step_5_title": "đang tạo hồ sơ...",
+    "step_5_des": "Hệ thống đang cá nhân hoá hồ sơ của bạn. Vui lòng đợi trong giây lát.",
+    "step_6": "Để có thể đưa ra gợi ý phù hợp, bạn vui lòng cho Faifan biết tuổi của bạn nha?",
+    "step_6_title": "bạn bao nhiêu tuổi?",
+    "step_7": "Để bắt đầu cuộc hành trình, Faifan cần biết bạn là ai nè?",
+    "step_7_title": "tên của bạn là gì?",
+    "step_8": "Sắp xong rồi, bạn chỉ cần nhập vài thông tin nữa thôi.",
+    "step_8_title": "email của bạn là?",
+    "step_9": "Chỉ còn một bước nữa thôi, bạn đã hoàn thành hầu hết mọi thứ rồi.",
+    "step_9_title": "tạo mật khẩu",
+    "step_9_btn": "Đăng ký tài khoản",
+    "step_10_title": "tạo tài khoản thành công!",
+    "step_10_des": "Chúc mừng bạn đã tạo tài khoản thành công. Cùng Faifan bắt đầu cuộc hành trình khám phá Hội An thôi nào!",
+    "step_10_btn": "Đi tới Hội An thôi nào!"
+
+  },
+  "home": {
+    "tab_1": "문화",
+    "tab_2": "제전",
+    "tab_3": "요리",
+    "tab_4": "체크인",
+    "tab_5": "기념품",
+    "tab_6": "박물관",
+    "tab_7": "전통 마을",
+    "welcome": "Welcome to",
+    "to": "HOI AN",
+    "section_titles": {
+      "section-1": "Điều nên làm ở Hội An",
+      "section-2": "Dành cho bạn",
+      "section-3": "Mẹo Vặt du lịch",
+      "section-4": "Xu hướng"
+    }
+
+  },
+  "see_more": "xem thêm"
+
 }

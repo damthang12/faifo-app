@@ -6,6 +6,7 @@ import {useRouter} from 'expo-router';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import {Ionicons} from '@expo/vector-icons';
 import ModalEditAvatar from '@/components/modal/EditAvatar';
+import {useToast} from "@/components/Toast";
 
 
 export default function ProfileEditScreen() {
@@ -17,7 +18,7 @@ export default function ProfileEditScreen() {
     const [phone, setPhone] = useState('(+84) 965 600 858');
     const [dob, setDob] = useState('');
     const [isDatePickerVisible, setDatePickerVisible] = useState(false);
-
+    const {showToast} = useToast()
     const showDatePicker = () => setDatePickerVisible(true);
     const hideDatePicker = () => setDatePickerVisible(false);
     const [showEditModal, setShowEditModal] = useState(false);
@@ -69,8 +70,12 @@ export default function ProfileEditScreen() {
             router.back();
     };
 
+    const handleUpdate = () => {
+        showToast('Cập nhật thành công Thông tin tài khoản của bạn đã được lưu.', 'success')
+    }
+
     return (
-        <View className="flex-1 bg-white px-4 pt-20">
+        <View className="flex-1 bg-white items-center px-4 pt-20">
             <View className="w-full flex flex-row items-center justify-between  mb-[50px]">
                 {/* Back button */}
                 <TouchableOpacity onPress={handleBack} className="">
@@ -94,7 +99,7 @@ export default function ProfileEditScreen() {
             </TouchableOpacity>
 
             {/* Trường thông tin */}
-            <View className="space-y-4 flex-col gap-4">
+            <View className="space-y-4 flex-col gap-4 w-full">
                 <View>
                     <Text className="font-semibold font-beVNSemibold text-sm text-gray-600 mb-1">Tên người dùng</Text>
                     <TextInput
@@ -150,7 +155,9 @@ export default function ProfileEditScreen() {
                 </View>
             </View>
 
-            <TouchableOpacity className="bg-[#F99F04] mt-6 p-4 rounded-full items-center">
+            <TouchableOpacity
+                onPress={handleUpdate}
+                className="bg-[#F99F04] absolute bottom-10 w-full  p-4 rounded-full items-center">
                 <Text className="text-white font-bold text-lg">Lưu thông tin</Text>
             </TouchableOpacity>
 
