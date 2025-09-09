@@ -6,7 +6,6 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import 'react-native-reanimated';
 import '../global.css';
-import { StyleSheet } from 'react-native';
 
 
 import {useColorScheme} from '@/hooks/useColorScheme';

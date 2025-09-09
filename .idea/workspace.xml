@@ -5,47 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c302d3bd-7989-4001-96d0-7193c4b3d6ac" name="Changes" comment="update code">
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/NhaMay/partner-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/NhaMay/partner-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/NhaMay/partner-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/NhaMay/partner-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/NhaMay/user-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/NhaMay/user-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/NhaMay/user-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/NhaMay/user-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThaDen/tha-den-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThaDen/tha-den-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThaDen/tha-den-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThaDen/tha-den-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThaDen/tha-den-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThaDen/tha-den-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThaDen/tha-den-7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThaDen/tha-den-8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThamQuan/tham-quan-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThamQuan/tham-quan-10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThamQuan/tham-quan-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThamQuan/tham-quan-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThamQuan/tham-quan-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThamQuan/tham-quan-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThamQuan/tham-quan-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThamQuan/tham-quan-7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThamQuan/tham-quan-8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThamQuan/tham-quan-9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThueAo/thue-ao-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThueAo/thue-ao-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThueAo/thue-ao-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThueAo/thue-ao-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThueAo/thue-ao-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThueAo/thue-ao-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThueAo/thue-ao-7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/plan/ThueAo/thue-ao-8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/modal/PlanningModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/onboarding/welcome-img-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/useScreen.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(app)/chatbot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/chatbot.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(app)/language.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/language.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(app)/map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/map.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(app)/profileDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/profileDetail.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(app)/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(login)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(login)/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(onboardings)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(onboardings)/step1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step1.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(onboardings)/step2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step2.tsx" afterDir="false" />
@@ -56,27 +20,21 @@
       <change beforePath="$PROJECT_DIR$/app/(onboardings)/step7.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step7.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(onboardings)/step8.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/step8.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(onboardings)/success.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(onboardings)/success.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/camera.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/camera.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/chat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/plan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/plan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/booking/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/booking/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/places/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/places/[id].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/plan-detail/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/plan-detail/[id].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/planed-detail/[id].tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Icon/CI.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Icon/CI.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Icon/Calendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Icon/Calendar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Icon/EditIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Icon/EditIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CustomBar/CustomeBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CustomBar/CustomeBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/PlaceCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/PlaceCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/dropdown/ImageDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/dropdown/ImageDropdown.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/dropdown/PlanDrropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/dropdown/PlanDrropdown.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/modal/CreatePlanModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/CreatePlanModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/AddOnPlan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/AddOnPlan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/MockData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/MockData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/i18n/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/locales/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/i18n/locales/ko.json" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/locales/ko.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/i18n/locales/vi.json" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/locales/vi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dropdown/ReviewDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/dropdown/ReviewDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modal/FavoriteListModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/FavoriteListModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modal/FilterModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/FilterModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modal/PlanningModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/PlanningModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +44,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="dev-v2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -106,12 +64,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="dev-v2" />
-                    <option name="lastUsedInstant" value="1749200439" />
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1749526573" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1749200438" />
+                    <option name="branchName" value="dev-v2" />
+                    <option name="lastUsedInstant" value="1749200439" />
                   </RecentBranch>
                 </list>
               </option>
@@ -137,27 +95,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "dev-v2",
-    "last_opened_file_path": "/Users/u2u2/Dev/u2u/faifo-app/assets/images/plan/ThamQuan",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "/Users/u2u2/Dev/u2u/faifo-app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/u2u2/Dev/u2u/faifo-app/assets/images/onboarding&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/u2u2/Dev/u2u/faifo-app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images/onboarding" />
       <recent name="$PROJECT_DIR$/assets/images/plan/ThamQuan" />
       <recent name="$PROJECT_DIR$/assets/images/plan/ThueAo" />
       <recent name="$PROJECT_DIR$/assets/images/plan/ThaDen" />
       <recent name="$PROJECT_DIR$/assets/images/plan/NhaMay" />
-      <recent name="$PROJECT_DIR$/components/modal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
@@ -168,7 +126,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-WS-251.26094.131" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.26927.40" />
       </set>
     </attachedChunks>
   </component>
@@ -207,6 +165,15 @@
       <workItem from="1748416259369" duration="12714000" />
       <workItem from="1748785680513" duration="60026000" />
       <workItem from="1749394048602" duration="30524000" />
+      <workItem from="1749529854861" duration="25000" />
+      <workItem from="1749898767657" duration="737000" />
+      <workItem from="1751515091486" duration="238000" />
+      <workItem from="1754924956089" duration="7100000" />
+      <workItem from="1755529578787" duration="19281000" />
+      <workItem from="1755673483123" duration="5000" />
+      <workItem from="1756179665971" duration="6923000" />
+      <workItem from="1756349287385" duration="1197000" />
+      <workItem from="1756549799411" duration="10579000" />
     </task>
     <task id="LOCAL-00004" summary="update code">
       <option name="closed" value="true" />

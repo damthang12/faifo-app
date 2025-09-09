@@ -71,9 +71,9 @@ export default function LoginScreen() {
                           className="top-[59px] w-full flex justify-center">
           <Image source={ArrLeft} className="h-6 w-6 "/>
         </TouchableOpacity>
-        <View className="top-[80px] w-full flex justify-center items-center gap-10">
+        <View className="top-[80px] tablet:top-[150px] w-full max-w-full tablet:max-w-[768px] flex justify-center items-center gap-10">
 
-          <View className=" w-full  flex flex-col justify-center gap-2">
+          <View className=" w-full  flex flex-col tablet:items-center justify-center gap-2">
             <Text className="text-[40px] text-[#8B3A00] font-phudu uppercase font-semibold">đăng nhập</Text>
             <Text className=" text-[#535862] font-beVN ">Chào mừng bạn trở lại với Hội An – nơi mỗi lần ghé là một lần nhớ.</Text>
           </View>
@@ -127,7 +127,7 @@ export default function LoginScreen() {
 
         </View>
 
-        <View className=" w-full absolute bottom-8 flex flex-col items-center gap-4">
+        <View className=" w-full max-w-full tablet:max-w-[768px] absolute bottom-8 tablet:bottom-12 flex flex-col items-center gap-4">
           <Text className="text-gray-400">Hoặc</Text>
           <TouchableOpacity onPress={handleLoginGG}
                             className="h-[52px] w-full border border-[#A4A7AE] flex items-center justify-center  rounded-[32px]">

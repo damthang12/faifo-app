@@ -8,7 +8,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "ios:ipad": "react-native run-ios --simulator='iPad mini (A17 Pro)'"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
@@ -20,6 +21,7 @@
     "axios": "^1.9.0",
     "dayjs": "^1.11.13",
     "expo": "~53.0.8",
+    "expo-av": "^15.1.7",
     "expo-blur": "~14.1.4",
     "expo-camera": "~16.1.6",
     "expo-constants": "~17.1.6",
@@ -63,11 +65,13 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@react-native-community/cli": "^20.0.0",
     "@types/react": "~19.0.10",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~9.2.0",
     "tailwindcss": "3.3.5",
     "typescript": "~5.8.3"
   },
-  "private": true
+  "private": true,
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

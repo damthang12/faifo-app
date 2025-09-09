@@ -29,7 +29,7 @@ module.exports = {
                 gradientBg: 'linear-gradient(0deg, rgba(185, 255, 152, 0.30) 0%, rgba(185, 255, 152, 0.30) 100%)',
             },
             screens: {
-                tablet: '768px',
+                tablet: '744px',
             },
         },
     },

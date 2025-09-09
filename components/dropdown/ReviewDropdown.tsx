@@ -57,7 +57,7 @@ export default function ReviewDropdown({onOpen}: Props) {
 
 
     return (
-        <View className="mt-4">
+        <View className="mt-4 ">
             <TouchableOpacity onPress={toggle} className="flex-row justify-between items-center mb-3">
                 <Text className="text-xl font-semibold text-[#8B3A00] font-beVNSemibold">Đánh giá</Text>
                 <Ionicons name={expanded ? 'chevron-up' : 'chevron-down'} size={24} color="#351904"/>
@@ -98,8 +98,9 @@ export default function ReviewDropdown({onOpen}: Props) {
                     <SwiperFlatList
                         paginationStyle={{bottom: -10}}
                         data={REVIEWS}
+                        contentContainerStyle={{width: '100%'}}
                         renderItem={({item}) => (
-                            <View className="p-4 rounded-2xl mr-4 w-[374px] max-h-[263px] border border-gray-200">
+                            <View className="p-4 rounded-2xl mr-4 w-[374px] tablet:w-[485px] max-h-[263px] border border-gray-200">
                                 <View className="flex-row items-center mb-4">
                                     {[...Array(5)].map((_, index) => (
                                         <Ionicons

@@ -1,11 +1,11 @@
-import LGOHA1 from '@/assets/images/home/lam-gi-o-ha-1.png';
-import LGOHA2 from '@/assets/images/home/lam-gi-o-ha-2.png';
-import LGOHA3 from '@/assets/images/home/lam-gi-o-ha-3.png';
-import LGOHA4 from '@/assets/images/home/lam-gi-o-ha-4.png';
 import DCB1 from '@/assets/images/home/danh-cho-ban-1.png';
 import DCB2 from '@/assets/images/home/danh-cho-ban-2.png';
 import DCB3 from '@/assets/images/home/danh-cho-ban-3.png';
 import DCB4 from '@/assets/images/home/danh-cho-ban-4.png';
+import LGOHA1 from '@/assets/images/home/lam-gi-o-ha-1.png';
+import LGOHA2 from '@/assets/images/home/lam-gi-o-ha-2.png';
+import LGOHA3 from '@/assets/images/home/lam-gi-o-ha-3.png';
+import LGOHA4 from '@/assets/images/home/lam-gi-o-ha-4.png';
 import MVDL1 from '@/assets/images/home/meo-vat-du-lich-1.png';
 import MVDL2 from '@/assets/images/home/meo-vat-du-lich-2.png';
 import MVDL3 from '@/assets/images/home/meo-vat-du-lich-3.png';
@@ -59,6 +59,10 @@ import KHHA from '@/assets/images/detail/KHHA.png';
 
 
 import KH1 from '@/assets/images/plan/KH1.png';
+import KH10 from '@/assets/images/plan/KH10.png';
+import KH11 from '@/assets/images/plan/KH11.png';
+import KH12 from '@/assets/images/plan/KH12.png';
+import KH13 from '@/assets/images/plan/KH13.png';
 import KH2 from '@/assets/images/plan/KH2.png';
 import KH3 from '@/assets/images/plan/KH3.png';
 import KH4 from '@/assets/images/plan/KH4.png';
@@ -67,10 +71,6 @@ import KH6 from '@/assets/images/plan/KH6.png';
 import KH7 from '@/assets/images/plan/KH7.png';
 import KH8 from '@/assets/images/plan/KH8.png';
 import KH9 from '@/assets/images/plan/KH9.png';
-import KH10 from '@/assets/images/plan/KH10.png';
-import KH11 from '@/assets/images/plan/KH11.png';
-import KH12 from '@/assets/images/plan/KH12.png';
-import KH13 from '@/assets/images/plan/KH13.png';
 
 
 import NM1 from '@/assets/images/plan/NhaMay/partner-1.png';
@@ -101,6 +101,7 @@ import TA7 from '@/assets/images/plan/ThueAo/thue-ao-7.png';
 import TA8 from '@/assets/images/plan/ThueAo/thue-ao-8.png';
 
 import TQ1 from '@/assets/images/plan/ThamQuan/tham-quan-1.png';
+import TQ10 from '@/assets/images/plan/ThamQuan/tham-quan-10.png';
 import TQ2 from '@/assets/images/plan/ThamQuan/tham-quan-2.png';
 import TQ3 from '@/assets/images/plan/ThamQuan/tham-quan-3.png';
 import TQ4 from '@/assets/images/plan/ThamQuan/tham-quan-4.png';
@@ -109,16 +110,20 @@ import TQ6 from '@/assets/images/plan/ThamQuan/tham-quan-6.png';
 import TQ7 from '@/assets/images/plan/ThamQuan/tham-quan-7.png';
 import TQ8 from '@/assets/images/plan/ThamQuan/tham-quan-8.png';
 import TQ9 from '@/assets/images/plan/ThamQuan/tham-quan-9.png';
-import TQ10 from '@/assets/images/plan/ThamQuan/tham-quan-10.png';
+
+import TG1 from '@/assets/images/travel-guide/am-thuc-1.png';
+import TG2 from '@/assets/images/travel-guide/am-thuc-2.png';
+import TG3 from '@/assets/images/travel-guide/am-thuc-3.png';
+import TG4 from '@/assets/images/travel-guide/di-chuyen-1.png';
+import TG5 from '@/assets/images/travel-guide/di-chuyen-2.png';
+import TG6 from '@/assets/images/travel-guide/len-ke-hoach.png';
+import TG7 from '@/assets/images/travel-guide/vh-dia-phuong-1.png';
+import TG8 from '@/assets/images/travel-guide/vh-dia-phuong-2.png';
 
 
 
-
-
-
-import {ImageSourcePropType} from "react-native";
-import {Planning} from "@/types/type";
-import {useTranslation} from "react-i18next";
+import { Planning } from "@/types/type";
+import { ImageSourcePropType } from "react-native";
 
 type Activities = {
     id: string;
@@ -146,6 +151,7 @@ export interface Booking {
 
 
 }
+
 
 export interface Place {
     id: string;
@@ -192,8 +198,15 @@ export interface Item {
 
     travelTips?: {
         title: string;
-        description?: string[];
+        description?: string[];  
     }
+    travelGuidelines?: {
+        title: string;
+        description?: string[];
+        image?: ImageSourcePropType;       
+        address?: string;  
+        note?: string;
+    }[]
     reviews?: string[]
     needHelp?: string[];
 }
@@ -754,7 +767,22 @@ export const PLACES_SECTIONS: Place[] = [
                     partner: [DLG1, DLG2, DLG3],
                     user: [DLG1, DLG2, DLG3],
                 },
-
+                travelGuidelines: [
+                    {
+                        title: 'Lựa chọn thời gian du lịch theo phong cách của bạn',
+                        description: ['Bạn yêu thích sự yên tĩnh? Hãy đi vào mùa thấp điểm (tháng 2–4, 9–11) để tránh đông đúc và tận hưởng Hội An nhẹ nhàng.', 'Bạn là người thích lễ hội và nhộn nhịp? Đi vào dịp rằm âm lịch để ngắm đèn lồng lung linh và tham gia các hoạt động văn hóa dân gian.'],
+                    },
+                    {
+                        title: 'Tùy chọn chỗ ở đúng gu',
+                        description: ['Gu chill & riêng tư: Homestay bên bờ sông Hoài hoặc villa ngoại ô với vườn xanh.', 'Gu hiện đại & tiện nghi: Khách sạn boutique trong phố cổ, dễ dàng di chuyển và check-in sống ảo.'],
+                    },
+                    {
+                        title: 'Đặt trước những trải nghiệm cá nhân hóa',
+                        description: ['Workshop làm đèn lồng hoặc gốm phù hợp người thích thủ công.'],
+                        image: TG6,
+                        note: 'Địa điểm bạn ghé đến không nhất thiết phải nổi tiếng, miễn là nó phù hợp với bạn. Hãy để Faifo giúp bạn tìm ra nó nhé.',
+                    },
+                ],
             },
             {
                 id: '10',
@@ -768,9 +796,25 @@ export const PLACES_SECTIONS: Place[] = [
                     partner: [DLG1, DLG2, DLG3],
                     user: [DLG1, DLG2, DLG3],
                 },
-
-
-
+                travelGuidelines: [
+                    {
+                        title: 'Sáng sớm ở chợ – nơi bắt đầu một ngày Hội An',
+                        description: ['Đi chợ Bà Lê hoặc chợ Hội An tầm 6h sáng để thưởng thức các món ăn ở chợ và mua quà lưu niệm, cũng như khám phá các loại gia vị miền Trung.'],
+                        address: '👉  Bạn có thể mua thử một ít rau Trà  Quế - loại rau đặc sản ở đây'
+                    },
+                    {
+                        title: 'Ăn sáng như người Hội An',
+                        description: ['Chọn một tô mì Quảng, cao lầu ở hàng quen của dân địa phương vào sáng sớm.'],
+                        address: 'Địa điểm quán ăn địa phương',
+                        image: TG7,
+                    },
+                    {
+                        title: 'Nghe hát bài chòi – khi văn hoá là niềm vui tập thể',
+                        description: ['Buổi tối cuối tuần, tại quảng trường Hội An, có những buổi biểu diễn dân gian miễn phí. Hát bài chòi vừa là trò chơi vừa là âm nhạc dân tộc, người thắng cuộc có thể nhận được quà nho nhỏ.', 'Đừng chỉ đứng xem – hãy tham gia thử một lượt, và bạn sẽ thấy mình không còn là “người ngoài cuộc”.'],
+                        image: TG8,
+                        note: 'Sống như một người Hội Ankhông chỉ là khách du lịch',
+                    },
+                ],
             },
             {
                 id: '11',
@@ -784,6 +828,24 @@ export const PLACES_SECTIONS: Place[] = [
                     partner: [DLG1, DLG2, DLG3],
                     user: [DLG1, DLG2, DLG3],
                 },
+                travelGuidelines: [
+                    {
+                        title: 'Xích lô – trải nghiệm truyền thống và nghỉ chân giữa phố',
+                        description: ['Thuê một chiếc xe đạp, bạn có thể thong thả đi xa hơn, đến làng Trà Quế, bãi biển An Bàng hay ghé các quán cà phê ẩn mình trong ngõ.'],
+                        address: 'Địa điểm thuê xe đạp Hội An',
+                    },
+                    {
+                        title: 'Xe máy – vận chuyển cực nhanh',
+                        description: ['Tài xế là người bản địa lâu năm – rất hiểu phố cổ và có thể chia sẻ cho bạn những câu chuyện thú vị về từng con đường, quán ăn hay lịch sử ngôi nhà cổ.'],
+                        image: TG4,
+                    },
+                    {
+                        title: 'Thuyền nhỏ – ngắm phố từ mặt nước lúc chiều xuống',
+                        description: ['Bạn có thể chọn ngắm phố cổ bằng cách đi thuyền trên sông Hoài. Thời gian lý tưởng tầm 17h30 - 19h để có thể ngắm hoàng hôn khi trời chưa tối hẳn. Nếu lịch tình cho phép, bạn có thể ở lại để tham gia thả đèn hoa đăng.'],
+                        image: TG5,
+                        note: 'Sống như một người Hội An không chỉ là khách du lịch'
+                    },
+                ],
 
 
 
@@ -800,6 +862,25 @@ export const PLACES_SECTIONS: Place[] = [
                     partner: [DLG1, DLG2, DLG3],
                     user: [DLG1, DLG2, DLG3],
                 },
+                travelGuidelines: [
+                    {
+                        title: 'Cao lầu, mì quảng',
+                        description: ['Chọn một tô mì Quảng, cao lầu ở hàng quen của dân địa phương vào sáng sớm.'],
+                        address: 'Địa điểm quán ăn địa phương',
+                        image: TG1,
+                    },
+                    {
+                        title: 'Bánh mì Phượng, bánh mì Madam Khánh',
+                        description: ['Thế giới trong một ổ bánh: kết hợp giữa Việt – Pháp – Hội An, mỗi tiệm có công thức riêng, không cái nào giống cái nào.'],
+                        image: TG2,
+                    },
+                    {
+                        title: 'Bánh hoa hồng trắng & hoành thánh chiên',
+                        description: ['Món ăn nhìn như tác phẩm nghệ thuật, mỏng nhẹ và tinh tế đến từng chi tiết.'],
+                        image: TG3,
+                        note: 'Sống như một người Hội An không chỉ là khách du lịch'
+                    },
+                ],
 
 
 
@@ -1132,8 +1213,7 @@ export const PLACES_SECTIONS: Place[] = [
                 ]
             },
             {
-                id: '17',
-                place: 'Tham quan  nhà cổ Tấn Ký',
+                id: '17',                place: 'Tham quan nhà cổ Tấn Ký',
                 rating: 4.6,
                 reviewCount: 1120,
                 price: 'Miễn phí',

@@ -25,258 +25,253 @@ import PlanningModal from "@/components/modal/PlanningModal";
 
 
 export default function PlaceDetailScreen() {
-    const {id} = useLocalSearchParams();
-    const router = useRouter();
-    const [liked, setLiked] = useState(false);
-    const [showReviewModal, setShowReviewModal] = useState(false);
-    const [showModal, setShowModal] = useState(false);
-    const [showFavoriteModal, setShowFavoriteModal] = useState(false);
-    const place = PLACES_SECTIONS.flatMap(section => section.items).find(item => item.id === id) as Item;
-    const scrollY = useRef(new Animated.Value(0)).current;
-    const {hasItineraryItem, itinerary} = useTripStore();
-
-
-
-    // Tạo một opacity dựa trên scroll position
-    const blurOpacity = scrollY.interpolate({
-        inputRange: [0, 50],
-        outputRange: [0, 1],
-        extrapolate: 'clamp',
-    });
-
-
-    const placeInfo = {
-        // id: Date.now().toString(),
-        id: place.id,
-        time: place.openTime,
-        title: place.place,
-        location: place.location || '',
-    };
-
-
-
-    const alreadyAdded = hasItineraryItem(place.id);
-    const isAdd = useMemo(() => {
-        return hasItineraryItem(place.id);
-    }, [hasItineraryItem, place.id,itinerary]);
-
-
-
-
-
-    return (
-        <View className="flex-1 bg-white">
-            {/* Header Blur */}
-            <Animated.View
-                style={{
-                    position: 'absolute',
-                    top: -40,
-                    left: 0,
-                    right: 0,
-                    height: 90,
-                    paddingTop: Platform.OS === 'ios' ? 40 : StatusBar.currentHeight,
-                    zIndex: 10,
-                    opacity: blurOpacity,
-                }}
+  const {id} = useLocalSearchParams();
+  const router = useRouter();
+  const [liked, setLiked] = useState(false);
+  const [showReviewModal, setShowReviewModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [showFavoriteModal, setShowFavoriteModal] = useState(false);
+  const place = PLACES_SECTIONS.flatMap(section => section.items).find(item => item.id === id) as Item;
+  const scrollY = useRef(new Animated.Value(0)).current;
+  const {hasItineraryItem, itinerary} = useTripStore();
+  
+  
+  // Tạo một opacity dựa trên scroll position
+  const blurOpacity = scrollY.interpolate({
+    inputRange: [0, 50],
+    outputRange: [0, 1],
+    extrapolate: 'clamp',
+  });
+  
+  
+  const placeInfo = {
+    // id: Date.now().toString(),
+    id: place.id,
+    time: place.openTime,
+    title: place.place,
+    location: place.location || '',
+  };
+  
+  
+  const alreadyAdded = hasItineraryItem(place.id);
+  const isAdd = useMemo(() => {
+    return hasItineraryItem(place.id);
+  }, [hasItineraryItem, place.id, itinerary]);
+  
+  
+  return (
+    <View className="flex-1 bg-white">
+      {/* Header Blur */}
+      <Animated.View
+        style={{
+          position: 'absolute',
+          top: -40,
+          left: 0,
+          right: 0,
+          height: 90,
+          paddingTop: Platform.OS === 'ios' ? 40 : StatusBar.currentHeight,
+          zIndex: 10,
+          opacity: blurOpacity,
+        }}
+      >
+        <BlurView intensity={50} tint="light" style={{flex: 1}}/>
+      </Animated.View>
+      
+      {/* Scroll Content */}
+      <Animated.ScrollView
+        scrollEventThrottle={16}
+        onScroll={Animated.event(
+          [{nativeEvent: {contentOffset: {y: scrollY}}}],
+          {useNativeDriver: false}
+        )}
+      >
+        <View className="flex-1">
+          {/* Swiper for images */}
+          <SwiperFlatList
+            data={place?.images?.user}
+            showPagination
+            autoplay
+            autoplayDelay={5}
+            autoplayLoop
+            autoplayLoopKeepAnimation
+            index={0}
+            renderItem={({item}) => (
+              <Image source={item} className="w-[430px] h-[332px] tablet:h-[678px] tablet:w-[1024px]"/>
+            )}
+            keyExtractor={(item, index) => `${place.id}-img-${index}`}
+            paginationStyle={{
+              position: 'absolute',
+              bottom: 0,
+              alignSelf: 'center',
+            }}
+            paginationStyleItem={{
+              width: 32,
+              height: 4,
+              marginHorizontal: 4,
+              borderRadius: 4,
+              opacity: 0.8,
+            }}
+            paginationStyleItemActive={{
+              backgroundColor: '#fff',
+              opacity: 1,
+            }}
+          />
+          
+          <TouchableOpacity
+            onPress={() => router.back()}
+            className="absolute top-12 left-4 bg-white/80 p-2 rounded-full"
+          >
+            <Ionicons name="arrow-back" size={20} color="#000"/>
+          </TouchableOpacity>
+          
+          <View className="absolute top-12 right-4 flex-row space-x-3 gap-2">
+            <TouchableOpacity
+              onPress={() => setShowFavoriteModal(true)}
+              className="bg-white/80 p-2 rounded-full"
             >
-                <BlurView intensity={50} tint="light" style={{flex: 1}}/>
-            </Animated.View>
-
-            {/* Scroll Content */}
-            <Animated.ScrollView
-                scrollEventThrottle={16}
-                onScroll={Animated.event(
-                    [{nativeEvent: {contentOffset: {y: scrollY}}}],
-                    {useNativeDriver: false}
-                )}
+              <View>
+                <Ionicons name={liked ? 'heart' : 'heart-outline'} size={20}
+                          color={liked ? 'red' : '#000'}/>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={async () => {
+                try {
+                  await Share.share({
+                    message: `Khám phá địa điểm: ${place?.place}`,
+                  });
+                } catch (error) {
+                  console.log('Share error:', error);
+                }
+              }}
+              className="bg-white/80 p-2 rounded-full"
             >
-                <View className="flex-1">
-                    {/* Swiper for images */}
-                    <SwiperFlatList
-                        data={place?.images?.user}
-                        showPagination
-                        autoplay
-                        autoplayDelay={5}
-                        autoplayLoop
-                        autoplayLoopKeepAnimation
-                        index={0}
-                        renderItem={({item}) => (
-                            <Image source={item} className="w-[430px] h-[332px] "/>
-                        )}
-                        keyExtractor={(item, index) => `${place.id}-img-${index}`}
-                        paginationStyle={{
-                            position: 'absolute',
-                            bottom: 0,
-                            alignSelf: 'center',
-                        }}
-                        paginationStyleItem={{
-                            width: 32,
-                            height: 4,
-                            marginHorizontal: 4,
-                            borderRadius: 4,
-                            opacity: 0.8,
-                        }}
-                        paginationStyleItemActive={{
-                            backgroundColor: '#fff',
-                            opacity: 1,
-                        }}
-                    />
-
-                    <TouchableOpacity
-                        onPress={() => router.back()}
-                        className="absolute top-12 left-4 bg-white/80 p-2 rounded-full"
-                    >
-                        <Ionicons name="arrow-back" size={20} color="#000"/>
-                    </TouchableOpacity>
-
-                    <View className="absolute top-12 right-4 flex-row space-x-3 gap-2">
-                        <TouchableOpacity
-                            onPress={() => setShowFavoriteModal(true)}
-                            className="bg-white/80 p-2 rounded-full"
-                        >
-                            <View>
-                                <Ionicons name={liked ? 'heart' : 'heart-outline'} size={20}
-                                          color={liked ? 'red' : '#000'}/>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={async () => {
-                                try {
-                                    await Share.share({
-                                        message: `Khám phá địa điểm: ${place?.place}`,
-                                    });
-                                } catch (error) {
-                                    console.log('Share error:', error);
-                                }
-                            }}
-                            className="bg-white/80 p-2 rounded-full"
-                        >
-                            <Ionicons name="share-social-outline" size={20} color="#000"/>
-                        </TouchableOpacity>
-                    </View>
-
-                </View>
-
-                <View className="p-4 flex-1 gap-2">
-                    <Text className="text-2xl font-semibold text-[#8B3A00] font-beVNSemibold my-5">{place?.place}</Text>
-                    <View className='flex-row  items-center gap-2'>
-                        <DollarIcon size={24}/>
-                        <Text className=" text-[#351904] font-semibold font-beVNSemibold">{place?.price || 0}</Text>
-                    </View>
-                    <View className='flex-row  items-center gap-2'>
-                        <ClockIcon size={24}/>
-                        <Text className=" text-gray-500 font-beVN">Giờ mở cửa: {place?.openTime}</Text>
-                    </View>
-                    <View className='flex-row  items-center justify-between gap-2'>
-                        <View className='flex-row  items-center gap-2'>
-                            <CheckInIcon size={24}/>
-                            <Text className="text-sm text-gray-500 font-beVN">{place?.location}</Text>
-                        </View>
-                        <TouchableOpacity
-                            onPress={() => router.push({pathname: "/(app)/map", params: {query: place?.location}})}
-                            className=""
-                        >
-                            <Text className="text-sm text-[#F99F04] underline">Xem bản đồ</Text>
-                        </TouchableOpacity>
-
-                    </View>
-                    <View className="flex-row items-center gap-2 mb-4">
-                        <View className="flex-row">
-                            {[...Array(5)].map((_, index) => (
-                                <Ionicons
-                                    key={index}
-                                    name={index < Math.round(4) ? 'star' : 'star-outline'}
-                                    size={16}
-                                    color="#FBBF24"
-                                    style={{marginRight: 2}}
-                                />
-                            ))}
-                        </View>
-                        <Text className="text-sm text-gray-800 font-beVN ">(1924 đánh giá)</Text>
-
-
-                    </View>
-
-
-                    <View className=" my-4 p-4 flex-1 gap-2 bg-[#FB9506] rounded-[20px]">
-                        <Text className="text-xl font-beVNSemibold text-white font-semibold">Thông tin thú vị</Text>
-                        <Text
-                            className=" text-white font-beVNBold">{place?.info || 'Thông tin đang được cập nhật'}</Text>
-                    </View>
-
-                    <View className="h-[1px] w-full bg-gray-300"/>
-
-                    <ExpandableSection2
-                        title={place.overview?.title || 'Tổng quan'}
-                        lines={place.overview?.description || []}
-                    />
-                    <View className="h-[1px] w-full bg-gray-300"/>
-
-                    <ExpandableSection1
-                        title="Bao gồm"
-                        lines={place.include?.description || []}
-                    />
-                    <View className="h-[1px] w-full bg-gray-300"/>
-
-                    <ExpandableSection2
-                        title={place.include2?.title || 'Bao gồm'}
-                        lines={place.include2?.description || []}
-                    />
-                    <View className="h-[1px] w-full bg-gray-300"/>
-
-                    <ItineraryDropdown/>
-                    <View className="h-[1px] w-full bg-gray-300"/>
-                    <ExpandableSection1
-                        title="Mẹo du lịch"
-                        lines={place.travelTips?.description || []}
-                    />
-                    <View className="h-[1px] w-full bg-gray-300"/>
-                    <ImageDropdown
-                        id={place.id}
-                        images={place?.images?.partner || []}
-                    />
-                    <View className="h-[1px] w-full bg-gray-300 my-4"/>
-                    <ReviewDropdown onOpen={() => setShowReviewModal(true)}/>
-                    <View className="h-[1px] w-full bg-gray-300 my-4"/>
-                    <ExpandableSection1
-                        isChatBot={true}
-                        title="Cần Giúp Đỡ?"
-                        lines={place.needHelp || []}
-
-                    />
-                </View>
-                <FavoriteListModal place={place} isVisible={showFavoriteModal}
-                                   onClose={() => setShowFavoriteModal(false)}/>
-                <WriteReviewModal isNoti={true} isVisible={showReviewModal} onClose={() => setShowReviewModal(false)}/>
-
-            </Animated.ScrollView>
-            <View className="flex flex-row my-7 justify-between px-4">
-                {/*<TouchableOpacity*/}
-                {/*    disabled={alreadyAdded}*/}
-                {/*    onPress={() => setShowModal(true)}*/}
-                {/*    className=" w-auto  px-4 py-3 rounded-full items-center border ">*/}
-                {/*    <Text className="text-[#F99F04] text-xl font-semibold font-beVNSemibold">Thêm vào lịch trình</Text>*/}
-                {/*</TouchableOpacity>*/}
-
-                <TouchableOpacity
-                    disabled={alreadyAdded}
-                    onPress={() => setShowModal(true)}
-                    className={`w-[48%]  px-4 py-3 rounded-full items-center  ${isAdd ? 'bg-gray-300' : 'border border-[#F99F04]'}`}
-                >
-                    <Text className={` ${isAdd ? 'text-gray-600' : 'text-[#F99F04]'} text-xl font-semibold font-beVNSemibold `}>
-                        {isAdd ? 'Đã thêm' : 'Thêm lịch trình'}
-                    </Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => router.push(`/booking/${place.id}`)}
-                                  className=" w-[46%] bg-[#F99F04] px-4 py-3  rounded-full items-center">
-                    <Text className="text-white text-xl font-semibold font-beVNSemibold">Đặt chỗ</Text>
-                </TouchableOpacity>
-            </View>
-
-            <PlanningModal place={placeInfo} onClose={() => setShowModal(false)} showModal={showModal} />
+              <Ionicons name="share-social-outline" size={20} color="#000"/>
+            </TouchableOpacity>
+          </View>
+        
         </View>
-
-
-    );
+        
+        <View className="p-4 tablet:p-6 flex-1 gap-2">
+          <Text className="text-2xl font-semibold text-[#8B3A00] font-beVNSemibold my-5">{place?.place}</Text>
+          <View className='flex-row  items-center gap-2'>
+            <DollarIcon size={24}/>
+            <Text className=" text-[#351904] font-semibold font-beVNSemibold"> {place?.price || 0}</Text>
+          </View>
+          <View className='flex-row  items-center gap-2'>
+            <ClockIcon size={24}/>
+            <Text className=" text-gray-500 font-beVN">Giờ mở cửa: {place?.openTime}</Text>
+          </View>
+          <View className='flex-row  items-center justify-between gap-2'>
+            <View className='flex-row  items-center gap-2'>
+              <CheckInIcon size={24}/>
+              <Text className="text-sm text-gray-500 font-beVN">{place?.location}</Text>
+            </View>
+            <TouchableOpacity
+              onPress={() => router.push({pathname: "/(app)/map", params: {query: place?.location}})}
+              className=""
+            >
+              <Text className="text-sm text-[#F99F04] underline">Xem bản đồ</Text>
+            </TouchableOpacity>
+          
+          </View>
+          <View className="flex-row items-center gap-2 mb-4">
+            <View className="flex-row">
+              {[...Array(5)].map((_, index) => (
+                <Ionicons
+                  key={index}
+                  name={index < Math.round(4) ? 'star' : 'star-outline'}
+                  size={16}
+                  color="#FBBF24"
+                  style={{marginRight: 2}}
+                />
+              ))}
+            </View>
+            <Text className="text-sm text-gray-800 font-beVN ">(1924 đánh giá)</Text>
+          
+          
+          </View>
+          
+          
+          <View className=" my-4 p-4 tablet:p-6 flex-1 gap-2 bg-[#8B3A00] rounded-[20px]">
+            <Text className="text-xl font-beVNSemibold text-white font-semibold">Thông tin thú vị</Text>
+            <Text
+              className=" text-white font-beVNBold">{place?.info || 'Thông tin đang được cập nhật'}</Text>
+          </View>
+          
+          <View className="h-[1px] w-full bg-gray-300"/>
+          
+          <ExpandableSection2
+            title={place.overview?.title || 'Tổng quan'}
+            lines={place.overview?.description || []}
+          />
+          <View className="h-[1px] w-full bg-gray-300"/>
+          
+          <ExpandableSection1
+            title="Bao gồm"
+            lines={place.include?.description || []}
+          />
+          <View className="h-[1px] w-full bg-gray-300"/>
+          
+          <ExpandableSection2
+            title={place.include2?.title || 'Bao gồm'}
+            lines={place.include2?.description || []}
+          />
+          <View className="h-[1px] w-full bg-gray-300"/>
+          
+          <ItineraryDropdown/>
+          <View className="h-[1px] w-full bg-gray-300"/>
+          <ExpandableSection1
+            title="Mẹo du lịch"
+            lines={place.travelTips?.description || []}
+          />
+          <View className="h-[1px] w-full bg-gray-300"/>
+          <ImageDropdown
+            id={place.id}
+            images={place?.images?.partner || []}
+          />
+          <View className="h-[1px] w-full bg-gray-300 my-4"/>
+          <ReviewDropdown onOpen={() => setShowReviewModal(true)}/>
+          <View className="h-[1px] w-full bg-gray-300 my-4"/>
+          <ExpandableSection1
+            isChatBot={true}
+            title="Cần Giúp Đỡ?"
+            lines={place.needHelp || []}
+          
+          />
+        </View>
+        <FavoriteListModal place={place} isVisible={showFavoriteModal}
+                           onClose={() => setShowFavoriteModal(false)}/>
+        <WriteReviewModal isNoti={true} isVisible={showReviewModal} onClose={() => setShowReviewModal(false)}/>
+      
+      </Animated.ScrollView>
+      <View className="flex flex-row my-7 justify-between px-4 tablet:px-6">
+        {/*<TouchableOpacity*/}
+        {/*    disabled={alreadyAdded}*/}
+        {/*    onPress={() => setShowModal(true)}*/}
+        {/*    className=" w-auto  px-4 py-3 rounded-full items-center border ">*/}
+        {/*    <Text className="text-[#F99F04] text-xl font-semibold font-beVNSemibold">Thêm vào lịch trình</Text>*/}
+        {/*</TouchableOpacity>*/}
+        
+        <TouchableOpacity
+          disabled={alreadyAdded}
+          onPress={() => setShowModal(true)}
+          className={`w-[49%]  px-4 py-3 tablet:py-4 rounded-full items-center  ${isAdd ? 'bg-gray-300' : 'border border-[#F99F04]'}`}
+        >
+          <Text className={` ${isAdd ? 'text-gray-600' : 'text-[#F99F04]'} text-xl font-semibold font-beVNSemibold `}>
+            {isAdd ? 'Đã thêm' : 'Thêm lịch trình'}
+          </Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity onPress={() => router.push(`/booking/${place.id}`)}
+                          className=" w-[49%] bg-[#F99F04] px-4 py-3 tablet:py-4  rounded-full items-center">
+          <Text className="text-white text-xl font-semibold font-beVNSemibold">Đặt chỗ</Text>
+        </TouchableOpacity>
+      </View>
+      
+      <PlanningModal place={placeInfo} onClose={() => setShowModal(false)} showModal={showModal}/>
+    </View>
+  
+  
+  );
 }
