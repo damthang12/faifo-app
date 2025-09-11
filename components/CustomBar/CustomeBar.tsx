@@ -26,7 +26,7 @@ const TABS: Record<
   },
 
   chat: {
-    label: "Hỏi đáp",
+    label: "Faifan",
     icon: (focused) => (
       <ChatBot size={27} color={focused ? "#fff" : "#717680"} />
     ),

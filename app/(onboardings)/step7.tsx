@@ -27,7 +27,7 @@ export default function OnboardingStep7() {
 
   useEffect(() => {
     // Load step7 audio when component mounts
-    const audioPath = `assets/audio/onboarding/${language}/step7.mp3`;
+    const audioPath = `assets/audio/onboarding/${language}/step8.mp3`;
     loadAudio(audioPath);
 
     return () => {
