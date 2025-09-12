@@ -1,0 +1,10 @@
+node_modules/
+.expo/
+dist/
+web-build/
+*.config.js
+*.config.ts
+coverage/
+.nyc_output/
+*.log
+.DS_Store

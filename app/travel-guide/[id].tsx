@@ -3,11 +3,10 @@ import ImgBGDesktop from "@/assets/images/mvdl-tablet.png";
 
 import VH from "@/assets/images/home/vh.png";
 import { Item, PLACES_SECTIONS } from "@/constants/MockData";
-import { useTripStore } from "@/store/useTripStore";
 import { Ionicons } from "@expo/vector-icons";
 import { BlurView } from "expo-blur";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useRef } from "react";
 
 import {
   Animated,
@@ -25,17 +24,17 @@ import { SwiperFlatList } from "react-native-swiper-flatlist";
 export default function TravelGuideDetailScreen() {
   const { id } = useLocalSearchParams();
   const router = useRouter();
-  const [liked, setLiked] = useState(false);
+  // const [liked, setLiked] = useState(false);
   const isTablet = Dimensions.get("window").width >= 768;
 
-  const [showReviewModal, setShowReviewModal] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [showFavoriteModal, setShowFavoriteModal] = useState(false);
+  // const [showReviewModal, setShowReviewModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+  // const [showFavoriteModal, setShowFavoriteModal] = useState(false);
   const place = PLACES_SECTIONS.flatMap((section) => section.items).find(
     (item) => item.id === id
   ) as Item;
   const scrollY = useRef(new Animated.Value(0)).current;
-  const { hasItineraryItem, itinerary } = useTripStore();
+  // const { hasItineraryItem, itinerary } = useTripStore();
 
   // Tạo một opacity dựa trên scroll position
   const blurOpacity = scrollY.interpolate({
@@ -44,18 +43,18 @@ export default function TravelGuideDetailScreen() {
     extrapolate: "clamp",
   });
 
-  const placeInfo = {
-    // id: Date.now().toString(),
-    id: place.id,
-    time: place.openTime,
-    title: place.place,
-    location: place.location || "",
-  };
+  // const placeInfo = {
+  //   // id: Date.now().toString(),
+  //   id: place.id,
+  //   time: place.openTime,
+  //   title: place.place,
+  //   location: place.location || "",
+  // };
 
-  const alreadyAdded = hasItineraryItem(place.id);
-  const isAdd = useMemo(() => {
-    return hasItineraryItem(place.id);
-  }, [hasItineraryItem, place.id, itinerary]);
+  // const alreadyAdded = hasItineraryItem(place.id);
+  // const isAdd = useMemo(() => {
+  //   return hasItineraryItem(place.id);
+  // }, [hasItineraryItem, place.id, itinerary]);
 
   return (
     <View className="flex-1 bg-white">
